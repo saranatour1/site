@@ -11,13 +11,13 @@ import LinkedIn from "../Icons/LinkedIn.astro";
   <Card className="bg-transparent">
     <CardTitle> Contact information</CardTitle>
     <CardDescription>
-      <div class="w-full flex flex-col items-start space-y-2">
+      <div class="w-full flex flex-col gap-4 items-start">
         {socialLinks.map((link) => {
           let label, Icon;
           if(!link) return null
           if (link.includes("github")) {
             label = "Follow me on GitHub";
-            Icon = <Github />;
+            Icon = <Github  />;
           } else if (link.includes("linkedin")) {
             label = "Follow me on LinkedIn";
             Icon = <LinkedIn />;
@@ -31,10 +31,10 @@ import LinkedIn from "../Icons/LinkedIn.astro";
               href={link}
               target="_blank"
               rel="noopener noreferrer"
-              class="flex flex-row-reverse items-center space-x-2 text-gray-700 hover:text-blue-1 transition"
+              class="flex  group items-center p-2 rounded-md text-gray-700 hover:text-blue-1 transition-colors hover:bg-blue-1/10 w-full"
             >
-              <span>{label}</span>
               {Icon}
+              <span class="text-sm font-medium">{label}</span>
             </a>
           );
         })}
