@@ -56,7 +56,7 @@ const { title, description, image = "/group-1.png" } = Astro.props;
 <meta property="twitter:description" content={description} />
 <meta property="twitter:image" content={new URL(image, Astro.url)} />
 <!-- Google tag (gtag.js) -->
-<script
+{ import.meta.env.PROD && <script
   is:inline
   async
   src="https://www.googletagmanager.com/gtag/js?id=G-QHKRHVWX6T"></script>
@@ -67,7 +67,7 @@ const { title, description, image = "/group-1.png" } = Astro.props;
   }
   gtag("js", new Date());
   gtag("config", "G-QHKRHVWX6T");
-</script>
+</script>}
 <!-- Fonts link -->
 
 <!-- Sitemap link -->
