@@ -1,6 +1,8 @@
 ---
+import { socialLinks } from "../../consts";
 import CardWrapper from "../CardWrapper.astro";
 import { Card, CardTitle, CardDescription } from "../ui/AnimatedCard";
+const email = socialLinks.find((r) => r["label"]==="email");
 ---
 
 <div
@@ -22,8 +24,8 @@ import { Card, CardTitle, CardDescription } from "../ui/AnimatedCard";
         helping startups ship better products across commerce, health, and B2B.
         When I'm not working, I'm building garden beds or helping people furnish
         their homes with the right tech. I like traveling, new places, new
-        perspectives. <br /> Working on something interesting? → 
-        <a href="mailto:reach@saranatour.dev">reach@saranatour.dev</a>
+        perspectives. <br /> Working on something interesting? →
+        <a href={`mailto:${email?.url}`}>{email?.url}</a>
       </CardDescription>
     </Card>
   </CardWrapper>
