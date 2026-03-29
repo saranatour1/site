@@ -1,12 +1,24 @@
+import type { ComponentType } from "react";
+import Email from "./components/Icons/Email.astro";
+import Github from "./components/Icons/Github.astro";
+import LinkedIn from "./components/Icons/LinkedIn.astro";
+import type { AstroComponentFactory } from "astro/runtime/server/index.js";
 // Place any global data in this file.
 // You can import this data from anywhere in your site by using the `import` keyword.
 export const SITE_TITLE = "Sara Natour's Personal website";
 export const SITE_DESCRIPTION = "The personal Website of Sara Natour.";
-export const socialLinks = [
-  import.meta.env.PUBLIC_EMAIL,
-  import.meta.env.PUBLIC_LINKEDIN,
-  import.meta.env.PUBLIC_GITHUB,
-] as string[];
+
+type SocialLink = {
+  url: string;
+  icon: AstroComponentFactory;
+  label: string;
+}
+
+export const socialLinks: SocialLink[] = [
+  { url: import.meta.env.PUBLIC_EMAIL, icon: Email, label: "email" },
+  { url: import.meta.env.PUBLIC_LINKEDIN, icon: LinkedIn, label: "linkedin" },
+  { url: import.meta.env.PUBLIC_GITHUB, icon: Github, label: "github" },
+];
 
 export const skillSet = [
   {
@@ -137,45 +149,17 @@ export const projectLinks = [
     upcoming: true,
   },
   {
+    name: "Sirdab (client work)",
+    description: "An online Art website for viewing, reading articles, sharing your artworks.",
+    url: null,
+    tools: ["Astro", "Convex", "Resend"],
+    upcoming: true,
+  },
+  {
     name: "link shortener app",
     description: "A link shortener app built with NextJS and Convex",
     url: null,
     tools: ["Tanstack start", "Convex"],
     upcoming: true,
-  },
-  {
-    name: "german article wheel",
-    description: "A german article wheel built with Vue",
-    url: "https://article.saranatour.dev/",
-    tools: ["vue"],
-    upcoming: false,
-  },
-  {
-    name: "mortage calculator",
-    description: "A mortage calculator built with vue and TailwindCSS",
-    url: "https://github.com/saranatour1/mortage-calculator",
-    tools: ["vue", "tailwindcss"],
-    upcoming: false,
-  },
-  {
-    name: "view colors",
-    description: "A view colors app built with Vue ",
-    url: "https://github.com/saranatour1/view-colors",
-    tools: ["vue", "tailwindcss"],
-    upcoming: false,
-  },
-  {
-    name: "preview card",
-    description: "A preview card built with kaioken",
-    url: "https://preview-card-uzhw.vercel.app/",
-    tools: ["kaioken", "tailwindcss"],
-    upcoming: false,
-  },
-  {
-    name: "image gallery",
-    description: "An image gallery built with sveltekit",
-    url: "https://github.com/saranatour1/image-gallery",
-    tools: ["svelte", "tailwindcss"],
-    upcoming: false,
   },
 ];

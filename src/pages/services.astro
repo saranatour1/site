@@ -1,12 +1,14 @@
 ---
+import CardWrapper from "../components/CardWrapper.astro";
 import Layout from "../layouts/Layout.astro";
 
 ---
 <Layout title="Services" description="Services offered by Sara Natour">
-+  <main>
-+    <p>
-+      I am still thinking how do I want to implement this page.
-+      <a href="mailto:reach@saranatour.dev">email me :)!</a>
-+    </p>
-+  </main>
+  <!-- I probably should move this into a CMS or something, should I make a chat box in here, or make email conversations? -->
+  <!-- I prefer email conversations  -->
+  <section class="flex justify-between items-center max-md:flex-col w-full max-w-200 mt-4">
+  <CardWrapper className="flex justify-between items-center w-full max-md:flex-col" enableWobble={false}>
+    hello from the other side
+  </CardWrapper>
+  </section>
  </Layout>

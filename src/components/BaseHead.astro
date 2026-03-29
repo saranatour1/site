@@ -56,7 +56,7 @@ const { title, description, image = "/group-1.png" } = Astro.props;
 <meta property="twitter:description" content={description} />
 <meta property="twitter:image" content={new URL(image, Astro.url)} />
 <!-- Google tag (gtag.js) -->
-<script
+{ import.meta.env.PROD && <script
   is:inline
   async
   src="https://www.googletagmanager.com/gtag/js?id=G-QHKRHVWX6T"></script>
@@ -67,8 +67,21 @@ const { title, description, image = "/group-1.png" } = Astro.props;
   }
   gtag("js", new Date());
   gtag("config", "G-QHKRHVWX6T");
-</script>
+</script>}
+
+
+<!-- Moving to databuddy -->
+ <script
+ src="https://cdn.databuddy.cc/databuddy.js"
+ is:inline
+ data-client-id="620a95f1-a26a-46ed-85c2-ca015f7fde75"
+ async
+  crossorigin="anonymous"
+  ></script>
 <!-- Fonts link -->
 
 <!-- Sitemap link -->
 <link rel="sitemap" href="/sitemap-index.xml" />
+
+
+

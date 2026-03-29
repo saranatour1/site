@@ -34,6 +34,10 @@ export const WobbleCard = ({
           ? `translate3d(${mousePosition.x}px, ${mousePosition.y}px, 0)`
           : "translate3d(0px, 0px, 0)",
         transition: "transform 0.1s ease-out",
+        // this should fix the problem with text blur on translate
+        backfaceVisibility:"hidden",
+        WebkitBackfaceVisibility:"hidden"
+
       }}
       className={cn(
         "mx-auto w-full h-auto border border-blue-1  gap-y-2 items-start  relative rounded-2xl overflow-hidden",
