@@ -53,10 +53,8 @@ const email = socialLinks.find((r) => r["label"]==="email");
             I am an Electrical Engineering graduate, and I work on making electronics designs with Arduino, ESPs, microcontrollers, and write and design the code for you. I have experience in Eagle, Flux, and other design apps.
           </p>
           <p>
-            I also do wood designs as a hobby, a begginer gardner. My favorite companies are Bunkie and ICON.
+            I also do wood designs as a hobby, a beginner gardner. My favorite companies are Bunkie and ICON.
           </p>
-
-          <hr class="my-6 border-neutral-200 dark:border-neutral-800" />
 
           <p class="font-medium text-black-1">
             Want me to try out your product? Send me an email with the details!
@@ -64,11 +62,12 @@ const email = socialLinks.find((r) => r["label"]==="email");
           <p>
             Need other questions? Send me an email or wait for this page to be updated.
           </p>
-          <p class="mt-4">
+          <div class="mt-4">
             <a href={`mailto:${email?.url}`} aria-label="Send me an email" class="text-blue-600 hover:underline">
-              {email?.url || 'Send an email'}
+              <span class="sr-only">Send an email</span>
+              {email?.url}
             </a>
-          </p>
+          </div>
         </CardDescription>
       </Card>
     </CardWrapper>
