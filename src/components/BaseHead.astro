@@ -1,4 +1,6 @@
 ---
+import { ClientRouter } from 'astro:transitions';
+
 // Import the global.css file here so that it is included on
 // all pages through the use of the <BaseHead /> component.
 
@@ -86,6 +88,4 @@ const { title, description, image = "/group-1.png" } = Astro.props;
 
 <!-- Sitemap link -->
 <link rel="sitemap" href="/sitemap-index.xml" />
-
-
-
+<ClientRouter />
