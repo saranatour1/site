@@ -1,0 +1,19 @@
+# Sara Natour
+
+## Overview
+Sara Natour is a software developer working remotely with clients and startups. She specializes in full-stack development, Convex, and building AI Agents. She also has an Electrical Engineering background with experience in electronics design using Arduino, ESPs, and microcontrollers.
+
+## Projects & Experience
+- **Freelance / Startups**: Building software from the ground up, handling testing, frontend, and backend development.
+- **Ye (业)**: A fully self-hostable web app for job applicants to track their applications, skip the line, and own their data without a middleman.
+- **AI Agents**: Strong experience building and integrating intelligent AI Agents into products.
+- **Electronics**: Designing and writing code for microcontrollers using Eagle, Flux, and more.
+
+## Tech Stack
+- TypeScript, JavaScript, React, NextJS, Astro
+- TailwindCSS, Convex
+- Python, Arduino, ESPs
+
+## Contact & Links
+- Open to new projects and well-developed opportunities.
+- Find more details and contact information on the website.
