@@ -1,19 +1,76 @@
 ---
 import CardWrapper from "../components/CardWrapper.astro";
 import Layout from "../layouts/Layout.astro";
+import { Card, CardTitle, CardDescription } from "../components/ui/AnimatedCard";
+import { socialLinks } from "../consts";
+
+const email = socialLinks.find((r) => r["label"]==="email");
 ---
 
 <Layout title="Services" description="Services offered by Sara Natour">
-  <!-- I probably should move this into a CMS or something, should I make a chat box in here, or make email conversations? -->
-  <!-- I prefer email conversations  -->
-  <section
-    class="flex flex-col justify-between items-center max-md:flex-col w-full max-w-200 mt-4 prose-h1:text-green-950"
+  <main
+    class="flex flex-col justify-between items-center max-md:flex-col w-full max-w-200 mt-4 mx-auto"
   >
-    <CardWrapper
-      className="flex justify-between items-center w-full max-md:flex-col"
-      enableWobble={false}
-    >
-      <h1 class="text-2xl text-black-1"> I offer online Services </h1>
+    <CardWrapper className="w-full" enableWobble={false}>
+      <Card className="bg-transparent w-full h-full p-6">
+        <div class="flex justify-between items-center mb-4">
+          <CardTitle className="text-2xl text-black-1">What I Do</CardTitle>
+          <span class="text-sm text-neutral-500">Latest update: May 26</span>
+        </div>
+        <CardDescription
+          class:list={[
+            "prose",
+            "text-sm",
+            "prose-neutral",
+            "leading-relaxed",
+            "max-w-none",
+            "space-y-4"
+          ]}
+        >
+          <p>
+            I'm a software developer working remotely with clients and startups to shape up their software. I do testing, frontend, and backend development. I mostly work with <a href="https://www.convex.dev" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">Convex</a>, but it's not my main thing of expertise. I also have strong experience in building and integrating AI Agents into products.
+          </p>
+
+          <h3 class="text-lg font-semibold text-black-1 mt-6 mb-2">What I'm working on now</h3>
+          <ul class="list-disc pl-5 space-y-2">
+            <li>
+              I have a client project for designers, where I'm the main developer working with Astro, Tailwind, Convex, and store sites. (Not launched yet, Q2)
+            </li>
+            <li>
+              I also am shaping up a web app for job applicants to track their job applications, apply, handle all the backlog details, skip the line, and get the job with no middleman. You own your data, you pay for what you use only, fully self-hostable called  Ye 业. 
+            </li>
+          </ul>
+
+          <div class="rounded-xl">
+            <h3 class="text-xl font-bold ">Looking for</h3>
+            <p class="text-base">
+              I am looking for new projects, open to relocating, and open to new well-developed opportunities.
+            </p>
+          </div>
+
+          <h3 class="text-lg font-semibold text-black-1 mt-6 mb-2">Other Interests & Hobbies</h3>
+          <p>
+            I am an Electrical Engineering graduate, and I work on making electronics designs with Arduino, ESPs, microcontrollers, and write and design the code for you. I have experience in Eagle, Flux, and other design apps.
+          </p>
+          <p>
+            I also do wood designs as a hobby, a begginer gardner. My favorite companies are Bunkie and ICON.
+          </p>
+
+          <hr class="my-6 border-neutral-200 dark:border-neutral-800" />
+
+          <p class="font-medium text-black-1">
+            Want me to try out your product? Send me an email with the details!
+          </p>
+          <p>
+            Need other questions? Send me an email or wait for this page to be updated.
+          </p>
+          <p class="mt-4">
+            <a href={`mailto:${email?.url}`} aria-label="Send me an email" class="text-blue-600 hover:underline">
+              {email?.url || 'Send an email'}
+            </a>
+          </p>
+        </CardDescription>
+      </Card>
     </CardWrapper>
-  </section>
+  </main>
 </Layout>
