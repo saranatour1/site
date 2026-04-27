@@ -23,3 +23,7 @@ All commands are run from the root of the project, from a terminal:
 ## 📬 Contact
 
 Want to work together? Check out the Services page or reach out directly!
+
+
+## Trigger bot
+Am I working bot?
