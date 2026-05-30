@@ -62,29 +62,14 @@ export const skillSet = [
     url: "https://www.python.org/",
   },
   {
-    name: "Java",
-    icon: "https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/java-colored.svg",
-    url: "https://www.oracle.com/java/",
-  },
-  {
     name: "Git",
     icon: "https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/git-colored.svg",
     url: "https://git-scm.com/",
   },
   {
-    name: "Bootstrap",
-    icon: "https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/bootstrap-colored.svg",
-    url: "https://getbootstrap.com/",
-  },
-  {
     name: "NodeJS",
     icon: "https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/nodejs-colored.svg",
     url: "https://nodejs.org/en/",
-  },
-  {
-    name: "MongoDB",
-    icon: "https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/mongodb-colored.svg",
-    url: "https://www.mongodb.com/",
   },
   {
     name: "MySQL",
@@ -112,11 +97,6 @@ export const skillSet = [
     url: "https://vuejs.org/",
   },
   {
-    name: "Docker",
-    icon: "https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/docker-colored.svg",
-    url: "https://www.docker.com/",
-  },
-  {
     name: "Figma",
     icon: "https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/figma-colored.svg",
     url: "https://www.figma.com/",
@@ -127,9 +107,24 @@ export const skillSet = [
     url: "https://www.postgresql.org/",
   },
   {
-    name: "MongoDB",
-    icon: "https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/mongodb-colored.svg",
-    url: "https://www.mongodb.com/",
+    name: "TanStack Router/start",
+    icon: "https://tanstack.com/favicon.ico",
+    url: "https://tanstack.com/start",
+  },
+  {
+    name: "Claude Code",
+    icon: "https://claude.ai/favicon.ico",
+    url: "https://www.anthropic.com/claude-code",
+  },
+  {
+    name: "Codex",
+    icon: "https://github.com/openai.png",
+    url: "https://github.com/openai/codex",
+  },
+  {
+    name: "Antigravity",
+    icon: "https://antigravity.google/favicon.ico",
+    url: "https://antigravity.google/",
   },
 ];
 
@@ -145,7 +140,7 @@ export const projectLinks = [
     name: "Personal Job Application tracker (for the Applicant)",
     description: "No more excuses, This is an actual Personal job tracker that pays off, and is completely free, self-hosted.",
     url: null,
-    tools: ["Tanstack Start", "Convex", "Firecrawl", "Agent"],
+    tools: ["TanStack Start", "Convex", "Firecrawl", "Agent"],
     upcoming: true,
   },
   {
@@ -159,7 +154,7 @@ export const projectLinks = [
     name: "link shortener app",
     description: "A link shortener app built with NextJS and Convex",
     url: null,
-    tools: ["Tanstack start", "Convex"],
+    tools: ["TanStack Start", "Convex"],
     upcoming: true,
   },
 ];
