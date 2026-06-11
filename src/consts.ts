@@ -1,4 +1,3 @@
-import type { ComponentType } from "react";
 import Email from "./components/Icons/Email.astro";
 import Github from "./components/Icons/Github.astro";
 import LinkedIn from "./components/Icons/LinkedIn.astro";

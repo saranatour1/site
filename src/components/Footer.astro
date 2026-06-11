@@ -7,6 +7,9 @@ const today = new Date();
 ---
 <footer class="  justify-self-end">
 	 Copyright {today.getFullYear()}. Made by Sara
+<div class="footer-links">
+  <a href="/sitemap-index.xml">Sitemap</a>
+</div>
 <div class="social-links">
   {socialLinks.map(({ url, icon: Icon, label }) => (
     <a href={url} target="_blank" class="cursor-pointer">
@@ -22,6 +25,16 @@ const today = new Date();
 		background: linear-gradient(var(--gray-gradient)) no-repeat;
 		color: rgb(var(--gray));
 		text-align: center;
+	}
+	.footer-links {
+		margin-top: 0.5em;
+	}
+	.footer-links a {
+		color: rgb(var(--gray));
+		text-decoration: underline;
+	}
+	.footer-links a:hover {
+		color: rgb(var(--gray-dark));
 	}
 	.social-links {
 		display: flex;
