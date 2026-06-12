@@ -24,22 +24,62 @@ const query = `
   }
 `;
 
-const octokit = new Octokit({
-  auth: import.meta.env.GITHUB_TOKEN,
-});
-
-const response = await octokit.graphql(query, {
-  baseUrl: "https://api.github.com",
-  headers: {
-    authorization: `token ${import.meta.env.GITHUB_TOKEN}`,
+const FALLBACK_PROJECTS: ProjectType[] = [
+  {
+    name: "ai-chat-bot-convex",
+    description: "AI chat app template using convex, next.js, ai!",
+    url: "https://github.com/saranatour1/ai-chat-bot-convex",
   },
-});
+  {
+    name: "note-taking-app",
+    description: "note taking app",
+    url: "https://github.com/saranatour1/note-taking-app",
+  },
+  {
+    name: "invoice-app",
+    description: "a frontend mentor challenge app",
+    url: "https://github.com/saranatour1/invoice-app",
+  },
+  {
+    name: "speed-test",
+    description: "How fast can you type?",
+    url: "https://github.com/saranatour1/speed-test",
+  },
+  {
+    name: "surveys",
+    description: "A simple demo of the posthog convex component",
+    url: "https://github.com/saranatour1/surveys",
+  },
+];
 
-const pinnedItems: ProjectType[] = (response as any).user.pinnedItems.nodes;
+let pinnedItems: ProjectType[] = FALLBACK_PROJECTS;
+
+if (import.meta.env.GITHUB_TOKEN) {
+  try {
+    const octokit = new Octokit({
+      auth: import.meta.env.GITHUB_TOKEN,
+      // @octokit/request v9 has no `timeout` option; abort via signal so a
+      // hung connection can't stall the prerender
+      request: { signal: AbortSignal.timeout(10_000) },
+    });
+
+    const response = await octokit.graphql(query, {
+      baseUrl: "https://api.github.com",
+    });
+
+    pinnedItems = (response as any).user.pinnedItems.nodes;
+  } catch (error) {
+    console.warn(
+      "Failed to fetch pinned repos from GitHub, using fallback list:",
+      error instanceof Error ? error.message : error,
+    );
+  }
+} else {
+  console.warn("GITHUB_TOKEN is not set, using fallback project list");
+}
 ---
 
 <section class="mt-4 w-full max-w-200">
-  {!pinnedItems && <span>loading</span>}
     <Card className="bg-transparent border-blue-1 p-8">
       <CardTitle className="text-2xl font-bold leading-6 ">Cool things</CardTitle>
         <HoverEffect client:visible items={pinnedItems}/>

@@ -11,30 +11,30 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/check": "^0.9.7",
-    "@astrojs/mdx": "^5.0.0",
-    "@astrojs/react": "^5.0.0",
-    "@astrojs/rss": "^4.0.17",
-    "@astrojs/sitemap": "^3.7.1",
+    "@astrojs/check": "^0.9.9",
+    "@astrojs/mdx": "^5.0.6",
+    "@astrojs/react": "^5.0.7",
+    "@astrojs/rss": "^4.0.18",
+    "@astrojs/sitemap": "^3.7.3",
     "@astrojs/tailwind": "^6.0.2",
-    "@octokit/core": "^6.1.2",
-    "@octokit/types": "^13.6.1",
-    "@tailwindcss/vite": "^4.1.11",
-    "@types/react": "^18.3.11",
-    "@types/react-dom": "^18.3.1",
-    "astro": "^6.0.4",
-    "astro-robots": "^2.0.1",
+    "@octokit/core": "^6.1.6",
+    "@octokit/types": "^13.10.0",
+    "@tailwindcss/vite": "^4.3.0",
+    "@types/react": "^18.3.31",
+    "@types/react-dom": "^18.3.7",
+    "astro": "^6.4.6",
+    "astro-robots": "^2.3.1",
     "clsx": "^2.1.1",
-    "framer-motion": "^11.11.9",
+    "framer-motion": "^11.18.2",
     "mini-svg-data-uri": "^1.4.4",
-    "react": "^19.2.4",
-    "react-dom": "^19.2.4",
-    "tailwind-merge": "^2.5.4",
-    "tailwindcss": "^4.1.11",
-    "typescript": "^6.0.2"
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
+    "tailwind-merge": "^2.6.1",
+    "tailwindcss": "^4.3.0",
+    "typescript": "^6.0.3"
   },
-  "packageManager": "pnpm@10.33.0",
+  "packageManager": "pnpm@11.5.3",
   "devDependencies": {
-    "@tailwindcss/typography": "^0.5.19"
+    "@tailwindcss/typography": "^0.5.20"
   }
 }
