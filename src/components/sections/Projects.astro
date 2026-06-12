@@ -58,6 +58,9 @@ if (import.meta.env.GITHUB_TOKEN) {
   try {
     const octokit = new Octokit({
       auth: import.meta.env.GITHUB_TOKEN,
+      // @octokit/request v9 has no `timeout` option; abort via signal so a
+      // hung connection can't stall the prerender
+      request: { signal: AbortSignal.timeout(10_000) },
     });
 
     const response = await octokit.graphql(query, {
