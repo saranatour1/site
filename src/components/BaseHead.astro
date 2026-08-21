@@ -1,5 +1,6 @@
 ---
 import { ClientRouter } from 'astro:transitions';
+import { socialLinks } from '../consts';
 
 // Import the global.css file here so that it is included on
 // all pages through the use of the <BaseHead /> component.
@@ -13,6 +14,17 @@ interface Props {
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
 const { title, description, image = "/group-1.png" } = Astro.props;
+
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Sara Natour",
+  jobTitle: "Full-stack Developer",
+  url: Astro.site,
+  sameAs: socialLinks
+    .filter((link) => link.label !== "email" && link.url)
+    .map((link) => link.url),
+};
 ---
 
 <!-- Global Metadata -->
@@ -38,6 +50,9 @@ const { title, description, image = "/group-1.png" } = Astro.props;
 
 <!-- Canonical URL -->
 <link rel="canonical" href={canonicalURL} />
+
+<!-- Structured data -->
+<script type="application/ld+json" is:inline set:html={JSON.stringify(personSchema)} />
 
 <!-- Primary Meta Tags -->
 <title>{title}</title>
@@ -77,13 +92,13 @@ const { title, description, image = "/group-1.png" } = Astro.props;
 
 
 <!-- Moving to databuddy -->
- <script
+{ import.meta.env.PROD && <script
  src="https://cdn.databuddy.cc/databuddy.js"
  is:inline
  data-client-id="620a95f1-a26a-46ed-85c2-ca015f7fde75"
  async
   crossorigin="anonymous"
-  ></script>
+  ></script> }
 <!-- Fonts link -->
 
 <!-- Sitemap link -->

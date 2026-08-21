@@ -1,23 +1,17 @@
 import { cn } from "../../lib/utils";
-import { AnimatePresence, motion } from "framer-motion";
-import { useState, type ReactNode } from "react";
 
 export const HoverEffect = ({
   items,
   className,
-  children
 }: {
   items: {
     name: string;
     description?: string;
     url: string;
-    icon?:string
+    icon?: string;
   }[];
   className?: string;
-  children?:ReactNode
 }) => {
-  let [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-
   return (
     <div
       className={cn(
@@ -25,35 +19,15 @@ export const HoverEffect = ({
         className
       )}
     >
-      {items.map((item, idx) => (
+      {items.map((item) => (
         <a
           href={item?.url}
           key={item?.url}
-          className="relative group  block p-2 h-full w-full"
-          onMouseEnter={() => setHoveredIndex(idx)}
-          onMouseLeave={() => setHoveredIndex(null)}
+          className="relative group block p-2 h-full w-full"
         >
-          <AnimatePresence>
-            {hoveredIndex === idx && (
-              <motion.span
-                className="absolute inset-0 h-full w-full bg-blue-1/50 block  rounded-3xl"
-                layoutId="hoverBackground"
-                initial={{ opacity: 0 }}
-                animate={{
-                  opacity: 1,
-                  transition: { duration: 0.15 },
-                }}
-                exit={{
-                  opacity: 0,
-                  transition: { duration: 0.15, delay: 0.2 },
-                }}
-              />
-            )}
-          </AnimatePresence>
           <Card>
             <CardTitle>{item.name}</CardTitle>
             <CardDescription>{item.description}</CardDescription>
-            {children}
           </Card>
         </a>
       ))}
