@@ -1,0 +1,58 @@
+{
+  "cli_version": "0.10.2",
+  "checkpoint_id": "01M0HKPF1KR2N2FQB29NA9NE12",
+  "session_id": "44bb0c49-f4e4-4ed4-8cd4-c38b1a0f2eb6",
+  "strategy": "manual-commit",
+  "created_at": "2026-08-21T07:31:22.004014Z",
+  "branch": "claude/recursing-dirac-c09a10",
+  "checkpoints_count": 1,
+  "files_touched": [
+    "README.md",
+    "src/components/BaseHead.astro",
+    "src/components/CardWrapper.astro",
+    "src/components/Icons/Heart.astro",
+    "src/components/Icons/Smily.astro",
+    "src/components/sections/FirstSection.astro",
+    "src/components/sections/ProfessionalExperience.astro",
+    "src/components/sections/Projects.astro",
+    "src/components/sections/Skills.astro",
+    "src/components/ui/AnimatedCard.tsx",
+    "src/components/ui/HoverEffect.tsx",
+    "src/consts.ts",
+    "src/pages/index.astro",
+    "src/pages/services.astro",
+    "src/styles/globals.css"
+  ],
+  "agent": "Claude Code",
+  "model": "claude-sonnet-5",
+  "turn_id": "196042932337",
+  "compact_transcript_start": 0,
+  "token_usage": {
+    "input_tokens": 230,
+    "cache_creation_tokens": 156118,
+    "cache_read_tokens": 16359503,
+    "output_tokens": 60580,
+    "api_call_count": 115
+  },
+  "initial_attribution": {
+    "calculated_at": "2026-08-21T07:31:21.957021Z",
+    "agent_lines": 39,
+    "agent_removed": 373,
+    "human_added": 2,
+    "human_modified": 0,
+    "human_removed": 0,
+    "total_committed": 41,
+    "total_lines_changed": 688,
+    "agent_percentage": 59.883720930232556,
+    "metric_version": 2
+  },
+  "prompt_attributions": [
+    {
+      "checkpoint_number": 1,
+      "user_lines_added": 0,
+      "user_lines_removed": 0,
+      "agent_lines_added": 0,
+      "agent_lines_removed": 0
+    }
+  ]
+}

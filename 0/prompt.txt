@@ -1,0 +1,1 @@
+Make. aplan to reduce the content on my page, and have less transitions + animations from motion and wobble. keep it simple and reasonable, content should be humanly readable, add an llm.txt and anything else that would make it more "SEO" friendly

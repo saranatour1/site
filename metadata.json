@@ -1,0 +1,40 @@
+{
+  "cli_version": "0.10.2",
+  "checkpoint_id": "01M0HKPF1KR2N2FQB29NA9NE12",
+  "strategy": "manual-commit",
+  "branch": "claude/recursing-dirac-c09a10",
+  "checkpoints_count": 1,
+  "files_touched": [
+    "README.md",
+    "src/components/BaseHead.astro",
+    "src/components/CardWrapper.astro",
+    "src/components/Icons/Heart.astro",
+    "src/components/Icons/Smily.astro",
+    "src/components/sections/FirstSection.astro",
+    "src/components/sections/ProfessionalExperience.astro",
+    "src/components/sections/Projects.astro",
+    "src/components/sections/Skills.astro",
+    "src/components/ui/AnimatedCard.tsx",
+    "src/components/ui/HoverEffect.tsx",
+    "src/consts.ts",
+    "src/pages/index.astro",
+    "src/pages/services.astro",
+    "src/styles/globals.css"
+  ],
+  "sessions": [
+    {
+      "metadata": "/0/metadata.json",
+      "transcript": "/0/full.jsonl",
+      "compact_transcript": "/0/transcript.jsonl",
+      "content_hash": "/0/content_hash.txt",
+      "prompt": "/0/prompt.txt"
+    }
+  ],
+  "token_usage": {
+    "input_tokens": 230,
+    "cache_creation_tokens": 156118,
+    "cache_read_tokens": 16359503,
+    "output_tokens": 60580,
+    "api_call_count": 115
+  }
+}
