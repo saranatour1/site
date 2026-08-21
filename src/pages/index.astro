@@ -6,17 +6,13 @@ import Skills from "../components/sections/Skills.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 import Layout from "../layouts/Layout.astro";
 import ProfessionalExperience from "../components/sections/ProfessionalExperience.astro"
-import ProjectLinks from "../components/sections/ProjectLinks.astro"
-import Contact from "../components/sections/Contact.astro";
 ---
 <Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
   <main>
     <FirstSection />
     <OverView />
-    <Contact />
     <ProfessionalExperience />
     <Skills />
     <Projects />
-    <ProjectLinks />
   </main>
 </Layout>
