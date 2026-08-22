@@ -61,29 +61,14 @@ const { title, description, image = "/group-1.png" } = Astro.props;
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
 <meta property="twitter:image" content={new URL(image, Astro.url)} />
-<!-- Google tag (gtag.js) -->
+<!-- Databuddy analytics (cookieless, no PII) -->
 { import.meta.env.PROD && <script
+  src="https://cdn.databuddy.cc/databuddy.js"
   is:inline
+  data-client-id="620a95f1-a26a-46ed-85c2-ca015f7fde75"
   async
-  src="https://www.googletagmanager.com/gtag/js?id=G-QHKRHVWX6T"></script>
-<script is:inline type="application/javascript">
-  window.dataLayer = window.dataLayer || [];
-  function gtag() {
-    dataLayer.push(arguments);
-  }
-  gtag("js", new Date());
-  gtag("config", "G-QHKRHVWX6T");
-</script>}
-
-
-<!-- Moving to databuddy -->
- <script
- src="https://cdn.databuddy.cc/databuddy.js"
- is:inline
- data-client-id="620a95f1-a26a-46ed-85c2-ca015f7fde75"
- async
   crossorigin="anonymous"
-  ></script>
+  ></script> }
 <!-- Fonts link -->
 
 <!-- Sitemap link -->

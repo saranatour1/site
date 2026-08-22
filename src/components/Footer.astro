@@ -3,9 +3,10 @@ import { socialLinks } from "../consts";
 const today = new Date();
 ---
 <footer class="  justify-self-end">
-	 Copyright {today.getFullYear()}. Made by Sara
+	 Copyright {today.getFullYear()}.
 <div class="footer-links">
   <a href="/sitemap-index.xml">Sitemap</a>
+  <a href="/privacy">Privacy</a>
 </div>
 <div class="social-links">
   {socialLinks.map(({ url, icon: Icon, label }) => (
@@ -25,6 +26,9 @@ const today = new Date();
 	}
 	.footer-links {
 		margin-top: 0.5em;
+		display: flex;
+		justify-content: center;
+		gap: 1em;
 	}
 	.footer-links a {
 		color: rgb(var(--gray));
