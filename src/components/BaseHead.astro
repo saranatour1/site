@@ -62,13 +62,13 @@ const { title, description, image = "/group-1.png" } = Astro.props;
 <meta property="twitter:description" content={description} />
 <meta property="twitter:image" content={new URL(image, Astro.url)} />
 <!-- Databuddy analytics (cookieless, no PII) -->
-{ import.meta.env.PROD && <script
+<script
   src="https://cdn.databuddy.cc/databuddy.js"
   is:inline
   data-client-id="620a95f1-a26a-46ed-85c2-ca015f7fde75"
   async
   crossorigin="anonymous"
-  ></script> }
+  ></script>
 <!-- Fonts link -->
 
 <!-- Sitemap link -->
