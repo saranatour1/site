@@ -24,3 +24,22 @@ const { ...rest } = Astro.props;
     </clipPath>
   </defs>
 </svg>
+
+<style>
+  .squiggle-1 {
+    stroke-dasharray: 450;
+    stroke-dashoffset: 450;
+    animation: draw 3s linear forwards;
+  }
+  .squiggle-2 {
+    stroke-dasharray: 450;
+    stroke-dashoffset: 450;
+    animation: draw 1.5s linear forwards;
+  }
+
+  @keyframes draw {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+</style>

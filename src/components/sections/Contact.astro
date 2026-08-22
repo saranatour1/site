@@ -1,0 +1,30 @@
+---
+import CardWrapper from "../CardWrapper.astro";
+import { Card, CardDescription, CardTitle } from "../ui/AnimatedCard";
+import { socialLinks } from "../../consts";
+---
+<section class="w-full max-w-200 mt-4">
+  <CardWrapper className="flex justify-between items-center w-full max-md:flex-col">
+  <Card className="bg-transparent">
+    <CardTitle> Contact information</CardTitle>
+    <CardDescription>
+      <div class="w-full flex flex-col gap-4 items-start">
+        {socialLinks.map(({ url, icon: Icon, label }) => {
+          return (
+            <a
+              href={url}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex  group items-center p-2 rounded-md text-gray-700 hover:text-blue-1 transition-colors hover:bg-blue-1/10 w-full"
+            >
+              {<Icon />}
+              <span class="text-sm font-medium">{label}</span>
+            </a>
+          );
+        })}
+      </div>
+      
+    </CardDescription>
+  </Card>
+  </CardWrapper>
+</section>
