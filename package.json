@@ -25,6 +25,7 @@
     "astro": "^7.2.2",
     "astro-robots": "^2.3.1",
     "clsx": "^2.1.1",
+    "framer-motion": "^11.18.2",
     "mini-svg-data-uri": "^1.4.4",
     "react": "^19.2.7",
     "react-dom": "^19.2.7",
