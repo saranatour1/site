@@ -1,0 +1,60 @@
+---
+import CardWrapper from "../components/CardWrapper.astro";
+import Layout from "../layouts/Layout.astro";
+import { Card, CardTitle, CardDescription } from "../components/ui/AnimatedCard";
+import { socialLinks } from "../consts";
+
+const email = socialLinks.find((r) => r["label"]==="email");
+---
+
+<Layout title="Privacy" description="Privacy and analytics on this site">
+  <main
+    class="flex flex-col justify-between items-center max-md:flex-col w-full max-w-200 mx-auto"
+  >
+    <CardWrapper className="w-full" enableWobble={false}>
+      <Card className="bg-transparent w-full h-full p-6">
+        <div class="flex justify-between items-center mb-4">
+          <CardTitle className="text-2xl text-black-1">Privacy</CardTitle>
+        </div>
+        <CardDescription
+          class:list={[
+            "prose",
+            "text-sm",
+            "prose-neutral",
+            "leading-relaxed",
+            "max-w-none",
+            "space-y-4"
+          ]}
+        >
+          <p>
+            This site uses <a href="https://databuddy.cc" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">Databuddy</a>, a cookieless analytics tool, to understand traffic. See Databuddy's own <a href="https://www.databuddy.cc/privacy" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">privacy policy</a> for details on how they process data.
+          </p>
+
+          <div>
+            <h3 class="text-lg font-semibold text-black-1 mb-2">What's collected</h3>
+            <p>Approximate location (country/city), page views, referrer, and device/browser type.</p>
+          </div>
+
+          <div>
+            <h3 class="text-lg font-semibold text-black-1 mb-2">What's not collected</h3>
+            <p>IP addresses, names, or any other personally identifying information are not collected or stored.</p>
+          </div>
+
+          <p>
+            No cookies are set by this analytics, which is why there's no cookie banner. Analytics only runs on the live site, not during local development.
+          </p>
+
+          <p class="font-medium text-black-1">
+            Questions? Send me an email.
+          </p>
+          <div class="mt-4">
+            <a href={`mailto:${email?.url}`} aria-label="Send me an email" class="text-blue-600 hover:underline">
+              <span class="sr-only">Send an email</span>
+              {email?.url}
+            </a>
+          </div>
+        </CardDescription>
+      </Card>
+    </CardWrapper>
+  </main>
+</Layout>
