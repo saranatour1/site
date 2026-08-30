@@ -1,0 +1,10 @@
+Goal: Signaling your preference of either allowing or disallowing certain categories of AI actions.
+
+Issue: No Content Signals found in robots.txt
+
+Fix: Add Content-Signal directives to your robots.txt declaring preferences for ai-train, search, and ai-input. For example:
+Content-Signal: ai-train=no, search=yes, ai-input=no
+
+Skill: https://isitagentready.com/.well-known/agent-skills/content-signals/SKILL.md
+
+Docs: https://contentsignals.org/
