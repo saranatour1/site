@@ -1,0 +1,53 @@
+{
+  "cli_version": "0.10.2",
+  "checkpoint_id": "01M1JVXN5KSFN400484CA5WHAC",
+  "session_id": "f68e802f-ab0f-4625-ba67-ac83dfe7593f",
+  "strategy": "manual-commit",
+  "created_at": "2026-09-03T05:30:01.612206Z",
+  "branch": "newsletter",
+  "checkpoints_count": 1,
+  "files_touched": [
+    "src/components/NavBar.astro",
+    "src/content.config.ts",
+    "src/content/writing/hello.md",
+    "src/pages/rss.xml.js",
+    "src/pages/writing/[...slug].astro",
+    "src/pages/writing/index.astro"
+  ],
+  "agent": "Claude Code",
+  "model": "claude-opus-5",
+  "turn_id": "df35c77fabad",
+  "compact_transcript_start": 0,
+  "token_usage": {
+    "input_tokens": 34,
+    "cache_creation_tokens": 38321,
+    "cache_read_tokens": 1131908,
+    "output_tokens": 7151,
+    "api_call_count": 17
+  },
+  "initial_attribution": {
+    "calculated_at": "2026-09-03T05:30:01.603382Z",
+    "agent_lines": 0,
+    "agent_removed": 0,
+    "human_added": 181,
+    "human_modified": 0,
+    "human_removed": 0,
+    "total_committed": 181,
+    "total_lines_changed": 181,
+    "agent_percentage": 0,
+    "metric_version": 2
+  },
+  "prompt_attributions": [
+    {
+      "checkpoint_number": 1,
+      "user_lines_added": 255,
+      "user_lines_removed": 0,
+      "agent_lines_added": 0,
+      "agent_lines_removed": 0,
+      "user_added_per_file": {
+        ".claude/settings.json": 84,
+        "skills/writing-plans/SKILL.md": 171
+      }
+    }
+  ]
+}
