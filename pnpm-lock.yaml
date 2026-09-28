@@ -27,8 +27,8 @@ importers:
         specifier: ^6.0.2
         version: 6.0.2(astro@7.2.2(@astrojs/markdown-remark@7.2.2(supports-color@7.2.0))(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.1)(@types/node@24.13.2)(jiti@2.7.0)(yaml@2.9.0))(tailwindcss@4.3.0)
       '@databuddy/sdk':
-        specifier: ^2.6.0
-        version: 2.6.0(react@19.2.7)
+        specifier: ^3.0.0
+        version: 3.0.0(react@19.2.7)
       '@octokit/core':
         specifier: ^6.1.6
         version: 6.1.6
@@ -362,8 +362,8 @@ packages:
     resolution: {integrity: sha512-zccHj2z2oCCO4yrDiRSlFOxWerGqRiysP7a5jPK6uoI9URKAquwY42Dd/iUP8JWHxEzdRe4TlbvZCo8z1/mhrw==}
     engines: {node: '>= 20.12.0'}
 
-  '@databuddy/sdk@2.6.0':
-    resolution: {integrity: sha512-coQVa/AJoesgsFSGWPFtlrl7xZx1nTTvoX3A9YLD+9f3+JDwr3ajVog3WOiLBJSLqk7xC+G+FnR/W/Wda5eWbw==}
+  '@databuddy/sdk@3.0.0':
+    resolution: {integrity: sha512-TeWALJJClxp9qPqGZoq1vrETYgwD40X3G65LuaWeQUCKx8WmACHSwg4uxXvrsW0wmhxu3ySkrQ4TsJUHiGJ02A==}
     peerDependencies:
       react: '>=18'
       vue: '>=3'
@@ -3130,7 +3130,7 @@ snapshots:
       fast-wrap-ansi: 0.2.2
       sisteransi: 1.0.5
 
-  '@databuddy/sdk@2.6.0(react@19.2.7)':
+  '@databuddy/sdk@3.0.0(react@19.2.7)':
     optionalDependencies:
       react: 19.2.7
 

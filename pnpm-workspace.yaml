@@ -1,3 +1,6 @@
 allowBuilds:
   esbuild: true
   sharp: true
+# Installed before its 24h release-age window passed; safe to remove after 2026-09-28 21:30 UTC.
+minimumReleaseAgeExclude:
+  - "@databuddy/sdk@3.0.0"
