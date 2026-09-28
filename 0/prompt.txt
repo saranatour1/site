@@ -46,3 +46,7 @@ Comment 1 — PR comment, no inline thread; truncated — full text: `gh api rep
 > > &l…
 (End of quoted GitHub text.)
 </ci-monitor-event>
+
+---
+
+install 3.0.0 now with minimum-release-age=0
