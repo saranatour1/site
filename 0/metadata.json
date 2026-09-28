@@ -1,0 +1,48 @@
+{
+  "cli_version": "0.11.3",
+  "checkpoint_id": "01M3MJBE9N9GHSTBF1MMZ4WNYK",
+  "session_id": "bcedefdb-a402-40fe-b2ba-d114adf0f755",
+  "strategy": "manual-commit",
+  "created_at": "2026-09-28T17:52:40.641457Z",
+  "branch": "feat/databuddy-agent-tracking",
+  "checkpoints_count": 2,
+  "files_touched": [
+    "worker.ts",
+    "wrangler.jsonc"
+  ],
+  "agent": "Claude Code",
+  "model": "claude-opus-5-5",
+  "turn_id": "6e1810fb576b",
+  "compact_transcript_start": 0,
+  "token_usage": {
+    "input_tokens": 38,
+    "cache_creation_tokens": 44548,
+    "cache_read_tokens": 1423730,
+    "output_tokens": 7370,
+    "api_call_count": 19
+  },
+  "session_metrics": {
+    "turn_count": 2
+  },
+  "initial_attribution": {
+    "calculated_at": "2026-09-28T17:52:40.627183Z",
+    "agent_lines": 31,
+    "agent_removed": 0,
+    "human_added": 5805,
+    "human_modified": 0,
+    "human_removed": 0,
+    "total_committed": 5836,
+    "total_lines_changed": 5836,
+    "agent_percentage": 0.5311857436600411,
+    "metric_version": 2
+  },
+  "prompt_attributions": [
+    {
+      "checkpoint_number": 1,
+      "user_lines_added": 0,
+      "user_lines_removed": 0,
+      "agent_lines_added": 0,
+      "agent_lines_removed": 0
+    }
+  ]
+}
