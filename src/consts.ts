@@ -26,29 +26,24 @@ export const skillSet = [
     url: "https://www.typescriptlang.org/",
   },
   {
-    name: "JavaScript",
-    icon: "https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/javascript-colored.svg",
-    url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
-  },
-  {
     name: "React",
     icon: "https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/react-colored.svg",
     url: "https://reactjs.org/",
   },
   {
-    name: "NextJS",
-    icon: "https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/nextjs-colored.svg",
-    url: "https://nextjs.org/",
-  },
-  {
-    name: "convex",
-    icon: "https://www.convex.dev/favicon.ico",
+    name: "Convex",
+    icon: "/icons/stack/convex.png",
     url: "https://www.convex.dev/",
   },
   {
-    name: "TailwindCSS",
-    icon: "https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/tailwindcss-colored.svg",
-    url: "https://tailwindcss.com/",
+    name: "Vite",
+    icon: "https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/vite-colored.svg",
+    url: "https://vite.dev/",
+  },
+  {
+    name: "TanStack",
+    icon: "https://tanstack.com/favicon.ico",
+    url: "https://tanstack.com/",
   },
   {
     name: "shadcn UI",
@@ -56,85 +51,55 @@ export const skillSet = [
     url: "https://ui.shadcn.com/",
   },
   {
-    name: "Python",
-    icon: "https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/python-colored.svg",
-    url: "https://www.python.org/",
-  },
-  {
-    name: "Java",
-    icon: "https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/java-colored.svg",
-    url: "https://www.oracle.com/java/",
-  },
-  {
-    name: "Git",
-    icon: "https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/git-colored.svg",
-    url: "https://git-scm.com/",
-  },
-  {
-    name: "Bootstrap",
-    icon: "https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/bootstrap-colored.svg",
-    url: "https://getbootstrap.com/",
-  },
-  {
-    name: "NodeJS",
-    icon: "https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/nodejs-colored.svg",
-    url: "https://nodejs.org/en/",
-  },
-  {
-    name: "MongoDB",
-    icon: "https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/mongodb-colored.svg",
-    url: "https://www.mongodb.com/",
-  },
-  {
-    name: "MySQL",
-    icon: "https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/mysql-colored.svg",
-    url: "https://www.mysql.com/",
-  },
-  {
-    name: "Flask",
-    icon: "https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/flask-colored.svg",
-    url: "https://flask.palletsprojects.com/en/2.0.x/",
-  },
-  {
-    name: "Django",
-    icon: "https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/django-colored.svg",
-    url: "https://www.djangoproject.com/",
+    name: "VueJS",
+    icon: "https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/vuejs-colored.svg",
+    url: "https://vuejs.org/",
   },
   {
     name: "Svelte",
     icon: "https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/svelte-colored.svg",
     url: "https://svelte.dev/",
   },
+];
+
+// [name, icon file in public/icons/stack, optional note]
+export const techStack: { title: string; items: [string, string, string?][] }[] = [
   {
-    name: "VueJS",
-    icon: "https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/vuejs-colored.svg",
-    url: "https://vuejs.org/",
+    title: "Building with",
+    items: [
+      ["Convex", "convex.png"], ["Astro", "astro.svg"], ["Vite", "vite.svg"], ["TanStack", "tanstack.svg"],
+      ["TypeScript", "typescript.svg"], ["shadcn UI", "shadcnui.svg"],
+      ["Cloudflare", "cloudflare.svg"], ["Go", "go.svg", "learning"],
+    ],
   },
   {
-    name: "Docker",
-    icon: "https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/docker-colored.svg",
-    url: "https://www.docker.com/",
+    title: "AI & agents",
+    items: [
+      ["Claude Agent", "claude.svg"], ["Cursor", "cursor.svg"], ["Grok Bot", "grok.png"],
+      ["Vapi", "vapi.svg"], ["Firecrawl", "firecrawl.png"], ["AgentMail", "agentmail.png"],
+      ["Entire", "entire.svg"], ["OpenUsage", "openusage.svg"],
+    ],
   },
   {
-    name: "Figma",
-    icon: "https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/figma-colored.svg",
-    url: "https://www.figma.com/",
+    title: "Workflow",
+    items: [
+      ["VS Code", "visualstudiocode.svg"], ["GitHub", "github.svg"], ["Linear", "linear.svg"],
+      ["Notion", "notion.svg"], ["Raycast", "raycast.svg"], ["Superhuman", "superhuman.svg"],
+      ["Databuddy", "databuddy.svg"],
+    ],
   },
   {
-    name: "PostgreSQL",
-    icon: "https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/postgresql-colored.svg",
-    url: "https://www.postgresql.org/",
-  },
-  {
-    name: "MongoDB",
-    icon: "https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/mongodb-colored.svg",
-    url: "https://www.mongodb.com/",
+    title: "Everyday",
+    items: [
+      ["1Password", "1password.svg"], ["NordVPN", "nordvpn.svg"],
+      ["Discord", "discord.svg"], ["Steam", "steam.svg"],
+    ],
   },
 ];
 
 export const projectLinks = [
   {
-    name: "Gemeni Chat app ",
+    name: "Gemini Chat app",
     description: "A chat app built with NextJS and Convex",
     url: "https://gemeni-app-azure.vercel.app/",
     tools: ["NextJS", "Convex", "TailwindCSS", "shadcn UI"],

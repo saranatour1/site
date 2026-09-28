@@ -12,7 +12,7 @@ import { socialLinks } from "../../consts";
         {socialLinks.map(({ url, icon: Icon, label }) => {
           return (
             <a
-              href={url}
+              href={label === "email" ? `mailto:${url}` : url}
               target="_blank"
               rel="noopener noreferrer"
               class="flex  group items-center p-2 rounded-md text-gray-700 hover:text-blue-1 transition-colors hover:bg-blue-1/10 w-full"

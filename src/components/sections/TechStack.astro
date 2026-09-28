@@ -1,0 +1,29 @@
+---
+import CardWrapper from "../CardWrapper.astro";
+import { Card, CardDescription, CardTitle } from "../ui/AnimatedCard";
+import { techStack } from "../../consts";
+---
+<section class="w-full max-w-200 mt-4">
+  <CardWrapper className="flex flex-col justify-start items-start">
+    <Card className="bg-transparent">
+      <CardTitle className="text-2xl font-bold leading-6">My Tech Stack</CardTitle>
+      <CardDescription>Things I use every day</CardDescription>
+      <div class="mt-6 flex flex-col gap-5 w-full">
+        {techStack.map(({ title, items }) => (
+          <div class="grid grid-cols-[8rem_1fr] gap-4 items-start max-sm:grid-cols-1 max-sm:gap-2">
+            <h4 class="text-xs uppercase tracking-widest text-neutral-500 pt-2">{title}</h4>
+            <ul class="flex flex-wrap gap-2">
+              {items.map(([name, icon, note]) => (
+                <li class="flex items-center gap-2 pl-2 pr-3 py-1.5 rounded-full border border-blue-1/25 text-sm text-black-1 transition hover:border-blue-1 hover:-translate-y-0.5">
+                  <img src={`/icons/stack/${icon}`} alt="" width="16" height="16" loading="lazy" class="size-4 object-contain" />
+                  {name}
+                  {note && <span class="text-[10px] uppercase tracking-wide text-blue-1">{note}</span>}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </Card>
+  </CardWrapper>
+</section>

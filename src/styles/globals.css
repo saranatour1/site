@@ -19,7 +19,8 @@
   .text-black-1 { color: var(--color-black-1); }
   .text-blue-1  { color: var(--color-blue-1); }
 
-  .font-recoleta { font-family: var(--font-recoleta); }
+  /* The Recoleta demo font replaces the fi/fl ligatures with a placeholder glyph. */
+  .font-recoleta { font-family: var(--font-recoleta); font-variant-ligatures: none; }
 
   /* Example for backgroundImage placeholder (static) */
   .bg-blog-placeholder-5 {
