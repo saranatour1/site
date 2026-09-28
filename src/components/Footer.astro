@@ -10,7 +10,7 @@ const today = new Date();
 </div>
 <div class="social-links">
   {socialLinks.map(({ url, icon: Icon, label }) => (
-    <a href={url} target="_blank" class="cursor-pointer">
+    <a href={label === "email" ? `mailto:${url}` : url} target="_blank" class="cursor-pointer">
       <span class="sr-only">{label}</span>
       <Icon />
     </a>
