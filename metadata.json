@@ -3,7 +3,7 @@
   "checkpoint_id": "01M3P2S1J12QFMR0QC9WGKTCTS",
   "strategy": "manual-commit",
   "branch": "update-llms-txt",
-  "checkpoints_count": 1,
+  "checkpoints_count": 2,
   "files_touched": [
     "public/llms.txt"
   ],
@@ -14,13 +14,20 @@
       "compact_transcript": "/0/transcript.jsonl",
       "content_hash": "/0/content_hash.txt",
       "prompt": "/0/prompt.txt"
+    },
+    {
+      "metadata": "/1/metadata.json",
+      "transcript": "/1/full.jsonl",
+      "compact_transcript": "/1/transcript.jsonl",
+      "content_hash": "/1/content_hash.txt",
+      "prompt": "/1/prompt.txt"
     }
   ],
   "token_usage": {
-    "input_tokens": 244,
-    "cache_creation_tokens": 121465,
-    "cache_read_tokens": 14587949,
-    "output_tokens": 46774,
-    "api_call_count": 122
+    "input_tokens": 258,
+    "cache_creation_tokens": 157274,
+    "cache_read_tokens": 15095550,
+    "output_tokens": 49299,
+    "api_call_count": 129
   }
 }
