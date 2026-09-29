@@ -1,19 +1,36 @@
 # Sara Natour
 
-## Overview
-Sara Natour is a software developer working remotely with clients and startups. She specializes in full-stack development, Convex, and building AI Agents. She also has an Electrical Engineering background with experience in electronics design using Arduino, ESPs, and microcontrollers.
+> Full-stack developer and Electrical Engineer. Works remotely with clients and startups on TypeScript, Convex, and AI agents.
 
-## Projects & Experience
-- **Freelance / Startups**: Building software from the ground up, handling testing, frontend, and backend development.
-- **Ye (业)**: A fully self-hostable web app for job applicants to track their applications, skip the line, and own their data without a middleman.
-- **AI Agents**: Strong experience building and integrating intelligent AI Agents into products.
-- **Electronics**: Designing and writing code for microcontrollers using Eagle, Flux, and more.
+Site: https://saranatour.dev/
+
+## About
+Sara Natour is a full-stack developer specializing in TypeScript and Convex, helping startups ship products across commerce, health, and B2B. She does testing, frontend, and backend work, and has strong experience building and integrating AI agents into products. She is an Electrical Engineering graduate who designs electronics with Arduino, ESPs, and microcontrollers (Eagle, Flux). Outside work: woodworking and gardening.
+
+## Pages
+- [Home](https://saranatour.dev/): About, experience, skills, tech stack, projects, contact.
+- [Services](https://saranatour.dev/services): What she does, and what she is looking for.
+- [Privacy](https://saranatour.dev/privacy): Analytics and privacy policy.
+
+## Experience
+- Independent Contractor (Freelance), April 2024 - present: full-stack web apps with React, Next.js, and Convex; open source contributor. Client projects include Sirdab and Markets.
+- Independent study and career break, February 2025 - November 2025.
+- Full stack developer, Clarity TXT inc, November 2024 - February 2025: real-time chat app with Convex, TypeScript, React, Next.js, Clerk.
+- Full stack developer, October 2023 - January 2024: website builder with TypeScript and React.
+
+## Projects
+- [Gemini Chat app](https://gemeni-app-azure.vercel.app/): chat app built with NextJS, Convex, TailwindCSS, shadcn UI.
+- Personal Job Application tracker (upcoming): free, self-hostable tracker for applicants, built with TanStack Start, Convex, Firecrawl, and an agent.
+- Sirdab (client work, upcoming): art website for viewing, reading articles, and sharing artwork (Astro, Convex, Resend).
+- Link shortener (upcoming): TanStack Start and Convex.
+- [GitHub](https://github.com/saranatour1): more repos, e.g. ai-chat-bot-convex, note-taking-app, invoice-app, speed-test, surveys.
 
 ## Tech Stack
-- TypeScript, JavaScript, React, NextJS, Astro
-- TailwindCSS, Convex
-- Python, Arduino, ESPs
+- Skills: TypeScript, React, Convex, Vite, TanStack, shadcn UI, VueJS, Svelte
+- Building with: Convex, Astro, Vite, TanStack, TypeScript, shadcn UI, Cloudflare; learning Go
+- AI & agents: Claude Agent, Cursor, Grok Bot, Vapi, Firecrawl, AgentMail, Entire, OpenUsage
+- Workflow: VS Code, GitHub, Linear, Notion, Raycast, Superhuman, Databuddy
 
-## Contact & Links
-- Open to new projects and well-developed opportunities.
-- Find more details and contact information on the website.
+## Contact
+- Open to new projects, relocation, and well-developed opportunities.
+- Contact links (email, LinkedIn, GitHub) are on the [home page](https://saranatour.dev/).
