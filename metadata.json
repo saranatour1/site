@@ -1,0 +1,26 @@
+{
+  "cli_version": "0.11.3",
+  "checkpoint_id": "01M3P2ZJTD7RJ33HV7EXJQQW2X",
+  "strategy": "manual-commit",
+  "branch": "update-llms-txt",
+  "checkpoints_count": 3,
+  "files_touched": [
+    "wrangler.jsonc"
+  ],
+  "sessions": [
+    {
+      "metadata": "/0/metadata.json",
+      "transcript": "/0/full.jsonl",
+      "compact_transcript": "/0/transcript.jsonl",
+      "content_hash": "/0/content_hash.txt",
+      "prompt": "/0/prompt.txt"
+    }
+  ],
+  "token_usage": {
+    "input_tokens": 4,
+    "cache_creation_tokens": 1473,
+    "cache_read_tokens": 183381,
+    "output_tokens": 492,
+    "api_call_count": 2
+  }
+}
