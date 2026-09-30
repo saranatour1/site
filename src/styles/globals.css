@@ -38,3 +38,39 @@
   0%   { transform: translateX(-200px); }
   100% { transform: translateX(200px); }
 }
+
+/* Magnetic hover: one highlight slides between items. Needs no JS. */
+.magnetic { position: relative; }
+.magnetic-item::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 1.5rem;
+  background: color-mix(in srgb, var(--color-blue-1) 50%, transparent);
+  opacity: 0;
+  transition: opacity 0.15s;
+}
+/* fallback: per-item highlight */
+.magnetic-item:hover::before { opacity: 1; }
+
+@supports (anchor-name: --a) {
+  .magnetic-item::before { display: none; }
+  .magnetic-item:hover { anchor-name: --magnetic-active; }
+  .magnetic:has(.magnetic-item:hover) { --magnetic-on: 1; }
+  .magnetic::after {
+    content: "";
+    position: absolute;
+    position-anchor: --magnetic-active;
+    inset: anchor(top) anchor(right) anchor(bottom) anchor(left);
+    border-radius: 1.5rem;
+    background: color-mix(in srgb, var(--color-blue-1) 50%, transparent);
+    pointer-events: none;
+    opacity: var(--magnetic-on, 0);
+    /* leaving: fade after position settles; entering: move, then fade in */
+    transition: opacity 0.2s, inset 0.2s 0.2s;
+  }
+  .magnetic:hover::after { transition: opacity 0.2s 0.2s, inset 0.2s; }
+  @media (prefers-reduced-motion: reduce) {
+    .magnetic::after { transition: none !important; }
+  }
+}

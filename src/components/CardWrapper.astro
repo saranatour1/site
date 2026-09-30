@@ -1,25 +1,13 @@
 ---
-import { WobbleCard } from "./ui/WobbleCard";
+import WobbleCard from "./ui/WobbleCard.astro";
 interface Props {
   className?: string;
   firstSection?: boolean;
   enableWobble?: boolean;
 }
-const { className, firstSection = false, enableWobble = true } = Astro.props;
+const { className, enableWobble = true } = Astro.props;
 ---
 
-<!-- Disabling js in one line in the client directive doesn't disable js even if you assign it to undefined-->{
-  enableWobble ? (
-    <WobbleCard
-      className={className}
-      client:visible={!firstSection}
-      client:idle={firstSection}
-    >
-      <slot />
-    </WobbleCard>
-  ) : (
-    <WobbleCard className={className}>
-      <slot />
-    </WobbleCard>
-  )
-}
+<WobbleCard className={className} wobble={enableWobble}>
+  <slot />
+</WobbleCard>

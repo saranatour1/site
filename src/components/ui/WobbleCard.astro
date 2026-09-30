@@ -1,0 +1,56 @@
+---
+import { cn } from "../../lib/utils";
+interface Props {
+  containerClassName?: string;
+  className?: string;
+  wobble?: boolean;
+}
+const { containerClassName, className, wobble = true } = Astro.props;
+---
+
+<section
+  data-wobble={wobble ? "" : undefined}
+  class={cn(
+    "wobble mx-auto w-full h-auto border border-blue-1 gap-y-2 items-start relative rounded-2xl overflow-hidden",
+    containerClassName
+  )}
+>
+  <div class="relative h-full sm:mx-0 sm:rounded-2xl overflow-hidden">
+    <div class={cn("wobble-inner h-full px-4 py-20 sm:px-10", className)}>
+      <slot />
+    </div>
+  </div>
+</section>
+
+<style is:global>
+  .wobble, .wobble-inner {
+    transform: translate3d(calc(var(--wx, 0) * 1px), calc(var(--wy, 0) * 1px), 0);
+    transition: transform 0.1s ease-out;
+    backface-visibility: hidden; /* avoids text blur on translate */
+  }
+  .wobble-inner {
+    transform: translate3d(calc(var(--wx, 0) * -1px), calc(var(--wy, 0) * -1px), 0);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .wobble, .wobble-inner { transform: none; }
+  }
+</style>
+
+<script>
+  const set = (el: HTMLElement, x: number, y: number) => {
+    el.style.setProperty("--wx", String(x));
+    el.style.setProperty("--wy", String(y));
+  };
+  
+  document.addEventListener("pointermove", (e) => {
+    const el = (e.target as Element).closest<HTMLElement>("[data-wobble]");
+    if (!el) return;
+    const r = el.getBoundingClientRect();
+    set(el, (e.clientX - r.left - r.width / 2) / 20, (e.clientY - r.top - r.height / 2) / 20);
+  });
+  
+  document.addEventListener("pointerout", (e) => {
+    const el = (e.target as Element).closest<HTMLElement>("[data-wobble]");
+    if (el && !el.contains(e.relatedTarget as Node)) set(el, 0, 0);
+  });
+</script>
