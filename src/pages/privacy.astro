@@ -14,7 +14,7 @@ const email = socialLinks.find((r) => r["label"]==="email");
     <CardWrapper className="w-full py-6" enableWobble={false}>
       <Card className="bg-transparent w-full h-full p-6">
         <div class="flex justify-between items-center mb-4">
-          <CardTitle className="text-2xl text-black-1">Privacy</CardTitle>
+          <CardTitle as="h1" className="text-2xl text-black-1">Privacy</CardTitle>
         </div>
         <CardDescription
           class:list={[
@@ -42,12 +42,13 @@ const email = socialLinks.find((r) => r["label"]==="email");
           <p class="font-medium text-black-1">
             Questions? Send me an email.
           </p>
-          <div class="mt-4">
-            <a href={`mailto:${email?.url}`} aria-label="Send me an email" class="text-blue-600 hover:underline">
-              <span class="sr-only">Send an email</span>
-              {email?.url}
-            </a>
-          </div>
+          {email?.url && (
+            <div class="mt-4">
+              <a href={`mailto:${email.url}`} class="text-blue-600 hover:underline">
+                {email.url}
+              </a>
+            </div>
+          )}
         </CardDescription>
       </Card>
     </CardWrapper>

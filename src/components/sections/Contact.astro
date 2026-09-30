@@ -6,7 +6,7 @@ import { socialLinks } from "../../consts";
 <section class="w-full max-w-200 mt-4">
   <CardWrapper className="flex justify-between items-center w-full max-md:flex-col">
   <Card className="bg-transparent">
-    <CardTitle> Contact information</CardTitle>
+    <CardTitle as="h2"> Contact information</CardTitle>
     <CardDescription>
       <div class="w-full flex flex-col gap-4 items-start">
         {socialLinks.map(({ url, icon: Icon, label }) => {
