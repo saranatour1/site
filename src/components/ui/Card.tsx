@@ -23,14 +23,16 @@ export const Card = ({
 export const CardTitle = ({
   children,
   className,
-  id
+  id,
+  as: Tag = "h3",
 }: {
   children: ReactNode;
   className?: string;
   id?:string;
+  as?: "h1" | "h2" | "h3";
 }) => {
   return (
-    <h3
+    <Tag
       id={id}
       className={cn(
         "text-lg font-semibold text-gray-800 py-2",
@@ -38,7 +40,7 @@ export const CardTitle = ({
       )}
     >
       {children}
-    </h3>
+    </Tag>
   );
 };
 

@@ -6,7 +6,7 @@ import { Card,CardTitle } from "../ui/Card";
 <section class="flex justify-between items-center  max-md:flex-col  w-full max-w-200 mt-4 ">
   <CardWrapper className="flex flex-col justify-start items-start flex-wrap">
     <Card className="bg-transparent">
-      <CardTitle className="text-2xl font-bold leading-6">Skills</CardTitle>
+      <CardTitle as="h2" className="text-2xl font-bold leading-6">Skills</CardTitle>
       <ul class="grid w-full grid-cols-4 gap-3 mt-4 max-md:grid-cols-2 max-sm:grid-cols-1">
         {skillSet.map((item)=> 
         <li>

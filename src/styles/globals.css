@@ -5,6 +5,7 @@
   --color-white-1: #fcf8ef;
   --color-black-1: #1a1a1a;
   --color-blue-1: #2a9d8f;
+  --color-blue-text: #1d756a; /* blue-1 darkened to pass 4.5:1 on white-1 */
   --font-recoleta: 'Recoleta';
 }
 
@@ -17,7 +18,8 @@
 
   .text-white-1 { color: var(--color-white-1); }
   .text-black-1 { color: var(--color-black-1); }
-  .text-blue-1  { color: var(--color-blue-1); }
+  .text-blue-1  { color: var(--color-blue-text); }
+  .hover\:text-blue-1:hover, .active\:text-blue-1:active { color: var(--color-blue-text); }
 
   /* The Recoleta demo font replaces the fi/fl ligatures with a placeholder glyph. */
   .font-recoleta { font-family: var(--font-recoleta); font-variant-ligatures: none; }

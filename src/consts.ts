@@ -13,21 +13,22 @@ type SocialLink = {
   label: string;
 }
 
+// Links whose PUBLIC_* env var is unset are dropped, so no anchor renders without an href.
 export const socialLinks: SocialLink[] = [
   { url: import.meta.env.PUBLIC_EMAIL, icon: Email, label: "email" },
   { url: import.meta.env.PUBLIC_LINKEDIN, icon: LinkedIn, label: "linkedin" },
   { url: import.meta.env.PUBLIC_GITHUB, icon: Github, label: "github" },
-];
+].filter((l) => l.url);
 
 export const skillSet = [
   {
     name: "TypeScript",
-    icon: "https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/typescript-colored.svg",
+    icon: "/icons/stack/typescript.svg",
     url: "https://www.typescriptlang.org/",
   },
   {
     name: "React",
-    icon: "https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/react-colored.svg",
+    icon: "/icons/stack/react.svg",
     url: "https://reactjs.org/",
   },
   {
@@ -37,7 +38,7 @@ export const skillSet = [
   },
   {
     name: "Vite",
-    icon: "https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/vite-colored.svg",
+    icon: "/icons/stack/vite.svg",
     url: "https://vite.dev/",
   },
   {
@@ -52,12 +53,12 @@ export const skillSet = [
   },
   {
     name: "VueJS",
-    icon: "https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/vuejs-colored.svg",
+    icon: "/icons/stack/vuejs.svg",
     url: "https://vuejs.org/",
   },
   {
     name: "Svelte",
-    icon: "https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/svelte-colored.svg",
+    icon: "/icons/stack/svelte.svg",
     url: "https://svelte.dev/",
   },
 ];

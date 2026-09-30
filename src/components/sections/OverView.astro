@@ -10,7 +10,7 @@ const email = socialLinks.find((r) => r["label"]==="email");
 >
   <CardWrapper>
     <Card className="bg-transparent w-full h-full">
-      <CardTitle className={`text-2xl`}> About Me </CardTitle>
+      <CardTitle as="h2" className={`text-2xl`}> About Me </CardTitle>
       <CardDescription
         class:list={[
           "prose",
@@ -25,7 +25,7 @@ const email = socialLinks.find((r) => r["label"]==="email");
         When I'm not working, I'm building garden beds or helping people furnish
         their homes with the right tech. I like traveling, new places, new
         perspectives. <br /> Working on something interesting? →
-        <a href={`mailto:${email?.url}`}>{email?.url}</a>
+        {email?.url && <a href={`mailto:${email.url}`}>{email.url}</a>}
       </CardDescription>
     </Card>
   </CardWrapper>
