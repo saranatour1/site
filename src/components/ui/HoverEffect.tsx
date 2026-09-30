@@ -1,7 +1,7 @@
 import { cn } from "../../lib/utils";
-import { AnimatePresence, motion } from "framer-motion";
-import { useState, type ReactNode } from "react";
+import type { ReactNode } from "react";
 
+// CSS-only magnetic hover (anchor positioning); styles live in globals.css (.magnetic)
 export const HoverEffect = ({
   items,
   className,
@@ -15,51 +15,28 @@ export const HoverEffect = ({
   }[];
   className?: string;
   children?:ReactNode
-}) => {
-  let [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-
-  return (
-    <div
-      className={cn(
-        "grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3 ",
-        className
-      )}
-    >
-      {items.map((item, idx) => (
-        <a
-          href={item?.url}
-          key={item?.url}
-          className="relative group  block p-2 h-full w-full"
-          onMouseEnter={() => setHoveredIndex(idx)}
-          onMouseLeave={() => setHoveredIndex(null)}
-        >
-          <AnimatePresence>
-            {hoveredIndex === idx && (
-              <motion.span
-                className="absolute inset-0 h-full w-full bg-blue-1/50 block  rounded-3xl"
-                layoutId="hoverBackground"
-                initial={{ opacity: 0 }}
-                animate={{
-                  opacity: 1,
-                  transition: { duration: 0.15 },
-                }}
-                exit={{
-                  opacity: 0,
-                  transition: { duration: 0.15, delay: 0.2 },
-                }}
-              />
-            )}
-          </AnimatePresence>
-          <Card>
-            <CardTitle>{item.name}</CardTitle>
-            <CardDescription>{item.description}</CardDescription>
-            {children}
-          </Card>
-        </a>
-      ))}
-    </div>
-  );
-};
+}) => (
+  <div
+    className={cn(
+      "magnetic grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3 ",
+      className
+    )}
+  >
+    {items.map((item) => (
+      <a
+        href={item?.url}
+        key={item?.url}
+        className="magnetic-item relative block p-2 h-full w-full"
+      >
+        <Card>
+          <CardTitle>{item.name}</CardTitle>
+          <CardDescription>{item.description}</CardDescription>
+          {children}
+        </Card>
+      </a>
+    ))}
+  </div>
+);
 
 export const Card = ({
   className,
