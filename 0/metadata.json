@@ -1,0 +1,58 @@
+{
+  "cli_version": "0.11.3",
+  "checkpoint_id": "01M3YJEPXR29AW12JWSW63MNGY",
+  "session_id": "d89c7dc5-9f63-4919-bd05-06f47764b7cf",
+  "strategy": "manual-commit",
+  "created_at": "2026-10-02T15:06:50.378087Z",
+  "branch": "update-llms-txt",
+  "checkpoints_count": 2,
+  "save_step_count": 1,
+  "files_touched": [
+    "src/components/ui/AnimatedCard.tsx",
+    "src/components/ui/BentoGrid.tsx",
+    "src/components/ui/Highlight.tsx",
+    "src/components/ui/HoverEffect.tsx",
+    "src/components/ui/WobbleCard.tsx",
+    "src/layouts/Layout.astro",
+    "src/pages/privacy.astro",
+    "src/pages/services.astro"
+  ],
+  "agent": "Claude Code",
+  "model": "claude-sonnet-5-5",
+  "turn_id": "4c5c47dd1a85",
+  "checkpoint_transcript_start": 154,
+  "transcript_lines_at_start": 154,
+  "compact_transcript_start": 23,
+  "token_usage": {
+    "input_tokens": 4,
+    "cache_creation_tokens": 487,
+    "cache_read_tokens": 187347,
+    "output_tokens": 415,
+    "api_call_count": 2
+  },
+  "session_metrics": {
+    "turn_count": 6
+  },
+  "prompt_attributions": [
+    {
+      "checkpoint_number": 1,
+      "user_lines_added": 918,
+      "user_lines_removed": 0,
+      "agent_lines_added": 0,
+      "agent_lines_removed": 0,
+      "user_added_per_file": {
+        ".claude/launch.json": 12,
+        ".claude/settings.json": 84,
+        "skills/writing-plans/SKILL.md": 171,
+        "src/components/ui/AnimatedCard.tsx": 185,
+        "src/components/ui/BentoGrid.tsx": 53,
+        "src/components/ui/Highlight.tsx": 95,
+        "src/components/ui/HoverEffect.tsx": 114,
+        "src/components/ui/WobbleCard.tsx": 63,
+        "src/layouts/Layout.astro": 19,
+        "src/pages/privacy.astro": 55,
+        "src/pages/services.astro": 67
+      }
+    }
+  ]
+}
