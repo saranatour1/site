@@ -8,11 +8,12 @@ interface Props {
   title: string;
   description: string;
   image?: string;
+  twitterImage?: string;
 }
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
-const { title, description, image = "/group-1.png" } = Astro.props;
+const { title, description, image = "/og/og-discord.png", twitterImage = "/og/og-twitter.png" } = Astro.props;
 ---
 
 <!-- Global Metadata -->
@@ -52,6 +53,8 @@ const { title, description, image = "/group-1.png" } = Astro.props;
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
 <meta property="og:image" content={new URL(image, Astro.url)} />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
 <meta property="og:site_name" content="Sara Natour" />
 <meta property="og:locale" content="en_US" />
 <meta name="theme-color" content="#12183e" />
@@ -60,7 +63,7 @@ const { title, description, image = "/group-1.png" } = Astro.props;
 <meta property="twitter:url" content={Astro.url} />
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
-<meta property="twitter:image" content={new URL(image, Astro.url)} />
+<meta property="twitter:image" content={new URL(twitterImage, Astro.url)} />
 <!-- Databuddy analytics (cookieless, no PII) -->
 <script
   src="https://cdn.databuddy.cc/databuddy.js"
