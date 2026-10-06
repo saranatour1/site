@@ -1,0 +1,28 @@
+{
+  "cli_version": "0.11.3",
+  "checkpoint_id": "01M48D28K6NGZ6Z21QNY8VAK4V",
+  "strategy": "manual-commit",
+  "branch": "update-llms-txt",
+  "checkpoints_count": 3,
+  "files_touched": [
+    "public/og/og-discord.png",
+    "public/og/og-linkedin.png",
+    "public/og/og-twitter.png"
+  ],
+  "sessions": [
+    {
+      "metadata": "/0/metadata.json",
+      "transcript": "/0/full.jsonl",
+      "compact_transcript": "/0/transcript.jsonl",
+      "content_hash": "/0/content_hash.txt",
+      "prompt": "/0/prompt.txt"
+    }
+  ],
+  "token_usage": {
+    "input_tokens": 66,
+    "cache_creation_tokens": 408087,
+    "cache_read_tokens": 2632973,
+    "output_tokens": 17031,
+    "api_call_count": 34
+  }
+}

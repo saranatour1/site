@@ -1,0 +1,74 @@
+lets make a better "OG image" for me to put down my socials 
+
+discord sarant 
+reddit _sarant 
+twitter _sarant
+github saranatour 
+linkedin saranatour
+
+and add this iamge 
+
+make one for discord, one for twitter, one or linked in to 
+I want it to have a dot feel
+
+---
+
+use the grid pattern 
+https://www.shadcn.io/view/backgrounds/grid-pattern
+
+---
+
+the profile photo needs to be smaller, and the logos for each social needs to be added too
+
+---
+
+that's not good
+
+---
+
+The app was quit while you were working. Please continue from where you left off.
+
+---
+
+@public/og/og-twitter.png I want to show you an edit of this
+
+---
+
+This is the orignal 
+√
+
+---
+
+√can you edit my OG image to be something like this?
+
+---
+
+can you keep the style chill? and have the emojis be small
+
+---
+
+have them under the name and title please, use your design skills
+
+---
+
+<create-pr-command>
+## Overview
+
+Create a pull request for the changes in this session, as a draft.
+
+## Steps
+
+1. Check for uncommitted changes. If any exist, stage and commit them with a message that describes what changed and why.
+2. Push the branch to the remote.
+3. Open the PR as a draft with `gh pr create --draft`. The user chose “Create draft PR” for this request, so keep `--draft` even if you would otherwise open it ready for review. When the target below names a base branch and that branch exists on origin (`git ls-remote --heads origin <base>`), pass it with `--base`; otherwise leave `--base` off and let gh infer it. Write a title that summarizes the change and a body that covers what changed, why, and anything a reviewer should know. If the repo has a PR template, follow it.
+4. Report the PR URL when done. Wrap the URL in a `<pr-created>` tag on its own line so the UI can render a live status card, like this: `<pr-created>https://github.com/owner/repo/pull/123</pr-created>`
+
+If a PR already exists for this branch, push any new commits and report the existing URL wrapped in the same `<pr-created>` tag instead of creating a duplicate, and leave that PR's draft or ready state as it is.
+
+## Target
+
+Repository: saranatour1/Personal-Website
+Branch: update-llms-txt
+Base branch: main
+Working directory: /Users/saranatour/workspace/Personal-Website
+</create-pr-command>
