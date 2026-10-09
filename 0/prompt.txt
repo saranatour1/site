@@ -1,0 +1,5 @@
+fix the og imaage not appearing on the og side
+
+---
+
+create a new PR
