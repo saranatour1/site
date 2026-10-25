@@ -19,11 +19,12 @@ Sara Natour is a full-stack developer specializing in TypeScript and Convex, hel
 - Full stack developer, October 2023 - January 2024: website builder with TypeScript and React.
 
 ## Projects
-- [Gemini Chat app](https://gemeni-app-azure.vercel.app/): chat app built with NextJS, Convex, TailwindCSS, shadcn UI.
-- Personal Job Application tracker (upcoming): free, self-hostable tracker for applicants, built with TanStack Start, Convex, Firecrawl, and an agent.
-- Sirdab (client work, upcoming): art website for viewing, reading articles, and sharing artwork (Astro, Convex, Resend).
-- Link shortener (upcoming): TanStack Start and Convex.
-- [GitHub](https://github.com/saranatour1): more repos, e.g. ai-chat-bot-convex, note-taking-app, invoice-app, speed-test, surveys.
+Pinned on [GitHub](https://github.com/saranatour1):
+- [ai-chat-bot-convex](https://github.com/saranatour1/ai-chat-bot-convex): AI chat app template using Convex, Next.js and AI.
+- [agent-arena](https://github.com/saranatour1/agent-arena)
+- [Email-bro](https://github.com/saranatour1/Email-bro): all your Gmail inboxes in one place; an AI sorts each new email into Needs action, Goal, Info or Spam.
+- [Story-time](https://github.com/saranatour1/Story-time): personal scrapbook/journal.
+- [Convex-Regions](https://github.com/saranatour1/Convex-Regions): which Convex region is closest?
 
 ## Tech Stack
 - Skills: TypeScript, React, Convex, Vite, TanStack, shadcn UI, VueJS, Svelte

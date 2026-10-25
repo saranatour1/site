@@ -97,34 +97,3 @@ export const techStack: { title: string; items: [string, string, string?][] }[] 
     ],
   },
 ];
-
-export const projectLinks = [
-  {
-    name: "Gemini Chat app",
-    description: "A chat app built with NextJS and Convex",
-    url: "https://gemeni-app-azure.vercel.app/",
-    tools: ["NextJS", "Convex", "TailwindCSS", "shadcn UI"],
-    upcoming: false,
-  },
-  {
-    name: "Personal Job Application tracker (for the Applicant)",
-    description: "No more excuses, This is an actual Personal job tracker that pays off, and is completely free, self-hosted.",
-    url: null,
-    tools: ["Tanstack Start", "Convex", "Firecrawl", "Agent"],
-    upcoming: true,
-  },
-  {
-    name: "Sirdab (client work)",
-    description: "An online Art website for viewing, reading articles, sharing your artworks.",
-    url: null,
-    tools: ["Astro", "Convex", "Resend"],
-    upcoming: true,
-  },
-  {
-    name: "link shortener app",
-    description: "A link shortener app built with NextJS and Convex",
-    url: null,
-    tools: ["Tanstack start", "Convex"],
-    upcoming: true,
-  },
-];

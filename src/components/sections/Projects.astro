@@ -83,12 +83,13 @@ if (import.meta.env.GITHUB_TOKEN) {
     <Card className="bg-transparent border-blue-1 p-8">
       <CardTitle as="h2" className="text-2xl font-bold leading-6 ">Cool things</CardTitle>
       <!-- CSS-only magnetic hover (anchor positioning); styles live in globals.css (.magnetic) -->
-      <div class="magnetic grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+      <!-- auto-rows-fr: every card shares the tallest card's height -->
+      <div class="magnetic mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 auto-rows-fr">
         {pinnedItems.map((item) => (
-          <a href={item.url} class="magnetic-item relative block p-2 h-full w-full">
-            <div class="rounded-2xl h-full w-full p-8 overflow-hidden bg-white-1 border border-blue-1 relative z-20">
-              <h3 class="text-black font-bold tracking-wide mt-4">{item.name}</h3>
-              {item.description && <p class="mt-8 text-zinc-600 tracking-wide text-sm">{item.description}</p>}
+          <a href={item.url} class="magnetic-item relative block p-2">
+            <div class="rounded-2xl h-full p-5 flex flex-col gap-2 bg-white-1 border border-blue-1 relative z-20">
+              <h3 class="text-black font-bold tracking-wide">{item.name}</h3>
+              {item.description && <p class="text-zinc-600 text-sm line-clamp-3">{item.description}</p>}
             </div>
           </a>
         ))}
