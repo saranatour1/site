@@ -1,7 +1,8 @@
 ---
 import CardWrapper from "../components/CardWrapper.astro";
 import Layout from "../layouts/Layout.astro";
-import { Card, CardTitle, CardDescription } from "../components/ui/Card";
+import Card from "../components/ui/Card.astro";
+import CardTitle from "../components/ui/CardTitle.astro";
 import { socialLinks } from "../consts";
 
 const email = socialLinks.find((r) => r["label"]==="email");
@@ -17,16 +18,7 @@ const email = socialLinks.find((r) => r["label"]==="email");
           <CardTitle as="h1" className="text-2xl text-black-1">What I Do</CardTitle>
           <span class="text-sm text-neutral-500">Latest update: Aug 16</span>
         </div>
-        <CardDescription
-          class:list={[
-            "prose",
-            "text-sm",
-            "prose-neutral",
-            "leading-relaxed",
-            "max-w-none",
-            "space-y-4"
-          ]}
-        >
+        <div>
           <p>
             I'm a software developer working remotely with clients and startups to shape up their software. I do testing, frontend, and backend development. I mostly work with <a href="https://www.convex.dev" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">Convex</a>, but it's not my main thing of expertise. I also have strong experience in building and integrating AI Agents into products.
           </p>
@@ -61,7 +53,7 @@ const email = socialLinks.find((r) => r["label"]==="email");
               </a>
             </div>
           )}
-        </CardDescription>
+        </div>
       </Card>
     </CardWrapper>
   </main>

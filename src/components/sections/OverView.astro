@@ -1,7 +1,9 @@
 ---
 import { socialLinks } from "../../consts";
 import CardWrapper from "../CardWrapper.astro";
-import { Card, CardTitle, CardDescription } from "../ui/Card";
+import Card from "../ui/Card.astro";
+import CardTitle from "../ui/CardTitle.astro";
+import CardDescription from "../ui/CardDescription.astro";
 const email = socialLinks.find((r) => r["label"]==="email");
 ---
 
@@ -11,15 +13,7 @@ const email = socialLinks.find((r) => r["label"]==="email");
   <CardWrapper>
     <Card className="bg-transparent w-full h-full">
       <CardTitle as="h2" className={`text-2xl`}> About Me </CardTitle>
-      <CardDescription
-        class:list={[
-          "prose",
-          "text-sm",
-          "prose-neutral",
-          "leading-relaxed",
-          "max-w-none",
-        ]}
-      >
+      <CardDescription>
         I'm a full-stack developer specializing in TypeScript and Convex,
         helping startups ship better products across commerce, health, and B2B.
         When I'm not working, I'm building garden beds or helping people furnish

@@ -1,13 +1,14 @@
 ---
 import CardWrapper from "../CardWrapper.astro";
-import { Card, CardDescription, CardTitle } from "../ui/Card";
+import Card from "../ui/Card.astro";
+import CardTitle from "../ui/CardTitle.astro";
 import { socialLinks } from "../../consts";
 ---
 <section class="w-full max-w-200 mt-4">
   <CardWrapper className="flex justify-between items-center w-full max-md:flex-col">
   <Card className="bg-transparent">
     <CardTitle as="h2"> Contact information</CardTitle>
-    <CardDescription>
+    <div>
       <div class="w-full flex flex-col gap-4 items-start">
         {socialLinks.map(({ url, icon: Icon, label }) => {
           return (
@@ -24,7 +25,7 @@ import { socialLinks } from "../../consts";
         })}
       </div>
       
-    </CardDescription>
+    </div>
   </Card>
   </CardWrapper>
 </section>

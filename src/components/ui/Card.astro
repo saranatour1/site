@@ -1,0 +1,11 @@
+---
+import { cn } from "../../lib/utils";
+interface Props {
+  className?: string;
+}
+const { className } = Astro.props;
+---
+
+<div class={cn("max-w-full w-full mx-auto rounded-xl border border-[rgba(255,255,255,0.10)] bg-gray-100 shadow-[2px_4px_16px_0px_rgba(248,248,248,0.06)_inset] group", className)}>
+  <slot />
+</div>

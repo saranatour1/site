@@ -9,7 +9,6 @@
   --font-recoleta: 'Recoleta';
 }
 
-/* Please note that after this line, it was generated with AI, and not actually written by a human */
 /* Custom utilities / extended utilities */
 @layer utilities {
   .bg-white-1 { background-color: var(--color-white-1); }
@@ -23,22 +22,6 @@
 
   /* The Recoleta demo font replaces the fi/fl ligatures with a placeholder glyph. */
   .font-recoleta { font-family: var(--font-recoleta); font-variant-ligatures: none; }
-
-  /* Example for backgroundImage placeholder (static) */
-  .bg-blog-placeholder-5 {
-    background-image: url("/blog-placeholder-5.jpg");
-  }
-
-  /* Custom animation */
-  .animate-move {
-    animation: move 5s linear infinite;
-  }
-}
-
-/* Keyframes */
-@keyframes move {
-  0%   { transform: translateX(-200px); }
-  100% { transform: translateX(200px); }
 }
 
 /* Magnetic hover: one highlight slides between items. Needs no JS. */
