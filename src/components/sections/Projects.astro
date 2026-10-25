@@ -1,11 +1,11 @@
 ---
 import { Octokit } from "@octokit/core";
-import { Card,CardTitle } from "../ui/Card";
-import {HoverEffect} from "../ui/HoverEffect"
+import Card from "../ui/Card.astro";
+import CardTitle from "../ui/CardTitle.astro";
 
 interface ProjectType {
   name: string;
-  description: string;
+  description?: string | null;
   url: string;
 }
 const query = `
@@ -24,6 +24,7 @@ const query = `
   }
 `;
 
+// Mirrors the pinned repos on github.com/saranatour1 (Oct 2026); shown when the build has no GITHUB_TOKEN.
 const FALLBACK_PROJECTS: ProjectType[] = [
   {
     name: "ai-chat-bot-convex",
@@ -31,24 +32,23 @@ const FALLBACK_PROJECTS: ProjectType[] = [
     url: "https://github.com/saranatour1/ai-chat-bot-convex",
   },
   {
-    name: "note-taking-app",
-    description: "note taking app",
-    url: "https://github.com/saranatour1/note-taking-app",
+    name: "agent-arena",
+    url: "https://github.com/saranatour1/agent-arena",
   },
   {
-    name: "invoice-app",
-    description: "a frontend mentor challenge app",
-    url: "https://github.com/saranatour1/invoice-app",
+    name: "Email-bro",
+    description: "All your Gmail inboxes in one place. An AI sorts each new email into Needs action, Goal, Info or Spam, so only what matters is on top.",
+    url: "https://github.com/saranatour1/Email-bro",
   },
   {
-    name: "speed-test",
-    description: "How fast can you type?",
-    url: "https://github.com/saranatour1/speed-test",
+    name: "Story-time",
+    description: "Personal scrap book/Journal",
+    url: "https://github.com/saranatour1/Story-time",
   },
   {
-    name: "surveys",
-    description: "A simple demo of the posthog convex component",
-    url: "https://github.com/saranatour1/surveys",
+    name: "Convex-Regions",
+    description: "Convex Regions, which one is closest?",
+    url: "https://github.com/saranatour1/Convex-Regions",
   },
 ];
 
@@ -82,6 +82,16 @@ if (import.meta.env.GITHUB_TOKEN) {
 <section class="mt-4 w-full max-w-200">
     <Card className="bg-transparent border-blue-1 p-8">
       <CardTitle as="h2" className="text-2xl font-bold leading-6 ">Cool things</CardTitle>
-        <HoverEffect items={pinnedItems}/>
+      <!-- CSS-only magnetic hover (anchor positioning); styles live in globals.css (.magnetic) -->
+      <div class="magnetic grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+        {pinnedItems.map((item) => (
+          <a href={item.url} class="magnetic-item relative block p-2 h-full w-full">
+            <div class="rounded-2xl h-full w-full p-8 overflow-hidden bg-white-1 border border-blue-1 relative z-20">
+              <h3 class="text-black font-bold tracking-wide mt-4">{item.name}</h3>
+              {item.description && <p class="mt-8 text-zinc-600 tracking-wide text-sm">{item.description}</p>}
+            </div>
+          </a>
+        ))}
+      </div>
     </Card>
 </section>

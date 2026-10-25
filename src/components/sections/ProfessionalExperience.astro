@@ -1,13 +1,14 @@
 ---
 import CardWrapper from "../CardWrapper.astro";
-import { Card, CardTitle, CardDescription } from "../ui/Card";
+import Card from "../ui/Card.astro";
+import CardTitle from "../ui/CardTitle.astro";
 ---
 
 <div class="mt-4 w-full max-w-200">
   <CardWrapper className="">
     <Card className="bg-transparent">
       <CardTitle as="h2"> Professional experience </CardTitle>
-      <CardDescription>
+      <div>
         <div class="w-full">
           <ul class="flex items-center justify-between contrast-50">
             <li>- Independent Contractor (Freelance)</li>
@@ -73,7 +74,7 @@ import { Card, CardTitle, CardDescription } from "../ui/Card";
             Worked with TypeScript and react on creating a Website builder
           </p>
         </div>
-      </CardDescription>
+      </div>
     </Card>
   </CardWrapper>
 </div>

@@ -2,52 +2,18 @@
 import { socialLinks } from "../consts";
 const today = new Date();
 ---
-<footer class="  justify-self-end">
-	 Copyright {today.getFullYear()}.
-<div class="footer-links">
-  <a href="/sitemap-index.xml">Sitemap</a>
-  <a href="/privacy">Privacy</a>
-</div>
-<div class="social-links">
-  {socialLinks.map(({ url, icon: Icon, label }) => (
-    <a href={label === "email" ? `mailto:${url}` : url} target="_blank" class="cursor-pointer">
-      <span class="sr-only">{label}</span>
-      <Icon />
-    </a>
-  ))}
-</div>
+<footer class="py-8 px-4 text-center text-neutral-600">
+	Copyright {today.getFullYear()}.
+	<div class="mt-2 flex justify-center gap-4">
+		<a href="/sitemap-index.xml" class="underline hover:text-black-1">Sitemap</a>
+		<a href="/privacy" class="underline hover:text-black-1">Privacy</a>
+	</div>
+	<div class="mt-4 flex justify-center gap-4">
+		{socialLinks.map(({ url, icon: Icon, label }) => (
+			<a href={label === "email" ? `mailto:${url}` : url} target="_blank" rel="noopener noreferrer" class="hover:text-black-1">
+				<span class="sr-only">{label}</span>
+				<Icon />
+			</a>
+		))}
+	</div>
 </footer>
-<style>
-	footer {
-		padding: 2em 1em 2em 1em;
-		background: linear-gradient(var(--gray-gradient)) no-repeat;
-		color: rgb(var(--gray));
-		text-align: center;
-	}
-	.footer-links {
-		margin-top: 0.5em;
-		display: flex;
-		justify-content: center;
-		gap: 1em;
-	}
-	.footer-links a {
-		color: rgb(var(--gray));
-		text-decoration: underline;
-	}
-	.footer-links a:hover {
-		color: rgb(var(--gray-dark));
-	}
-	.social-links {
-		display: flex;
-		justify-content: center;
-		gap: 1em;
-		margin-top: 1em;
-	}
-	.social-links a {
-		text-decoration: none;
-		color: rgb(var(--gray));
-	}
-	.social-links a:hover {
-		color: rgb(var(--gray-dark));
-	}
-</style>

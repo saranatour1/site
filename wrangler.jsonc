@@ -11,5 +11,12 @@
 	"vars": {
 		// Public: same ID as data-client-id in BaseHead.astro.
 		"DATABUDDY_WEBSITE_ID": "620a95f1-a26a-46ed-85c2-ca015f7fde75"
+	},
+	"observability": {
+		"logs": {
+			"enabled": true,
+			"invocation_logs": true,
+			"persist": true
+		}
 	}
 }
