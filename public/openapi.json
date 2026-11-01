@@ -1,0 +1,37 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "saranatour.dev",
+    "version": "1.0.0",
+    "description": "Read-only public pages of Sara Natour's personal website. No authentication. Send Accept: text/markdown to get a page as Markdown."
+  },
+  "servers": [{ "url": "https://saranatour.dev" }],
+  "paths": {
+    "/": {
+      "get": { "summary": "Home: about, experience, skills, projects, contact", "responses": { "200": { "$ref": "#/components/responses/Page" } } }
+    },
+    "/services/": {
+      "get": { "summary": "Services and what she is looking for", "responses": { "200": { "$ref": "#/components/responses/Page" } } }
+    },
+    "/privacy/": {
+      "get": { "summary": "Analytics and privacy policy", "responses": { "200": { "$ref": "#/components/responses/Page" } } }
+    },
+    "/llms.txt": {
+      "get": {
+        "summary": "Site overview for LLMs",
+        "responses": { "200": { "description": "Overview", "content": { "text/plain": { "schema": { "type": "string" } } } } }
+      }
+    }
+  },
+  "components": {
+    "responses": {
+      "Page": {
+        "description": "The page, as HTML by default or Markdown when requested",
+        "content": {
+          "text/html": { "schema": { "type": "string" } },
+          "text/markdown": { "schema": { "type": "string" } }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "linkset": [
+    {
+      "anchor": "https://saranatour.dev/",
+      "service-desc": [
+        { "href": "https://saranatour.dev/openapi.json", "type": "application/json" }
+      ],
+      "service-doc": [
+        { "href": "https://saranatour.dev/llms.txt", "type": "text/plain" }
+      ]
+    }
+  ]
+}
