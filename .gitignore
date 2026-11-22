@@ -20,3 +20,6 @@ pnpm-debug.log*
 # macOS-specific files
 .DS_Store
 .venv
+
+# local narration recordings (hosted on R2)
+public/audio/

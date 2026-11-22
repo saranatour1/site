@@ -8,12 +8,13 @@ interface Props {
   title: string;
   description: string;
   image?: string;
+  type?: "website" | "article";
 }
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
 // Each platform crops to a different ratio, so each gets its own image.
-const { title, description, image = "/og/og-linkedin.png" } = Astro.props;
+const { title, description, image = "/og/og-linkedin.png", type = "website" } = Astro.props;
 const twitterImage = Astro.props.image ?? "/og/og-twitter.png";
 ---
 
@@ -49,7 +50,7 @@ const twitterImage = Astro.props.image ?? "/og/og-twitter.png";
 <meta name="keywords" content="Sara Natour, Software Developer, Web Development, Full-stack Development, Testing, Convex, Astro, React, AI Agents, Electronics Design" />
 
 <!-- Open Graph / Facebook -->
-<meta property="og:type" content="website" />
+<meta property="og:type" content={type} />
 <meta property="og:url" content={Astro.url} />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
@@ -75,4 +76,5 @@ const twitterImage = Astro.props.image ?? "/og/og-twitter.png";
 
 <!-- Sitemap link -->
 <link rel="sitemap" href="/sitemap-index.xml" />
+<link rel="alternate" type="application/rss+xml" title="Sara Natour" href="/rss.xml" />
 <ClientRouter />

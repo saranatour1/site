@@ -1,0 +1,41 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import ArticleMeta from "../../components/articles/ArticleMeta.astro";
+import { getArticles } from "../../lib/articles";
+
+const articles = await getArticles();
+// Shown under the heading when set.
+const intro = "";
+---
+
+<Layout title="Articles | Sara Natour" description="Articles by Sara Natour.">
+  <main class="w-full max-w-200 mx-auto">
+    <header class="flex flex-col gap-4 pt-16 max-sm:pt-6">
+      <p class="m-0 text-sm uppercase tracking-[0.08em] text-[#6b6860]">Writing</p>
+      <h1 class="m-0 text-6xl leading-none tracking-tight text-black-1 max-sm:text-5xl">Articles</h1>
+      {intro && <p class="m-0 max-w-140 text-xl leading-normal text-[#4a4843]">{intro}</p>}
+      <div class="pt-2">
+        <a href="/rss.xml" class="inline-flex min-h-11 items-center gap-2 rounded-full border border-black-1/15 px-4 text-[15px] text-blue-1 hover:border-blue-1">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 11a9 9 0 0 1 9 9" /><path d="M4 4a16 16 0 0 1 16 16" /><circle cx="5" cy="19" r="1" /></svg>
+          RSS feed
+        </a>
+      </div>
+    </header>
+
+    <section aria-labelledby="all-articles" class="pt-14">
+      <h2 id="all-articles" class="m-0 border-b border-black-1/12 pb-3 text-sm font-normal uppercase tracking-[0.08em] text-[#6b6860]">All articles</h2>
+      {articles.length === 0 && <p class="py-7 text-[#4a4843]">Nothing here yet.</p>}
+      {
+        articles.map((article) => (
+          <article class="flex flex-col gap-2 border-b border-black-1/10 py-7">
+            <ArticleMeta article={article} audioTag class="text-sm" />
+            <h3 class="m-0 text-[28px] leading-tight font-normal">
+              <a href={`/articles/${article.id}`} class="text-black-1 transition-colors hover:text-blue-1">{article.data.title}</a>
+            </h3>
+            <p class="m-0 text-[17px] leading-normal text-[#4a4843]">{article.data.description}</p>
+          </article>
+        ))
+      }
+    </section>
+  </main>
+</Layout>

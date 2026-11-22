@@ -10,6 +10,7 @@ Sara Natour is a full-stack developer specializing in TypeScript and Convex, hel
 ## Pages
 - [Home](https://saranatour.dev/): About, experience, skills, tech stack, projects, contact.
 - [Services](https://saranatour.dev/services): What she does, and what she is looking for.
+- [Articles](https://saranatour.dev/articles): Articles, some with audio narration. [RSS](https://saranatour.dev/rss.xml).
 - [Privacy](https://saranatour.dev/privacy): Analytics and privacy policy.
 
 ## Experience

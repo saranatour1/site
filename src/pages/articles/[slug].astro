@@ -1,0 +1,381 @@
+---
+import { render } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+import ArticleMeta from "../../components/articles/ArticleMeta.astro";
+import { AUDIO_BASE } from "../../consts";
+import { getArticles, readingMinutes } from "../../lib/articles";
+
+export async function getStaticPaths() {
+  const articles = await getArticles();
+  return articles.map((article) => ({ params: { slug: article.id }, props: { article, articles } }));
+}
+
+const { article, articles } = Astro.props;
+const { title, description, pubDate, narrated, originalAudio } = article.data;
+const { Content } = await render(article);
+const more = articles.filter((other) => other.id !== article.id).slice(0, 2);
+const audio = `${AUDIO_BASE}/${article.id}.mp3`;
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  headline: title,
+  description,
+  datePublished: pubDate.toISOString(),
+  author: { "@type": "Person", name: "Sara Natour", url: Astro.site },
+  mainEntityOfPage: new URL(Astro.url.pathname, Astro.site),
+};
+---
+
+<Layout title={`${title} | Sara Natour`} description={description} type="article">
+  <main class="mx-auto flex w-full max-w-170 flex-col">
+    <a href="/articles" class="mt-10 inline-flex min-h-11 items-center gap-1.5 self-start text-[15px] text-[#4a4843] hover:text-blue-1 max-sm:mt-2">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5" /><path d="m12 19-7-7 7-7" /></svg>
+      All articles
+    </a>
+
+    <header class="flex flex-col gap-4 pt-6">
+      <ArticleMeta article={article} class="text-[15px]" />
+      <h1 class="m-0 text-[56px] leading-[1.05] tracking-tight text-black-1 max-sm:text-4xl">{title}</h1>
+      <p class="m-0 text-[22px] leading-normal text-[#4a4843] max-sm:text-lg">{description}</p>
+      {
+        narrated && (
+          // Shown by the script; opens the player. Without JS the native player below is used.
+          <button data-listen hidden type="button" class="mt-2 inline-flex min-h-11 cursor-pointer items-center gap-2.5 self-start rounded-full border border-black-1/15 py-1.5 pr-4 pl-1.5 text-[15px] text-black-1 transition-colors hover:border-blue-1">
+            <span class="grid size-8 place-items-center rounded-full bg-blue-1 text-white-1">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3" /></svg>
+            </span>
+            Listen to this article
+          </button>
+        )
+      }
+    </header>
+
+    {
+      narrated && (
+        <div class="z-10 sm:sticky sm:top-2">
+          {/* Not sticky on phones, where the full player would cover a third of the screen. */}
+          {/* Native controls until the script swaps in the custom player, so it still plays without JS. */}
+          <audio data-narration controls preload="metadata" src={audio} class="mt-9 w-full">
+            <track kind="metadata" src={`/narration/${article.id}.vtt`} default />
+          </audio>
+          <div data-player hidden role="group" aria-label="Narration player" class="mt-9 flex flex-col gap-3.5 rounded-3xl border border-black-1/10 bg-[#fffdf7] px-5 pt-4.5 pb-4 shadow-[0_1px_2px_rgba(26,26,26,0.04),0_10px_28px_-18px_rgba(26,26,26,0.35)]">
+            <div class="flex items-center justify-between gap-2">
+              <span class="truncate text-[15px]">Listen · read by Sara</span>
+              <span class="flex shrink-0 items-center gap-1">
+                <span data-time class="text-[13px] tabular-nums text-[#6b6860]">0:00</span>
+                <button data-close type="button" aria-label="Close player" class="-mr-2 grid size-9 cursor-pointer place-items-center rounded-full text-[#4a4843] hover:bg-black-1/5">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18" /><path d="m6 6 12 12" /></svg>
+                </button>
+              </span>
+            </div>
+            <input data-seek type="range" min="0" max="0" step="0.1" value="0" aria-label="Seek" class="h-1 w-full cursor-pointer" />
+            <div class="flex flex-wrap items-center justify-between gap-3">
+              <div class="flex min-w-37 flex-1 items-center gap-2">
+                <button data-mute type="button" aria-label="Mute" class="grid size-11 cursor-pointer place-items-center rounded-full text-[#4a4843] hover:bg-black-1/5">
+                  <svg data-icon-sound width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4V5Z" /><path d="M15.54 8.46a5 5 0 0 1 0 7.07" /><path d="M19.07 4.93a10 10 0 0 1 0 14.14" /></svg>
+                  <svg data-icon-muted class="hidden" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4V5Z" /><path d="m22 9-6 6" /><path d="m16 9 6 6" /></svg>
+                </button>
+                {
+                  originalAudio && (
+                    <div role="radiogroup" aria-label="Audio version" class="inline-flex rounded-full bg-black-1/6 p-0.75 text-[13px]">
+                      <button data-version={audio} type="button" role="radio" aria-checked="true" class="min-h-8 cursor-pointer rounded-full px-3 text-[#4a4843] aria-checked:bg-[#fffdf7] aria-checked:text-black-1 aria-checked:shadow-sm">Krisp</button>
+                      <button data-version={`${AUDIO_BASE}/${article.id}.original.mp3`} type="button" role="radio" aria-checked="false" class="min-h-8 cursor-pointer rounded-full px-3 text-[#4a4843] aria-checked:bg-[#fffdf7] aria-checked:text-black-1 aria-checked:shadow-sm">Original</button>
+                    </div>
+                  )
+                }
+              </div>
+              <div class="flex items-center gap-3">
+                <button data-skip="-10" type="button" aria-label="Back 10 seconds" class="relative grid size-11 cursor-pointer place-items-center rounded-full hover:bg-black-1/5">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7" /><path d="M3 3v5h5" /></svg>
+                  <span aria-hidden="true" class="absolute pt-0.5 font-sans text-[9px] font-semibold">10</span>
+                </button>
+                <button data-play type="button" aria-label="Play narration" class="grid size-14 cursor-pointer place-items-center rounded-full bg-blue-1 text-white-1 transition hover:brightness-110 active:scale-95">
+                  <svg data-icon-play width="22" height="22" viewBox="0 0 24 24" fill="currentColor" class="translate-x-px" aria-hidden="true"><path d="M8 5.5v13a1 1 0 0 0 1.5.86l10.5-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5Z" /></svg>
+                  <svg data-icon-pause class="hidden" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1" /><rect x="14" y="5" width="4" height="14" rx="1" /></svg>
+                </button>
+                <button data-skip="10" type="button" aria-label="Forward 10 seconds" class="relative grid size-11 cursor-pointer place-items-center rounded-full hover:bg-black-1/5">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-3-6.7" /><path d="M21 3v5h-5" /></svg>
+                  <span aria-hidden="true" class="absolute pt-0.5 font-sans text-[9px] font-semibold">10</span>
+                </button>
+              </div>
+              <div class="flex min-w-37 flex-1 justify-end">
+                <div role="group" aria-label="Playback speed" class="inline-flex items-center rounded-full border border-black-1/15">
+                  <button data-speed="-1" type="button" aria-label="Slower" class="grid size-10 cursor-pointer place-items-center rounded-full hover:bg-black-1/5">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14" /></svg>
+                  </button>
+                  {/* "x": the Recoleta demo font has no × glyph */}
+                  <span data-rate aria-live="polite" class="min-w-11 text-center text-sm tabular-nums">1x</span>
+                  <button data-speed="1" type="button" aria-label="Faster" class="grid size-10 cursor-pointer place-items-center rounded-full hover:bg-black-1/5">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14" /><path d="M12 5v14" /></svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )
+    }
+    {
+      // Dev only: tap along to the recording to write the timings file.
+      import.meta.env.DEV && narrated && (
+        <button data-tap data-slug={article.id} class="mt-6 w-full rounded border border-dashed border-neutral-400 px-3 py-2 text-left text-sm">
+          Record timings (dev only)
+        </button>
+      )
+    }
+
+    <article data-article class="prose prose-xl prose-neutral max-w-none pt-12 max-sm:prose-lg prose-headings:font-normal prose-headings:text-black-1 prose-a:text-blue-1 prose-a:underline-offset-4 prose-blockquote:border-blue-1 prose-blockquote:font-normal prose-blockquote:text-black-1 prose-pre:rounded-2xl prose-pre:bg-black-1">
+      <Content />
+    </article>
+
+    {
+      more.length > 0 && (
+        <section aria-labelledby="more-articles" class="pt-18">
+          <h2 id="more-articles" class="m-0 mb-5 text-sm font-normal uppercase tracking-[0.08em] text-[#6b6860]">More articles</h2>
+          <div class="grid grid-cols-[repeat(auto-fit,minmax(260px,1fr))] gap-4">
+            {more.map((other) => (
+              <a href={`/articles/${other.id}`} class="flex flex-col gap-2.5 rounded-[20px] border border-black-1/10 bg-[#fffdf7] p-6 text-black-1 transition-colors hover:border-blue-1">
+                <span class="text-sm text-[#6b6860]">
+                  {other.data.pubDate.toLocaleDateString("en", { dateStyle: "medium" })} · {readingMinutes(other)} minute read
+                </span>
+                <span class="text-[22px] leading-tight">{other.data.title}</span>
+                <span class="text-base leading-normal text-[#4a4843]">{other.data.description}</span>
+              </a>
+            ))}
+          </div>
+        </section>
+      )
+    }
+  </main>
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />
+</Layout>
+
+<style is:global>
+  ::highlight(narration) {
+    background-color: color-mix(in srgb, var(--color-blue-1) 30%, transparent);
+  }
+  /* Thin scrubber: filled up to the playhead (--fill, set by the script), round blue thumb. */
+  [data-seek] {
+    appearance: none;
+    height: 4px;
+    background: linear-gradient(to right, var(--color-blue-1) var(--fill, 0%), color-mix(in srgb, var(--color-black-1) 12%, transparent) 0);
+    border-radius: 999px;
+  }
+  [data-seek]::-webkit-slider-thumb {
+    appearance: none;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--color-blue-1);
+  }
+  [data-seek]::-moz-range-thumb {
+    width: 12px;
+    height: 12px;
+    border: 0;
+    border-radius: 50%;
+    background: var(--color-blue-1);
+  }
+</style>
+
+<script>
+  // Follows the narration: each cue in the .vtt is one sentence; the matching
+  // sentence on the page is highlighted (CSS Custom Highlight API, no markup added).
+  const norm = (s: string) => s.toLowerCase().replace(/[^\p{L}\p{N}]+/gu, "");
+
+  document.addEventListener("astro:page-load", () => {
+    CSS.highlights?.delete("narration");
+    const audio = document.querySelector<HTMLAudioElement>("audio[data-narration]");
+    const article = document.querySelector("article[data-article]");
+    const track = audio?.textTracks[0];
+
+    // Custom player, driving the same <audio> element.
+    const player = document.querySelector<HTMLElement>("[data-player]");
+    if (audio && player) {
+      const q = <T extends Element>(sel: string) => player.querySelector<T>(sel)!;
+      const play = q<HTMLButtonElement>("[data-play]");
+      const mute = q<HTMLButtonElement>("[data-mute]");
+      const seek = q<HTMLInputElement>("[data-seek]");
+      const time = q<HTMLElement>("[data-time]");
+      const rate = q<HTMLElement>("[data-rate]");
+      const speeds = [0.75, 1, 1.25, 1.5, 1.75, 2];
+      const clock = (s: number) => `${Math.floor(s / 60)}:${String(Math.floor(s % 60)).padStart(2, "0")}`;
+      const sync = () => {
+        const total = Number.isFinite(audio.duration) ? audio.duration : 0;
+        seek.max = String(total);
+        seek.value = String(audio.currentTime);
+        seek.style.setProperty("--fill", `${total ? (audio.currentTime / total) * 100 : 0}%`);
+        time.textContent = total ? `${clock(audio.currentTime)} / ${clock(total)}` : clock(audio.currentTime);
+        q("[data-icon-play]").classList.toggle("hidden", !audio.paused);
+        q("[data-icon-pause]").classList.toggle("hidden", audio.paused);
+        play.setAttribute("aria-label", audio.paused ? "Play narration" : "Pause narration");
+        q("[data-icon-sound]").classList.toggle("hidden", audio.muted);
+        q("[data-icon-muted]").classList.toggle("hidden", !audio.muted);
+        mute.setAttribute("aria-label", audio.muted ? "Unmute" : "Mute");
+        rate.textContent = `${audio.playbackRate}x`;
+      };
+      // Collapsed to a "Listen" button until asked for; closing pauses and collapses again.
+      const listen = document.querySelector<HTMLButtonElement>("[data-listen]")!;
+      const open = (show: boolean) => {
+        player.hidden = !show;
+        listen.hidden = show;
+      };
+      audio.controls = false;
+      audio.hidden = true;
+      open(false);
+      listen.addEventListener("click", () => {
+        open(true);
+        audio.play();
+        play.focus();
+      });
+      q("[data-close]").addEventListener("click", () => {
+        audio.pause();
+        open(false);
+        listen.focus();
+      });
+      for (const event of ["loadedmetadata", "timeupdate", "play", "pause", "ended", "volumechange", "ratechange"]) {
+        audio.addEventListener(event, sync);
+      }
+      play.addEventListener("click", () => (audio.paused ? audio.play() : audio.pause()));
+      mute.addEventListener("click", () => (audio.muted = !audio.muted));
+      seek.addEventListener("input", () => (audio.currentTime = Number(seek.value)));
+      for (const button of player.querySelectorAll<HTMLButtonElement>("[data-skip]")) {
+        button.addEventListener("click", () => {
+          audio.currentTime = Math.min(Math.max(audio.currentTime + Number(button.dataset.skip), 0), audio.duration || 0);
+        });
+      }
+      for (const button of player.querySelectorAll<HTMLButtonElement>("[data-speed]")) {
+        button.addEventListener("click", () => {
+          const i = speeds.indexOf(audio.playbackRate);
+          const next = speeds[Math.min(Math.max((i < 0 ? 1 : i) + Number(button.dataset.speed), 0), speeds.length - 1)];
+          audio.playbackRate = next;
+          audio.defaultPlaybackRate = next; // survives a Krisp / Original switch
+        });
+      }
+      // Krisp / Original: swap the file, keep the position and play state.
+      const versions = player.querySelectorAll<HTMLButtonElement>("[data-version]");
+      for (const button of versions) {
+        button.addEventListener("click", () => {
+          if (button.getAttribute("aria-checked") === "true") return;
+          for (const other of versions) other.setAttribute("aria-checked", String(other === button));
+          const { currentTime, paused } = audio;
+          audio.src = button.dataset.version!;
+          audio.addEventListener("loadedmetadata", () => {
+            audio.currentTime = currentTime;
+            if (!paused) audio.play();
+          }, { once: true });
+        });
+      }
+      sync();
+    }
+
+    if (!audio || !article || !track || !CSS.highlights) return; // player only, no highlighting
+
+    // One Range per sentence, in page order.
+    // ponytail: a list item with a nested list yields its nested sentences twice;
+    // skip blocks containing a nested li if articles start using nested lists.
+    const segmenter = new Intl.Segmenter("en", { granularity: "sentence" });
+    const sentences: { key: string; range: Range }[] = [];
+    for (const block of article.querySelectorAll("p, h2, h3, h4, li")) {
+      if (block.closest("pre") || block.querySelector("p")) continue;
+      const walker = document.createTreeWalker(block, NodeFilter.SHOW_TEXT);
+      const nodes: Text[] = [];
+      while (walker.nextNode()) nodes.push(walker.currentNode as Text);
+      const at = (offset: number): [Text, number] => {
+        for (const node of nodes) {
+          if (offset <= node.length) return [node, offset];
+          offset -= node.length;
+        }
+        return [nodes[nodes.length - 1], nodes[nodes.length - 1].length];
+      };
+      for (const { segment, index } of segmenter.segment(block.textContent ?? "")) {
+        const key = norm(segment);
+        if (!key) continue;
+        const range = new Range();
+        range.setStart(...at(index));
+        range.setEnd(...at(index + segment.trimEnd().length));
+        sentences.push({ key, range });
+      }
+    }
+
+    // Cues are matched to sentences by text, in order, so editing the article
+    // after recording only un-highlights the edited sentence.
+    let byCue: Map<TextTrackCue, Range> | undefined;
+    const matchCues = () => {
+      byCue = new Map();
+      let from = 0;
+      for (const cue of track.cues ?? []) {
+        const key = norm((cue as VTTCue).getCueAsHTML().textContent ?? "");
+        const i = sentences.findIndex((s, i) => i >= from && s.key === key);
+        if (i < 0) continue;
+        byCue.set(cue, sentences[i].range);
+        from = i + 1;
+      }
+    };
+
+    const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)");
+    track.mode = "hidden"; // load cues and fire cuechange without rendering them
+    track.addEventListener("cuechange", () => {
+      if (!byCue) matchCues();
+      const cue = track.activeCues?.[0];
+      const range = cue && byCue!.get(cue);
+      if (!range) return;
+      CSS.highlights.set("narration", new Highlight(range));
+      if (!audio.paused) {
+        range.startContainer.parentElement?.scrollIntoView({
+          block: "center",
+          behavior: reducedMotion.matches ? "auto" : "smooth",
+        });
+      }
+    });
+
+    // Dev only: play the recording and press Space as each sentence starts.
+    // Saving downloads <slug>.vtt, which goes in public/narration/.
+    const tapButton = import.meta.env.DEV ? document.querySelector<HTMLButtonElement>("button[data-tap]") : null;
+    if (tapButton) {
+      const TAP_LAG = 0.2; // seconds a tap trails the voice; tune if highlights feel late or early
+      const starts: number[] = [];
+      let tapping = false;
+      const stamp = (t: number) => new Date(Math.max(t, 0) * 1000).toISOString().slice(11, 23);
+      const show = () => {
+        const current = sentences[starts.length - 1];
+        if (current) {
+          CSS.highlights.set("narration", new Highlight(current.range));
+          current.range.startContainer.parentElement?.scrollIntoView({ block: "center" });
+        } else CSS.highlights.delete("narration");
+        tapButton.textContent = `${starts.length}/${sentences.length} sentences marked. Space: next sentence starts now. Backspace: undo. Click here to save.`;
+      };
+      tapButton.addEventListener("click", () => {
+        tapButton.blur(); // so Space doesn't re-click the button
+        if (!tapping) {
+          tapping = true;
+          track.mode = "disabled"; // old timings must not fight the taps
+          starts.length = 0;
+          audio.currentTime = 0;
+          audio.play();
+          show();
+          return;
+        }
+        tapping = false;
+        audio.pause();
+        const cues = starts.map((start, i) => {
+          const text = sentences[i].range.toString().replace(/\s+/g, " ").trim().replace(/&/g, "&amp;").replace(/</g, "&lt;");
+          return `${stamp(start - TAP_LAG)} --> ${stamp((starts[i + 1] ?? audio.duration + TAP_LAG) - TAP_LAG)}\n${text}\n`;
+        });
+        const link = document.createElement("a");
+        link.href = URL.createObjectURL(new Blob([`WEBVTT\n\n${cues.join("\n")}`], { type: "text/vtt" }));
+        link.download = `${tapButton.dataset.slug}.vtt`;
+        link.click();
+        tapButton.textContent = `Saved ${link.download} to your downloads. Move it to public/narration/ and reload.`;
+      });
+      document.addEventListener("keydown", (event) => {
+        if (!tapping || !tapButton.isConnected) return;
+        if (event.code === "Space" && starts.length < sentences.length) starts.push(audio.currentTime);
+        else if (event.code === "Backspace") starts.pop();
+        else return;
+        event.preventDefault();
+        show();
+      });
+    }
+  });
+</script>
