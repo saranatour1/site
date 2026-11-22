@@ -372,3 +372,7 @@ Commit and open PR
 ---
 
 I also want to have, so since we're using Astro, everything is, very partial hydrated and everything. But what I also want to have is, you see how when there is the articles page and then there is I write articles now, using I'm writing articles now for the fun of the game. When I click on it, I want to see the articles go up towards the top and the route changing. And then I also want to have the description be smaller than this. Yeah, the description needs to be smaller than this. And yeah, maybe also like center the photo into like the center of the page instead of it being like to the left, and add a caption at the bottom. And that's mostly it, right? Yeah, that's mostly it. There is typos in the thing, but I don't mind typos anymore.
+
+---
+
+Commit and open PR
