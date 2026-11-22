@@ -18,8 +18,9 @@ I've been mostly freelancing these past 2-3 years, as it just gives me the gener
 I am contracting at [convex](convex.dev) now, and you'll probably see me dog-fooding it a lot on here and on my socials :) but you'll also find problem-solution type of thing going on as well. I'm mostly pumped about advent of code so I get to write about my solutions this year, and embarrass myself once again. 
 That's getting too much.. 
 
-here's a picture of me when I was like 4-5, opening up my dads PC, and writing some excel codes. 
-<img width="640" height="640" alt="image" src="https://github.com/user-attachments/assets/b89d3710-c50e-413a-9d7e-c977efe6c4fd" />
+here's a picture of me when I was like 4-5, opening up my dads PC, and writing some excel codes.
+
+![Me at about five, grinning at the camera from my dad's desk, with an Excel spreadsheet open on the old CRT monitor behind me](../../assets/articles/sara-at-dads-pc.png)
 
 
 
