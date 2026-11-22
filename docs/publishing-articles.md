@@ -36,6 +36,17 @@ shared:
     url: https://x.com/.../status/...
 ```
 
+Images go in `src/assets/articles/` and are linked with a relative path, so the build optimizes them. For a centered photo with a caption, wrap it like this (the blank lines matter):
+
+```md
+<figure>
+
+![What the photo shows](../../assets/articles/my-photo.png)
+
+<figcaption>The caption under it</figcaption>
+</figure>
+```
+
 `draft: true` keeps it off the live site. Drafts still show in `pnpm dev`, at `localhost:4321/articles/my-post`.
 
 ## 3. Narration (optional)

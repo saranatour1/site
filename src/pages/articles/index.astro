@@ -50,10 +50,10 @@ const intro = "";
         articles.map((article) => (
           <article class="flex flex-col gap-2 border-b border-black-1/10 py-7">
             <ArticleMeta article={article} audioTag class="text-sm" />
-            <h3 class="m-0 text-[28px] leading-tight font-normal">
+            <h3 class="m-0 text-[28px] leading-tight font-normal" transition:name={`article-title-${article.id}`}>
               <a href={`/articles/${article.id}`} class="text-black-1 transition-colors hover:text-blue-1">{article.data.title}</a>
             </h3>
-            <p class="m-0 text-[17px] leading-normal text-[#4a4843]">{article.data.description}</p>
+            <p class="m-0 text-[17px] leading-normal text-[#4a4843]" transition:name={`article-description-${article.id}`}>{article.data.description}</p>
           </article>
         ))
       }
