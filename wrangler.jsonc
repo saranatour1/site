@@ -8,6 +8,8 @@
 		// Without this, static hits skip the worker and never get tracked.
 		"run_worker_first": true
 	},
+	// Required by `wrangler preview` (PR preview deploys). Empty: previews use the same settings as production.
+	"previews": {},
 	"observability": {
 		"enabled": false,
 		"head_sampling_rate": 1,
