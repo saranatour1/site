@@ -1,0 +1,103 @@
+{
+  "cli_version": "0.11.3",
+  "checkpoint_id": "01M821VBDJ5TXC3J5H489H8G1F",
+  "session_id": "f71cbbc7-f39b-4e82-86eb-96926e257576",
+  "strategy": "manual-commit",
+  "created_at": "2026-11-22T16:36:24.478449Z",
+  "branch": "add-articles",
+  "checkpoints_count": 3,
+  "save_step_count": 2,
+  "files_touched": [
+    "src/assets/articles/sara-at-dads-pc.png",
+    "src/content/articles/i-write-articles-now.md",
+    "src/pages/articles/[slug].astro"
+  ],
+  "agent": "Claude Code",
+  "model": "claude-fable-5-2",
+  "turn_id": "8f20be388b9e",
+  "compact_transcript_start": 0,
+  "token_usage": {
+    "input_tokens": 418,
+    "cache_creation_tokens": 623186,
+    "cache_read_tokens": 48986458,
+    "output_tokens": 142010,
+    "api_call_count": 174,
+    "subagent_tokens": {
+      "input_tokens": 0,
+      "cache_creation_tokens": 0,
+      "cache_read_tokens": 0,
+      "output_tokens": 0,
+      "api_call_count": 0
+    }
+  },
+  "skill_events_version": 1,
+  "skill_events": [
+    {
+      "id": "prompt-skill-claude-code-design-2026-11-22T15:40:38.733339Z",
+      "event_type": "prompt_invocation",
+      "skill": {
+        "name": "design"
+      },
+      "source": {
+        "agent": "claude-code",
+        "signal": "prompt_slash_command",
+        "confidence": "explicit"
+      },
+      "turn_id": "4b97ace17cc8",
+      "timestamp": "2026-11-22T15:40:38.733339Z",
+      "native": {
+        "command": "/design"
+      },
+      "collapse": {
+        "target": "user_message",
+        "label": "/design",
+        "default_collapsed": true
+      }
+    }
+  ],
+  "session_metrics": {
+    "turn_count": 32
+  },
+  "initial_attribution": {
+    "calculated_at": "2026-11-22T16:36:24.369633Z",
+    "agent_lines": 21,
+    "agent_removed": 4,
+    "human_added": 0,
+    "human_modified": 0,
+    "human_removed": 0,
+    "total_committed": 21,
+    "total_lines_changed": 25,
+    "agent_percentage": 100,
+    "metric_version": 2
+  },
+  "prompt_attributions": [
+    {
+      "checkpoint_number": 2,
+      "user_lines_added": 310,
+      "user_lines_removed": 0,
+      "agent_lines_added": 0,
+      "agent_lines_removed": 0,
+      "user_added_per_file": {
+        ".claude/launch.json": 12,
+        ".claude/settings.json": 84,
+        "public/narration/hello-narration.vtt": 25,
+        "skills/writing-plans/SKILL.md": 171,
+        "src/content/articles/hello-narration.md": 18
+      }
+    },
+    {
+      "checkpoint_number": 3,
+      "user_lines_added": 310,
+      "user_lines_removed": 0,
+      "agent_lines_added": 4,
+      "agent_lines_removed": 3,
+      "user_added_per_file": {
+        ".claude/launch.json": 12,
+        ".claude/settings.json": 84,
+        "public/narration/hello-narration.vtt": 25,
+        "skills/writing-plans/SKILL.md": 171,
+        "src/content/articles/hello-narration.md": 18
+      }
+    }
+  ]
+}
