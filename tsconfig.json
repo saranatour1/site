@@ -2,5 +2,12 @@
   "extends": "astro/tsconfigs/strict",
   "compilerOptions": {
     "strictNullChecks": true
-  }
+  },
+  // Lets TypeScript 7.1+ type-check .astro files (run tsc with --runExternalCode).
+  "contentMappers": [
+    {
+      "package": "@astrojs/ts-content-mapper",
+      "extensions": [".astro"]
+    }
+  ]
 }

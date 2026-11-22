@@ -1,16 +1,15 @@
 import { trackAgents } from "@databuddy/sdk/agents";
 import { prefersMarkdown } from "./src/lib/accept";
+import { DATABUDDY_WEBSITE_ID } from "./src/lib/databuddy";
 
 // ponytail: inline types instead of adding @cloudflare/workers-types for one file
 interface Env {
 	ASSETS: { fetch(request: Request): Promise<Response> };
-	DATABUDDY_WEBSITE_ID: string;
 }
 
 export default {
 	async fetch(request: Request, env: Env, ctx: { waitUntil(p: Promise<unknown>): void }) {
-		const websiteId = env.DATABUDDY_WEBSITE_ID;
-		ctx.waitUntil(trackAgents(request, { websiteId }));
+		ctx.waitUntil(trackAgents(request, { websiteId: DATABUDDY_WEBSITE_ID }));
 		if (["GET", "HEAD"].includes(request.method) && prefersMarkdown(request.headers.get("accept") ?? "")) {
 			const url = new URL(request.url);
 			const path = url.pathname.replace(/\/$/, "") || "/index";
