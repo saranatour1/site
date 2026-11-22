@@ -1,5 +1,6 @@
 ---
 import { ClientRouter } from 'astro:transitions';
+import { DATABUDDY_WEBSITE_ID } from "../lib/databuddy";
 
 // Import the global.css file here so that it is included on
 // all pages through the use of the <BaseHead /> component.
@@ -71,7 +72,7 @@ const twitterImage = Astro.props.image ?? "/og/og-twitter.png";
 <script
   src="https://cdn.databuddy.cc/databuddy.js"
   is:inline
-  data-client-id="620a95f1-a26a-46ed-85c2-ca015f7fde75"
+  data-client-id={DATABUDDY_WEBSITE_ID}
   async
   crossorigin="anonymous"
   ></script>
