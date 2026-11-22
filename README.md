@@ -20,6 +20,10 @@ All commands are run from the root of the project, from a terminal:
 | `npm run build`           | Build your production site to `./dist/`          |
 | `npm run preview`         | Preview your build locally, before deploying     |
 
+## Articles
+
+How to write, narrate and publish an article: [docs/publishing-articles.md](docs/publishing-articles.md).
+
 ## 📬 Contact
 
 Want to work together? Check out the Services page or reach out directly!
