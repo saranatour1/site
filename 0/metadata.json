@@ -1,0 +1,66 @@
+{
+  "cli_version": "0.11.3",
+  "checkpoint_id": "01M81ZX6371ZHXH8RZGE0JDRZ5",
+  "session_id": "f71cbbc7-f39b-4e82-86eb-96926e257576",
+  "strategy": "manual-commit",
+  "created_at": "2026-11-22T16:02:27.331732Z",
+  "branch": "add-articles",
+  "checkpoints_count": 23,
+  "save_step_count": 1,
+  "files_touched": [],
+  "agent": "Claude Code",
+  "model": "claude-fable-5-2",
+  "turn_id": "b12e555126b5",
+  "compact_transcript_start": 0,
+  "token_usage": {
+    "input_tokens": 360,
+    "cache_creation_tokens": 607408,
+    "cache_read_tokens": 38272303,
+    "output_tokens": 133972,
+    "api_call_count": 149
+  },
+  "skill_events_version": 1,
+  "skill_events": [
+    {
+      "id": "prompt-skill-claude-code-design-2026-11-22T15:40:38.733339Z",
+      "event_type": "prompt_invocation",
+      "skill": {
+        "name": "design"
+      },
+      "source": {
+        "agent": "claude-code",
+        "signal": "prompt_slash_command",
+        "confidence": "explicit"
+      },
+      "turn_id": "4b97ace17cc8",
+      "timestamp": "2026-11-22T15:40:38.733339Z",
+      "native": {
+        "command": "/design"
+      },
+      "collapse": {
+        "target": "user_message",
+        "label": "/design",
+        "default_collapsed": true
+      }
+    }
+  ],
+  "session_metrics": {
+    "turn_count": 29
+  },
+  "prompt_attributions": [
+    {
+      "checkpoint_number": 2,
+      "user_lines_added": 310,
+      "user_lines_removed": 0,
+      "agent_lines_added": 0,
+      "agent_lines_removed": 0,
+      "user_added_per_file": {
+        ".claude/launch.json": 12,
+        ".claude/settings.json": 84,
+        "public/narration/hello-narration.vtt": 25,
+        "skills/writing-plans/SKILL.md": 171,
+        "src/content/articles/hello-narration.md": 18
+      }
+    }
+  ]
+}
