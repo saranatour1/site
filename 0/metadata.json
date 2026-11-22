@@ -1,0 +1,114 @@
+{
+  "cli_version": "0.11.3",
+  "checkpoint_id": "01M822ETBR1DJ3EBBCQWA0QTR1",
+  "session_id": "f71cbbc7-f39b-4e82-86eb-96926e257576",
+  "strategy": "manual-commit",
+  "created_at": "2026-11-22T16:47:02.410832Z",
+  "branch": "add-articles",
+  "checkpoints_count": 2,
+  "save_step_count": 2,
+  "files_touched": [
+    "package.json",
+    "pnpm-lock.yaml",
+    "public/llms.txt",
+    "src/assets/fonts/Inter-Regular.ttf",
+    "src/assets/fonts/Inter-SemiBold.ttf",
+    "src/components/BaseHead.astro",
+    "src/content.config.ts",
+    "src/layouts/Layout.astro",
+    "src/lib/og.ts",
+    "src/llms.txt",
+    "src/pages/articles/[slug].astro",
+    "src/pages/articles/index.astro",
+    "src/pages/llms.txt.ts",
+    "src/pages/og/articles/[slug].png.ts"
+  ],
+  "agent": "Claude Code",
+  "model": "claude-fable-5-2",
+  "turn_id": "b80402936eac",
+  "compact_transcript_start": 0,
+  "token_usage": {
+    "input_tokens": 460,
+    "cache_creation_tokens": 649445,
+    "cache_read_tokens": 57552943,
+    "output_tokens": 159592,
+    "api_call_count": 193,
+    "subagent_tokens": {
+      "input_tokens": 0,
+      "cache_creation_tokens": 0,
+      "cache_read_tokens": 0,
+      "output_tokens": 0,
+      "api_call_count": 0
+    }
+  },
+  "skill_events_version": 1,
+  "skill_events": [
+    {
+      "id": "prompt-skill-claude-code-design-2026-11-22T15:40:38.733339Z",
+      "event_type": "prompt_invocation",
+      "skill": {
+        "name": "design"
+      },
+      "source": {
+        "agent": "claude-code",
+        "signal": "prompt_slash_command",
+        "confidence": "explicit"
+      },
+      "turn_id": "4b97ace17cc8",
+      "timestamp": "2026-11-22T15:40:38.733339Z",
+      "native": {
+        "command": "/design"
+      },
+      "collapse": {
+        "target": "user_message",
+        "label": "/design",
+        "default_collapsed": true
+      }
+    }
+  ],
+  "session_metrics": {
+    "turn_count": 34
+  },
+  "initial_attribution": {
+    "calculated_at": "2026-11-22T16:47:02.296394Z",
+    "agent_lines": 380,
+    "agent_removed": 54,
+    "human_added": 0,
+    "human_modified": 0,
+    "human_removed": 0,
+    "total_committed": 380,
+    "total_lines_changed": 434,
+    "agent_percentage": 100,
+    "metric_version": 2
+  },
+  "prompt_attributions": [
+    {
+      "checkpoint_number": 2,
+      "user_lines_added": 310,
+      "user_lines_removed": 0,
+      "agent_lines_added": 0,
+      "agent_lines_removed": 0,
+      "user_added_per_file": {
+        ".claude/launch.json": 12,
+        ".claude/settings.json": 84,
+        "public/narration/hello-narration.vtt": 25,
+        "skills/writing-plans/SKILL.md": 171,
+        "src/content/articles/hello-narration.md": 18
+      }
+    },
+    {
+      "checkpoint_number": 3,
+      "user_lines_added": 310,
+      "user_lines_removed": 0,
+      "agent_lines_added": 380,
+      "agent_lines_removed": 54,
+      "user_added_per_file": {
+        ".claude/launch.json": 12,
+        ".claude/settings.json": 84,
+        "public/narration/hello-narration.vtt": 25,
+        "skills/writing-plans/SKILL.md": 171,
+        "src/content/articles/hello-narration.md": 18
+      }
+    }
+  ]
+}
