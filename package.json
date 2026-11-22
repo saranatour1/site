@@ -19,6 +19,8 @@
     "@tailwindcss/vite": "^4.3.3",
     "astro": "^7.4.2",
     "clsx": "^2.1.1",
+    "satori": "^0.63.2",
+    "sharp": "^0.35.5",
     "tailwind-merge": "^2.6.1",
     "tailwindcss": "^4.3.3",
     "typescript": "^6.0.3"

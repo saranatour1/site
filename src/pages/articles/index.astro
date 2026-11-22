@@ -4,11 +4,32 @@ import ArticleMeta from "../../components/articles/ArticleMeta.astro";
 import { getArticles } from "../../lib/articles";
 
 const articles = await getArticles();
+const description = "Articles by Sara Natour on building for the web, Convex, AI agents and whatever else she's figuring out. Some are read aloud.";
+
+// Structured data: this page is the blog, listing each article.
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  "@id": new URL("/articles#blog", Astro.site),
+  name: "Articles by Sara Natour",
+  description,
+  url: new URL("/articles", Astro.site),
+  inLanguage: "en",
+  author: { "@type": "Person", name: "Sara Natour", url: Astro.site },
+  blogPost: articles.map(({ id, data }) => ({
+    "@type": "BlogPosting",
+    headline: data.title,
+    description: data.description,
+    datePublished: data.pubDate.toISOString(),
+    url: new URL(`/articles/${id}`, Astro.site),
+  })),
+};
 // Shown under the heading when set.
 const intro = "";
 ---
 
-<Layout title="Articles | Sara Natour" description="Articles by Sara Natour.">
+<Layout title="Articles | Sara Natour" description={description}>
+  <script slot="head" type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />
   <main class="w-full max-w-200 mx-auto">
     <header class="flex flex-col gap-4 pt-16 max-sm:pt-6">
       <p class="m-0 text-sm uppercase tracking-[0.08em] text-[#6b6860]">Writing</p>

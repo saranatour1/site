@@ -12,6 +12,8 @@ interface Props {
 }
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+// Every page has a Markdown twin (astro.config.mjs writes it; worker.ts serves it for Accept: text/markdown).
+const markdownURL = new URL(`${Astro.url.pathname.replace(/\/$/, "") || "/index"}.md`, Astro.site);
 
 // Each platform crops to a different ratio, so each gets its own image.
 const { title, description, image = "/og/og-linkedin.png", type = "website" } = Astro.props;
@@ -55,6 +57,7 @@ const twitterImage = Astro.props.image ?? "/og/og-twitter.png";
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
 <meta property="og:image" content={new URL(image, Astro.url)} />
+<meta property="og:image:alt" content={title} />
 <meta property="og:site_name" content="Sara Natour" />
 <meta property="og:locale" content="en_US" />
 <meta name="theme-color" content="#fcf8ef" />
@@ -77,4 +80,5 @@ const twitterImage = Astro.props.image ?? "/og/og-twitter.png";
 <!-- Sitemap link -->
 <link rel="sitemap" href="/sitemap-index.xml" />
 <link rel="alternate" type="application/rss+xml" title="Sara Natour" href="/rss.xml" />
+<link rel="alternate" type="text/markdown" href={markdownURL} />
 <ClientRouter />

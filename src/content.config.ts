@@ -9,6 +9,10 @@ export const collections = {
       title: z.string(),
       description: z.string(),
       pubDate: z.coerce.date(),
+      // set when an article is meaningfully revised; shown to search engines as dateModified
+      updatedDate: z.coerce.date().optional(),
+      // topics, used as article:tag and schema.org keywords
+      tags: z.array(z.string()).default([]),
       // shows the audio player; needs the mp3 (public/audio/ in dev, R2 in production)
       // and public/narration/<slug>.vtt, recorded with the dev-only "Record timings" button
       narrated: z.boolean().default(false),
