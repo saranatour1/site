@@ -1,0 +1,36 @@
+{
+  "cli_version": "0.11.3",
+  "checkpoint_id": "01M8233EGAT59TKDGPGEQGPFRZ",
+  "strategy": "manual-commit",
+  "branch": "article-polish",
+  "checkpoints_count": 1,
+  "files_touched": [
+    "docs/publishing-articles.md",
+    "src/content/articles/i-write-articles-now.md",
+    "src/pages/articles/[slug].astro",
+    "src/pages/articles/index.astro"
+  ],
+  "sessions": [
+    {
+      "metadata": "/0/metadata.json",
+      "transcript": "/0/full.jsonl",
+      "compact_transcript": "/0/transcript.jsonl",
+      "content_hash": "/0/content_hash.txt",
+      "prompt": "/0/prompt.txt"
+    }
+  ],
+  "token_usage": {
+    "input_tokens": 570,
+    "cache_creation_tokens": 696897,
+    "cache_read_tokens": 80509611,
+    "output_tokens": 183654,
+    "api_call_count": 240,
+    "subagent_tokens": {
+      "input_tokens": 0,
+      "cache_creation_tokens": 0,
+      "cache_read_tokens": 0,
+      "output_tokens": 0,
+      "api_call_count": 0
+    }
+  }
+}
