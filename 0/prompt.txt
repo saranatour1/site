@@ -336,3 +336,7 @@ so I just added changes to the article can you pull and restart the server so I 
 ---
 
 fix the image
+
+---
+
+Commit and push
