@@ -20,7 +20,12 @@ That's getting too much..
 
 here's a picture of me when I was like 4-5, opening up my dads PC, and writing some excel codes.
 
+<figure>
+
 ![Me at about five, grinning at the camera from my dad's desk, with an Excel spreadsheet open on the old CRT monitor behind me](../../assets/articles/sara-at-dads-pc.png)
+
+<figcaption>Me at 4 or 5, at my dad's PC, writing some Excel</figcaption>
+</figure>
 
 
 

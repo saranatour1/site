@@ -82,8 +82,9 @@ const jsonLd = [
 
     <header class="flex flex-col gap-4 pt-6">
       <ArticleMeta article={article} class="text-[15px]" />
-      <h1 class="m-0 text-[56px] leading-[1.05] tracking-tight text-black-1 max-sm:text-4xl">{title}</h1>
-      <p class="m-0 text-[22px] leading-normal text-[#4a4843] max-sm:text-lg">{description}</p>
+      {/* Same transition names as the list rows, so the title and description glide up into place. */}
+      <h1 class="m-0 text-[56px] leading-[1.05] tracking-tight text-black-1 max-sm:text-4xl" transition:name={`article-title-${article.id}`}>{title}</h1>
+      <p class="m-0 text-lg leading-normal text-[#4a4843] max-sm:text-base" transition:name={`article-description-${article.id}`}>{description}</p>
       {
         narrated && (
           // Shown by the script; opens the player. Without JS the native player below is used.
@@ -171,7 +172,7 @@ const jsonLd = [
       )
     }
 
-    <article data-article class="prose prose-xl prose-neutral max-w-none pt-12 max-sm:prose-lg prose-headings:font-normal prose-headings:text-black-1 prose-a:text-blue-1 prose-a:underline-offset-4 prose-blockquote:border-blue-1 prose-blockquote:font-normal prose-blockquote:text-black-1 prose-pre:rounded-2xl prose-pre:bg-black-1 prose-img:rounded-2xl">
+    <article data-article class="prose prose-xl prose-neutral max-w-none pt-12 max-sm:prose-lg prose-headings:font-normal prose-headings:text-black-1 prose-a:text-blue-1 prose-a:underline-offset-4 prose-blockquote:border-blue-1 prose-blockquote:font-normal prose-blockquote:text-black-1 prose-pre:rounded-2xl prose-pre:bg-black-1 prose-img:mx-auto prose-img:rounded-2xl prose-figcaption:text-center prose-figcaption:text-[#6b6860]">
       <Content />
     </article>
 
