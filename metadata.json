@@ -1,0 +1,39 @@
+{
+  "cli_version": "0.11.3",
+  "checkpoint_id": "01M822YATGW6240SDZGNB75TNM",
+  "strategy": "manual-commit",
+  "branch": "update-deps",
+  "checkpoints_count": 4,
+  "files_touched": [
+    "package.json",
+    "pnpm-lock.yaml",
+    "src/components/BaseHead.astro",
+    "src/lib/databuddy.ts",
+    "tsconfig.json",
+    "worker.ts",
+    "wrangler.jsonc"
+  ],
+  "sessions": [
+    {
+      "metadata": "/0/metadata.json",
+      "transcript": "/0/full.jsonl",
+      "compact_transcript": "/0/transcript.jsonl",
+      "content_hash": "/0/content_hash.txt",
+      "prompt": "/0/prompt.txt"
+    }
+  ],
+  "token_usage": {
+    "input_tokens": 534,
+    "cache_creation_tokens": 679590,
+    "cache_read_tokens": 72404089,
+    "output_tokens": 173357,
+    "api_call_count": 224,
+    "subagent_tokens": {
+      "input_tokens": 0,
+      "cache_creation_tokens": 0,
+      "cache_read_tokens": 0,
+      "output_tokens": 0,
+      "api_call_count": 0
+    }
+  }
+}

@@ -1,0 +1,121 @@
+{
+  "cli_version": "0.11.3",
+  "checkpoint_id": "01M822YATGW6240SDZGNB75TNM",
+  "session_id": "f71cbbc7-f39b-4e82-86eb-96926e257576",
+  "strategy": "manual-commit",
+  "created_at": "2026-11-22T16:55:30.885132Z",
+  "branch": "update-deps",
+  "checkpoints_count": 4,
+  "save_step_count": 3,
+  "files_touched": [
+    "package.json",
+    "pnpm-lock.yaml",
+    "src/components/BaseHead.astro",
+    "src/lib/databuddy.ts",
+    "tsconfig.json",
+    "worker.ts",
+    "wrangler.jsonc"
+  ],
+  "agent": "Claude Code",
+  "model": "claude-fable-5-2",
+  "turn_id": "e375542ae1f4",
+  "compact_transcript_start": 0,
+  "token_usage": {
+    "input_tokens": 534,
+    "cache_creation_tokens": 679590,
+    "cache_read_tokens": 72404089,
+    "output_tokens": 173357,
+    "api_call_count": 224,
+    "subagent_tokens": {
+      "input_tokens": 0,
+      "cache_creation_tokens": 0,
+      "cache_read_tokens": 0,
+      "output_tokens": 0,
+      "api_call_count": 0
+    }
+  },
+  "skill_events_version": 1,
+  "skill_events": [
+    {
+      "id": "prompt-skill-claude-code-design-2026-11-22T15:40:38.733339Z",
+      "event_type": "prompt_invocation",
+      "skill": {
+        "name": "design"
+      },
+      "source": {
+        "agent": "claude-code",
+        "signal": "prompt_slash_command",
+        "confidence": "explicit"
+      },
+      "turn_id": "4b97ace17cc8",
+      "timestamp": "2026-11-22T15:40:38.733339Z",
+      "native": {
+        "command": "/design"
+      },
+      "collapse": {
+        "target": "user_message",
+        "label": "/design",
+        "default_collapsed": true
+      }
+    }
+  ],
+  "session_metrics": {
+    "turn_count": 38
+  },
+  "initial_attribution": {
+    "calculated_at": "2026-11-22T16:55:30.753621Z",
+    "agent_lines": 1081,
+    "agent_removed": 1648,
+    "human_added": 0,
+    "human_modified": 0,
+    "human_removed": 0,
+    "total_committed": 1081,
+    "total_lines_changed": 2729,
+    "agent_percentage": 100,
+    "metric_version": 2
+  },
+  "prompt_attributions": [
+    {
+      "checkpoint_number": 2,
+      "user_lines_added": 310,
+      "user_lines_removed": 0,
+      "agent_lines_added": 0,
+      "agent_lines_removed": 0,
+      "user_added_per_file": {
+        ".claude/launch.json": 12,
+        ".claude/settings.json": 84,
+        "public/narration/hello-narration.vtt": 25,
+        "skills/writing-plans/SKILL.md": 171,
+        "src/content/articles/hello-narration.md": 18
+      }
+    },
+    {
+      "checkpoint_number": 3,
+      "user_lines_added": 310,
+      "user_lines_removed": 0,
+      "agent_lines_added": 947,
+      "agent_lines_removed": 1086,
+      "user_added_per_file": {
+        ".claude/launch.json": 12,
+        ".claude/settings.json": 84,
+        "public/narration/hello-narration.vtt": 25,
+        "skills/writing-plans/SKILL.md": 171,
+        "src/content/articles/hello-narration.md": 18
+      }
+    },
+    {
+      "checkpoint_number": 4,
+      "user_lines_added": 310,
+      "user_lines_removed": 0,
+      "agent_lines_added": 1081,
+      "agent_lines_removed": 1648,
+      "user_added_per_file": {
+        ".claude/launch.json": 12,
+        ".claude/settings.json": 84,
+        "public/narration/hello-narration.vtt": 25,
+        "skills/writing-plans/SKILL.md": 171,
+        "src/content/articles/hello-narration.md": 18
+      }
+    }
+  ]
+}
