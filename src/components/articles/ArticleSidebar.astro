@@ -1,0 +1,55 @@
+---
+import ChevronRight from "../Icons/ChevronRight.astro";
+import Mail from "../Icons/Mail.astro";
+import Rss from "../Icons/Rss.astro";
+import { socialLinks } from "../../consts";
+import { readingMinutes, type Article } from "../../lib/articles";
+
+interface Props {
+  more: Article[];
+}
+
+const { more } = Astro.props;
+const email = socialLinks.find(({ label }) => label === "email")?.url;
+---
+
+{/* Sticks beside the article on wide screens; drops below it on phones. */}
+<aside aria-label="More from Sara" class="flex min-w-0 max-w-95 flex-[1_1_300px] flex-col gap-4 lg:sticky lg:top-6">
+  {
+    more.length > 0 && (
+      <section aria-labelledby="more-articles" class="flex flex-col gap-2 rounded-2xl border border-blue-1 p-5">
+        <div class="flex items-baseline justify-between gap-3">
+          <h2 id="more-articles" class="text-lg">More articles</h2>
+          <a href="/articles" class="text-sm text-blue-1 hover:underline">View all</a>
+        </div>
+        {more.map((other) => (
+          <a href={`/articles/${other.id}`} class="flex min-h-11 items-center gap-3 border-t border-black-1/10 py-3 transition-colors hover:text-blue-1">
+            <span class="flex min-w-0 flex-1 flex-col gap-1">
+              <span class="leading-snug">{other.data.title}</span>
+              <span class="text-[13px] text-[#6b6860]">
+                {other.data.pubDate.toLocaleDateString("en", { dateStyle: "medium" })} · {readingMinutes(other)} minute read
+              </span>
+            </span>
+            <ChevronRight class="shrink-0 text-[#6b6860]" />
+          </a>
+        ))}
+      </section>
+    )
+  }
+  {
+    email && (
+      <section aria-labelledby="work-together" class="flex flex-col gap-3 rounded-2xl border border-blue-1 px-5 py-6">
+        <h2 id="work-together" class="text-[22px] leading-tight">Working on something interesting?</h2>
+        <p class="text-[15px] leading-relaxed text-[#4a4843]">I help startups ship better products with TypeScript and Convex.</p>
+        <a href={`mailto:${email}`} class="mt-1 inline-flex min-h-11 items-center gap-2 self-start rounded-full bg-[#1d756a] px-4.5 text-[15px] text-white-1 transition hover:brightness-110">
+          <Mail />
+          {email}
+        </a>
+      </section>
+    )
+  }
+  <a href="/rss.xml" class="inline-flex min-h-11 items-center gap-2 self-start px-1 text-[15px] text-[#4a4843] transition-colors hover:text-blue-1">
+    <Rss />
+    Follow along with RSS
+  </a>
+</aside>

@@ -1,0 +1,75 @@
+---
+import Layout from "./Layout.astro";
+import ArticleSidebar from "../components/articles/ArticleSidebar.astro";
+import { socialLinks } from "../consts";
+import { readingMinutes, type Article } from "../lib/articles";
+
+interface Props {
+  article: Article;
+  more: Article[];
+}
+
+const { article, more } = Astro.props;
+const { title, description, pubDate, updatedDate, tags, shared } = article.data;
+const url = new URL(Astro.url.pathname, Astro.site);
+const ogImage = `/og/articles/${article.id}.png`;
+const author = {
+  "@type": "Person",
+  "@id": new URL("/#person", Astro.site),
+  name: "Sara Natour",
+  url: Astro.site,
+  jobTitle: "Full-stack developer",
+  sameAs: socialLinks.filter(({ label }) => label !== "email").map(({ url }) => url),
+};
+
+// For search and answer engines: the article, and where it sits on the site.
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "@id": `${url}#article`,
+    headline: title,
+    description,
+    image: new URL(ogImage, Astro.site),
+    datePublished: pubDate.toISOString(),
+    dateModified: (updatedDate ?? pubDate).toISOString(),
+    author,
+    publisher: author,
+    mainEntityOfPage: url,
+    url,
+    inLanguage: "en",
+    wordCount: (article.body ?? "").split(/\s+/).filter(Boolean).length,
+    timeRequired: `PT${readingMinutes(article)}M`,
+    isAccessibleForFree: true,
+    ...(tags.length && { keywords: tags.join(", ") }),
+    ...(shared.length && { sameAs: shared.map(({ url }) => url) }),
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: Astro.site },
+      { "@type": "ListItem", position: 2, name: "Articles", item: new URL("/articles", Astro.site) },
+      { "@type": "ListItem", position: 3, name: title, item: url },
+    ],
+  },
+];
+---
+
+<Layout title={`${title} | Sara Natour`} description={description} type="article" image={ogImage} wide>
+  <Fragment slot="head">
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="article:published_time" content={pubDate.toISOString()} />
+    {updatedDate && <meta property="article:modified_time" content={updatedDate.toISOString()} />}
+    <meta property="article:author" content={Astro.site} />
+    {tags.map((tag) => <meta property="article:tag" content={tag} />)}
+    <script type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />
+  </Fragment>
+  <div class="flex w-full max-w-280 flex-wrap items-start gap-x-16 gap-y-12 pt-8">
+    <main class="flex min-w-0 max-w-170 flex-[999_1_560px] flex-col">
+      <slot />
+    </main>
+    <ArticleSidebar more={more} />
+  </div>
+</Layout>
