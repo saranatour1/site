@@ -1,0 +1,59 @@
+{
+  "cli_version": "0.11.3",
+  "checkpoint_id": "01M8EKN1AVB6K3PE171W0AWR6R",
+  "strategy": "manual-commit",
+  "branch": "site-redesign",
+  "checkpoints_count": 28,
+  "files_touched": [
+    "public/fonts/Recoleta-RegularDEMO.otf",
+    "public/fonts/recoleta.woff2",
+    "public/icons/stack/capy.png",
+    "public/icons/stack/viteplus.svg",
+    "public/og/og-discord.png",
+    "public/og/og-linkedin.png",
+    "public/og/og-twitter.png",
+    "src/assets/avatar.jpg",
+    "src/assets/fonts/Inter-Regular.ttf",
+    "src/assets/fonts/Inter-SemiBold.ttf",
+    "src/assets/fonts/Recoleta-RegularDEMO.otf",
+    "src/components/BaseHead.astro",
+    "src/components/Footer.astro",
+    "src/components/NavBar.astro",
+    "src/components/sections/Contact.astro",
+    "src/components/sections/FirstSection.astro",
+    "src/components/sections/OverView.astro",
+    "src/components/sections/ProfessionalExperience.astro",
+    "src/components/sections/Projects.astro",
+    "src/components/sections/Skills.astro",
+    "src/components/sections/TechStack.astro",
+    "src/components/ui/Card.astro",
+    "src/components/ui/CardDescription.astro",
+    "src/components/ui/CardTitle.astro",
+    "src/consts.ts",
+    "src/content/articles/i-write-articles-now.md",
+    "src/layouts/Layout.astro",
+    "src/lib/og.ts",
+    "src/pages/articles/[slug].astro",
+    "src/pages/articles/index.astro",
+    "src/pages/og/[name].png.ts",
+    "src/pages/privacy.astro",
+    "src/pages/services.astro",
+    "src/styles/styles.css"
+  ],
+  "sessions": [
+    {
+      "metadata": "/0/metadata.json",
+      "transcript": "/0/full.jsonl",
+      "compact_transcript": "/0/transcript.jsonl",
+      "content_hash": "/0/content_hash.txt",
+      "prompt": "/0/prompt.txt"
+    }
+  ],
+  "token_usage": {
+    "input_tokens": 376,
+    "cache_creation_tokens": 554079,
+    "cache_read_tokens": 59421792,
+    "output_tokens": 206530,
+    "api_call_count": 159
+  }
+}
