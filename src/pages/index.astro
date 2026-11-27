@@ -3,13 +3,31 @@ import FirstSection from "../components/sections/FirstSection.astro";
 import OverView from "../components/sections/OverView.astro";
 import Projects from "../components/sections/Projects.astro";
 import Skills from "../components/sections/Skills.astro";
-import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import { SITE_TITLE, SITE_DESCRIPTION, socialLinks } from "../consts";
 import Layout from "../layouts/Layout.astro";
 import ProfessionalExperience from "../components/sections/ProfessionalExperience.astro"
 import Contact from "../components/sections/Contact.astro";
 import TechStack from "../components/sections/TechStack.astro";
+import avatar from "../assets/avatar.jpg";
+
+// Tells Google this site belongs to the Sara Natour behind these profiles, not one of the others with the name.
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ProfilePage",
+  mainEntity: {
+    "@type": "Person",
+    "@id": new URL("/#person", Astro.site),
+    name: "Sara Natour",
+    url: Astro.site,
+    jobTitle: "Full-stack developer",
+    description: "Full-stack developer specializing in TypeScript and Convex.",
+    image: new URL(avatar.src, Astro.site),
+    sameAs: socialLinks.filter(({ label }) => label !== "email").map(({ url }) => url),
+  },
+};
 ---
 <Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
+  <script slot="head" type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />
   <main>
     <FirstSection />
     <OverView />
