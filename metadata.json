@@ -1,0 +1,59 @@
+{
+  "cli_version": "0.11.3",
+  "checkpoint_id": "01M8EBZ16035RP6CJE535N751F",
+  "strategy": "manual-commit",
+  "branch": "main",
+  "checkpoints_count": 2,
+  "files_touched": [
+    "public/icons/stack/1password.svg",
+    "public/icons/stack/agentmail.png",
+    "public/icons/stack/astro.svg",
+    "public/icons/stack/claude.svg",
+    "public/icons/stack/cloudflare.svg",
+    "public/icons/stack/convex.png",
+    "public/icons/stack/cursor.svg",
+    "public/icons/stack/databuddy.svg",
+    "public/icons/stack/discord.svg",
+    "public/icons/stack/entire.svg",
+    "public/icons/stack/firecrawl.png",
+    "public/icons/stack/github.svg",
+    "public/icons/stack/go.svg",
+    "public/icons/stack/grok.png",
+    "public/icons/stack/linear.svg",
+    "public/icons/stack/nordvpn.svg",
+    "public/icons/stack/notion.svg",
+    "public/icons/stack/openusage.svg",
+    "public/icons/stack/raycast.svg",
+    "public/icons/stack/react.svg",
+    "public/icons/stack/shadcnui.svg",
+    "public/icons/stack/steam.svg",
+    "public/icons/stack/superhuman.svg",
+    "public/icons/stack/svelte.svg",
+    "public/icons/stack/tanstack.svg",
+    "public/icons/stack/typescript.svg",
+    "public/icons/stack/vapi.svg",
+    "public/icons/stack/visualstudiocode.svg",
+    "public/icons/stack/vite.svg",
+    "public/icons/stack/vuejs.svg",
+    "public/og/og-discord.png",
+    "public/og/og-linkedin.png",
+    "public/og/og-twitter.png",
+    "public/robots.txt"
+  ],
+  "sessions": [
+    {
+      "metadata": "/0/metadata.json",
+      "transcript": "/0/full.jsonl",
+      "compact_transcript": "/0/transcript.jsonl",
+      "content_hash": "/0/content_hash.txt",
+      "prompt": "/0/prompt.txt"
+    }
+  ],
+  "token_usage": {
+    "input_tokens": 612,
+    "cache_creation_tokens": 709671,
+    "cache_read_tokens": 89881785,
+    "output_tokens": 188576,
+    "api_call_count": 258
+  }
+}

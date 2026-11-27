@@ -1,0 +1,101 @@
+{
+  "cli_version": "0.11.3",
+  "checkpoint_id": "01M8EBZ16035RP6CJE535N751F",
+  "session_id": "f71cbbc7-f39b-4e82-86eb-96926e257576",
+  "strategy": "manual-commit",
+  "created_at": "2026-11-27T11:24:03.504133Z",
+  "branch": "main",
+  "checkpoints_count": 2,
+  "save_step_count": 1,
+  "files_touched": [
+    "public/icons/stack/1password.svg",
+    "public/icons/stack/agentmail.png",
+    "public/icons/stack/astro.svg",
+    "public/icons/stack/claude.svg",
+    "public/icons/stack/cloudflare.svg",
+    "public/icons/stack/convex.png",
+    "public/icons/stack/cursor.svg",
+    "public/icons/stack/databuddy.svg",
+    "public/icons/stack/discord.svg",
+    "public/icons/stack/entire.svg",
+    "public/icons/stack/firecrawl.png",
+    "public/icons/stack/github.svg",
+    "public/icons/stack/go.svg",
+    "public/icons/stack/grok.png",
+    "public/icons/stack/linear.svg",
+    "public/icons/stack/nordvpn.svg",
+    "public/icons/stack/notion.svg",
+    "public/icons/stack/openusage.svg",
+    "public/icons/stack/raycast.svg",
+    "public/icons/stack/react.svg",
+    "public/icons/stack/shadcnui.svg",
+    "public/icons/stack/steam.svg",
+    "public/icons/stack/superhuman.svg",
+    "public/icons/stack/svelte.svg",
+    "public/icons/stack/tanstack.svg",
+    "public/icons/stack/typescript.svg",
+    "public/icons/stack/vapi.svg",
+    "public/icons/stack/visualstudiocode.svg",
+    "public/icons/stack/vite.svg",
+    "public/icons/stack/vuejs.svg",
+    "public/og/og-discord.png",
+    "public/og/og-linkedin.png",
+    "public/og/og-twitter.png",
+    "public/robots.txt"
+  ],
+  "agent": "Claude Code",
+  "model": "claude-fable-5-2",
+  "turn_id": "244d0301f323",
+  "compact_transcript_start": 0,
+  "token_usage": {
+    "input_tokens": 612,
+    "cache_creation_tokens": 709671,
+    "cache_read_tokens": 89881785,
+    "output_tokens": 188576,
+    "api_call_count": 258
+  },
+  "skill_events_version": 1,
+  "skill_events": [
+    {
+      "id": "prompt-skill-claude-code-design-2026-11-22T15:40:38.733339Z",
+      "event_type": "prompt_invocation",
+      "skill": {
+        "name": "design"
+      },
+      "source": {
+        "agent": "claude-code",
+        "signal": "prompt_slash_command",
+        "confidence": "explicit"
+      },
+      "turn_id": "4b97ace17cc8",
+      "timestamp": "2026-11-22T15:40:38.733339Z",
+      "native": {
+        "command": "/design"
+      },
+      "collapse": {
+        "target": "user_message",
+        "label": "/design",
+        "default_collapsed": true
+      }
+    }
+  ],
+  "session_metrics": {
+    "turn_count": 43
+  },
+  "prompt_attributions": [
+    {
+      "checkpoint_number": 2,
+      "user_lines_added": 310,
+      "user_lines_removed": 0,
+      "agent_lines_added": 0,
+      "agent_lines_removed": 0,
+      "user_added_per_file": {
+        ".claude/launch.json": 12,
+        ".claude/settings.json": 84,
+        "public/narration/hello-narration.vtt": 25,
+        "skills/writing-plans/SKILL.md": 171,
+        "src/content/articles/hello-narration.md": 18
+      }
+    }
+  ]
+}
