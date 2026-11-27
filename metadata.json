@@ -1,0 +1,44 @@
+{
+  "cli_version": "0.11.3",
+  "checkpoint_id": "01M8F0Q1YNHBBN54M9SBSVBSFK",
+  "strategy": "manual-commit",
+  "branch": "article-page-cleanup",
+  "checkpoints_count": 4,
+  "files_touched": [
+    "README.md",
+    "docs/publishing-articles.md",
+    "src/components/Icons/ChevronRight.astro",
+    "src/components/Icons/LinkedIn.astro",
+    "src/components/Icons/Mail.astro",
+    "src/components/Icons/Rss.astro",
+    "src/components/Icons/X.astro",
+    "src/components/articles/ArticleMeta.astro",
+    "src/components/articles/ArticleSidebar.astro",
+    "src/consts.ts",
+    "src/content.config.ts",
+    "src/content/articles/draft-of-latest-projects.md",
+    "src/layouts/ArticleLayout.astro",
+    "src/lib/og.ts",
+    "src/llms.txt",
+    "src/pages/articles/[slug].astro",
+    "src/pages/articles/index.astro",
+    "src/pages/privacy.astro",
+    "src/pages/services.astro"
+  ],
+  "sessions": [
+    {
+      "metadata": "/0/metadata.json",
+      "transcript": "/0/full.jsonl",
+      "compact_transcript": "/0/transcript.jsonl",
+      "content_hash": "/0/content_hash.txt",
+      "prompt": "/0/prompt.txt"
+    }
+  ],
+  "token_usage": {
+    "input_tokens": 128,
+    "cache_creation_tokens": 114849,
+    "cache_read_tokens": 12709047,
+    "output_tokens": 67840,
+    "api_call_count": 58
+  }
+}

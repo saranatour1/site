@@ -1,0 +1,33 @@
+<create-pr-command>
+## Overview
+
+Create a pull request for the changes in this session, as a draft.
+
+## Steps
+
+1. Check for uncommitted changes. If any exist, stage and commit them with a message that describes what changed and why.
+2. Push the branch to the remote.
+3. Open the PR as a draft with `gh pr create --draft`. The user chose “Create draft PR” for this request, so keep `--draft` even if you would otherwise open it ready for review. When the target below names a base branch and that branch exists on origin (`git ls-remote --heads origin <base>`), pass it with `--base`; otherwise leave `--base` off and let gh infer it. Write a title that summarizes the change and a body that covers what changed, why, and anything a reviewer should know. If the repo has a PR template, follow it.
+4. Report the PR URL when done. Wrap the URL in a `<pr-created>` tag on its own line so the UI can render a live status card, like this: `<pr-created>https://github.com/owner/repo/pull/123</pr-created>`
+
+If an open PR already exists for this branch, push any new commits and report the existing URL wrapped in the same `<pr-created>` tag instead of creating a duplicate, and leave that PR's draft or ready state as it is.
+
+## Target
+
+Repository: saranatour1/Personal-Website
+Branch: og-cache-bust
+Base branch: main
+Working directory: /Users/saranatour/workspace/Personal-Website
+</create-pr-command>
+
+---
+
+do i need to add my projects in json-ld type format
+
+---
+
+So I'm reading SRC Pages articles, slug.astro, and I'm kind of seeing that there's a lot of comments that don't necessarily need to be there. There's also this weird compactation of putting everything inside of inside of the article's page instead of like splitting it into the layout. Instead of like splitting it into the layouts and making sure that the whole thing is not too much work, right? So potentially what we want to do is we want to move SVGs into their own public format, into like their own component, or into their own like Astro component that just contains an SVG, because they're taking up so much space and they're probably doing so much work. And narrated, so yes, narrated up to line 135 also needs to be moved into its own component. Original audio needs to also be split into two components. Original audio needs to be just one component. And then from line 145 to line 157, we need to split the SVGs into like their own separate components. Same goes for the rest of the pages. And then I want you to look into like the style. Your adding style is global inside the inside the slug Astro thing. And I don't feel like this is the place for a style page. Potentially you should move this out into like this layout component. And then I'm also looking at script. Script is kind of terribly written as well. Like, we should probably look into minimizing the amount of JavaScript that's served on the page. And if minimizing the amount of JavaScript served on the page means that we don't have a playlist, I'm fine with that. You can just remove it.
+
+---
+
+remove the narration code
