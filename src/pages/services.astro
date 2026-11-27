@@ -1,60 +1,44 @@
 ---
-import CardWrapper from "../components/CardWrapper.astro";
 import Layout from "../layouts/Layout.astro";
-import Card from "../components/ui/Card.astro";
-import CardTitle from "../components/ui/CardTitle.astro";
 import { socialLinks } from "../consts";
 
 const email = socialLinks.find((r) => r["label"]==="email");
 ---
 
 <Layout title="Services" description="Services offered by Sara Natour">
-  <main
-    class="flex flex-col justify-between items-center max-md:flex-col w-full max-w-200 mx-auto"
-  >
-    <CardWrapper className="w-full" enableWobble={false}>
-      <Card className="bg-transparent w-full h-full p-6">
-        <div class="flex justify-between items-center mb-4">
-          <CardTitle as="h1" className="text-2xl text-black-1">What I Do</CardTitle>
-          <span class="text-sm text-neutral-500">Latest update: Aug 16</span>
+  <main class="w-full max-w-200 mx-auto flex flex-col gap-4">
+    <header class="flex flex-col items-center gap-4 rounded-2xl border border-blue-1 px-10 py-16 text-center max-sm:px-5 max-sm:py-12">
+      <p class="text-sm text-[#6b6860]">Latest update: Aug 16</p>
+      <h1 class="text-7xl leading-none tracking-tight max-sm:text-5xl">What I do</h1>
+      <p class="max-w-150 text-lg leading-relaxed text-[#4a4843]">
+        I'm a software developer working remotely with clients and startups to shape up their software. I do testing, frontend, and backend development. I mostly work with <a href="https://www.convex.dev" target="_blank" rel="noopener noreferrer" class="text-blue-1 underline underline-offset-4">Convex</a>, but it's not my main thing of expertise. I also have strong experience in building and integrating AI Agents into products.
+      </p>
+    </header>
+
+    <section aria-labelledby="looking-for" class="flex flex-col gap-3 rounded-2xl border border-blue-1 p-10 max-sm:px-5">
+      <h2 id="looking-for" class="text-2xl">Looking for</h2>
+      <p class="leading-relaxed text-[#4a4843]">I am actively looking for new projects, open to relocating, and open to new well-developed opportunities.</p>
+    </section>
+
+    <section aria-labelledby="interests" class="flex flex-col gap-3 rounded-2xl border border-blue-1 p-10 max-sm:px-5">
+      <h2 id="interests" class="text-2xl">Other interests &amp; hobbies</h2>
+      <p class="leading-relaxed text-[#4a4843]">
+        I am an Electrical Engineering graduate, and I work on making electronics designs with Arduino, ESPs, microcontrollers, and write and design the code for you. I have experience in Eagle, Flux, and other design apps.
+      </p>
+      <p class="leading-relaxed text-[#4a4843]">I also do wood designs as a hobby, a beginner gardner. My favorite companies are Bunkie and ICON.</p>
+    </section>
+
+    {email?.url && (
+      <section aria-labelledby="try-product" class="flex flex-wrap items-center justify-between gap-6 rounded-2xl border border-blue-1 px-10 py-12 max-sm:px-5">
+        <div class="flex min-w-0 flex-[1_1_360px] flex-col gap-2">
+          <h2 id="try-product" class="text-[28px] leading-tight">Want me to try out your product?</h2>
+          <p class="leading-relaxed text-[#4a4843]">Send me an email with the details. Other questions? Email me, or wait for this page to be updated.</p>
         </div>
-        <div>
-          <p>
-            I'm a software developer working remotely with clients and startups to shape up their software. I do testing, frontend, and backend development. I mostly work with <a href="https://www.convex.dev" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">Convex</a>, but it's not my main thing of expertise. I also have strong experience in building and integrating AI Agents into products.
-          </p>
-
- 
-
-          <div class="rounded-xl">
-            <h3 class="text-xl font-bold ">Looking for</h3>
-            <p class="text-base">
-              I am actively looking for new projects, open to relocating, and open to new well-developed opportunities.
-            </p>
-          </div>
-
-          <h3 class="text-lg font-semibold text-black-1 mt-6 mb-2">Other Interests & Hobbies</h3>
-          <p>
-            I am an Electrical Engineering graduate, and I work on making electronics designs with Arduino, ESPs, microcontrollers, and write and design the code for you. I have experience in Eagle, Flux, and other design apps.
-          </p>
-          <p>
-            I also do wood designs as a hobby, a beginner gardner. My favorite companies are Bunkie and ICON.
-          </p>
-
-          <p class="font-medium text-black-1">
-            Want me to try out your product? Send me an email with the details!
-          </p>
-          <p>
-            Need other questions? Send me an email or wait for this page to be updated.
-          </p>
-          {email?.url && (
-            <div class="mt-4">
-              <a href={`mailto:${email.url}`} class="text-blue-600 hover:underline">
-                {email.url}
-              </a>
-            </div>
-          )}
-        </div>
-      </Card>
-    </CardWrapper>
+        <a href={`mailto:${email.url}`} class="inline-flex min-h-12 items-center gap-2.5 rounded-full bg-[#1d756a] px-5.5 text-white-1 transition hover:brightness-110">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2" /><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" /></svg>
+          {email.url}
+        </a>
+      </section>
+    )}
   </main>
 </Layout>

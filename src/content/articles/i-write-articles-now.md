@@ -8,7 +8,7 @@ I used to write notes, scripts, life highlights inside a notebook [this one spec
 
 It's not about writing things for people to read (at the end of the day it's going to be read by web scrapers duh) it's mostly about writing things that matter to the world. At least I hope. I hope this gives you a sense of life, reading something a human wrote for fun. 
 
-### What I do 
+## What I do 
 This is probably where it's more difficult to get into, because it's so complex that I don't even know what I do. Generally I'm a software engineer, full stack dev, IT whatever you want to call me with intent in focusing on.. everything. I can't remember that last time where I was doing nothing, that just puts me in a bad icky mood. I really like solving problems, but I also really really like telling people what to do and how to do it in the most efficient way possible. I like solving problems, and my moto of this year is:
 > If you can do it, do it. If everyone else does it, do it. If everyone else does it the same way, maybe you should focus on what to do differently.
 

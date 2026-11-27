@@ -1,22 +1,19 @@
 ---
 import CardWrapper from "../CardWrapper.astro";
 import { skillSet } from "../../consts";
-import Card from "../ui/Card.astro";
-import CardTitle from "../ui/CardTitle.astro";
 ---
-<section class="flex justify-between items-center  max-md:flex-col  w-full max-w-200 mt-4 ">
-  <CardWrapper className="flex flex-col justify-start items-start flex-wrap">
-    <Card className="bg-transparent">
-      <CardTitle as="h2" className="text-2xl font-bold leading-6">Skills</CardTitle>
-      <ul class="grid w-full grid-cols-4 gap-3 mt-4 max-md:grid-cols-2 max-sm:grid-cols-1">
-        {skillSet.map((item)=> 
+<div class="w-full max-w-200 mt-4">
+  <CardWrapper className="py-10 flex flex-col gap-4">
+    <h2 class="text-2xl">Skills</h2>
+    <ul class="grid w-full grid-cols-4 gap-x-4 gap-y-1 max-md:grid-cols-2">
+      {skillSet.map((item) => (
         <li>
-          <a href={item.url} target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 p-3 rounded-lg border border-blue-1/25 transition hover:border-blue-1 hover:-translate-y-0.5">
-            <img width={24} height={24} src={item.icon} alt="" class="size-6 object-contain" />
-            <span>{item.name}</span>
+          <a href={item.url} target="_blank" rel="noopener noreferrer" class="flex min-h-11 items-center gap-3 transition-colors hover:text-blue-1">
+            <img width={24} height={24} src={item.icon} alt="" loading="lazy" class="size-6 object-contain" />
+            {item.name}
           </a>
-        </li>)}
-      </ul>
-    </Card>
+        </li>
+      ))}
+    </ul>
   </CardWrapper>
-</section>
+</div>

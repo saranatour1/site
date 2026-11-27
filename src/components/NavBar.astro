@@ -4,18 +4,24 @@ const routes = [
   ["services", `/services`],
   ["articles", `/articles`],
 ];
-const currentPath = Astro.url.pathname;
+const currentPath = Astro.url.pathname.replace(/\/$/, "") || "/";
+const { wide = false } = Astro.props;
 ---
 
-<nav class="flex justify-start items-center gap-x-4 my-4 w-full max-w-200">
+<nav aria-label="Main" class:list={["flex justify-start items-center gap-x-2 my-4 w-full", wide ? "max-w-280" : "max-w-200"]}>
   {
-    routes.map(([route, link]) => (
-      <a
-        class={`hover:text-blue-1 hover:-translate-y-0.5 transition-colors active:text-blue-1 ${currentPath === link ? "text-blue-1" : ""}`}
-        href={link} 
-      >
-        {route}
-      </a>
-    ))
+    routes.map(([route, link]) => {
+      // An article lives under /articles, so its nav item stays active too.
+      const active = link === "/" ? currentPath === "/" : currentPath.startsWith(link);
+      return (
+        <a
+          class:list={["inline-flex min-h-11 items-center px-2 first:-ml-2 hover:text-blue-1 hover:-translate-y-0.5 transition-colors active:text-blue-1", { "text-blue-1": active }]}
+          href={link}
+          aria-current={active ? "page" : undefined}
+        >
+          {route}
+        </a>
+      );
+    })
   }
 </nav>

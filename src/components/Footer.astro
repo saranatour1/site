@@ -2,15 +2,15 @@
 import { socialLinks } from "../consts";
 const today = new Date();
 ---
-<footer class="py-8 px-4 text-center text-neutral-600">
-	Copyright {today.getFullYear()}.
-	<div class="mt-2 flex justify-center gap-4">
-		<a href="/sitemap-index.xml" class="underline hover:text-black-1">Sitemap</a>
-		<a href="/privacy" class="underline hover:text-black-1">Privacy</a>
+<footer class="mt-8 py-8 px-4 flex flex-col items-center gap-3 text-center text-neutral-600">
+	<p>Copyright {today.getFullYear()}.</p>
+	<div class="flex justify-center gap-4">
+		<a href="/sitemap-index.xml" class="inline-flex min-h-11 items-center underline hover:text-black-1">Sitemap</a>
+		<a href="/privacy" class="inline-flex min-h-11 items-center underline hover:text-black-1">Privacy</a>
 	</div>
-	<div class="mt-4 flex justify-center gap-4">
+	<div class="flex justify-center gap-2">
 		{socialLinks.map(({ url, icon: Icon, label }) => (
-			<a href={label === "email" ? `mailto:${url}` : url} target="_blank" rel="noopener noreferrer" class="hover:text-black-1">
+			<a href={label === "email" ? `mailto:${url}` : url} target="_blank" rel="noopener noreferrer" class="grid size-11 place-items-center rounded-full hover:bg-black-1/5">
 				<span class="sr-only">{label}</span>
 				<Icon />
 			</a>
