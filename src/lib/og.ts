@@ -16,7 +16,6 @@ const ink = "#1a1a1a";
 const body = "#4a4843";
 const muted = "#6b6860";
 const teal = "#2a9d8f"; // the card border
-const tealText = "#1d756a"; // teal that passes 4.5:1 on the cream
 
 // Handles in two columns. Icon paths from Simple Icons; LinkedIn's from src/components/Icons/LinkedIn.astro.
 const SOCIALS: { handle: string; d: string; viewBox?: string }[][] = [
@@ -80,7 +79,7 @@ export const siteOgImage = (height: number) =>
 
 /** An article's 1200x630 card. */
 export async function articleOgImage(article: Article): Promise<ArrayBuffer> {
-  const { title, description, pubDate, narrated } = article.data;
+  const { title, description, pubDate } = article.data;
   const date = pubDate.toLocaleDateString("en", { dateStyle: "medium" });
 
   return png(
@@ -96,7 +95,6 @@ export async function articleOgImage(article: Article): Promise<ArrayBuffer> {
       el("div", { display: "flex", gap: 16, fontSize: 26 }, [
         el("div", {}, "Sara Natour"),
         el("div", { color: muted }, `${date} · ${readingMinutes(article)} min read`),
-        ...(narrated ? [el("div", { color: tealText }, "· With audio")] : []),
       ]),
     ]),
     630,

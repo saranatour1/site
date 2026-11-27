@@ -22,7 +22,7 @@ All commands are run from the root of the project, from a terminal:
 
 ## Articles
 
-How to write, narrate and publish an article: [docs/publishing-articles.md](docs/publishing-articles.md).
+How to write and publish an article: [docs/publishing-articles.md](docs/publishing-articles.md).
 
 ## 📬 Contact
 

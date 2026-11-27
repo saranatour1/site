@@ -2,7 +2,6 @@
 title: A collage of things I've built this year 2026
 description: Projects and Packages I built this year 
 pubDate: 2026-11-27
-narrated: false
 draft: false
 ---
 1 month left to 2026, and we have to keep building :S 

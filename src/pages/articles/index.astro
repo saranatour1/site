@@ -1,10 +1,11 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import Rss from "../../components/Icons/Rss.astro";
 import ArticleMeta from "../../components/articles/ArticleMeta.astro";
 import { getArticles } from "../../lib/articles";
 
 const articles = await getArticles();
-const description = "Articles by Sara Natour on building for the web, Convex, AI agents and whatever else she's figuring out. Some are read aloud.";
+const description = "Articles by Sara Natour on building for the web, Convex, AI agents and whatever else she's figuring out.";
 
 // Structured data: this page is the blog, listing each article.
 const jsonLd = {
@@ -25,7 +26,7 @@ const jsonLd = {
   })),
 };
 // Shown under the heading when set.
-const intro = "Building for the web, Convex, AI agents, and whatever else I'm figuring out. Some are read aloud.";
+const intro = "Building for the web, Convex, AI agents, and whatever else I'm figuring out.";
 ---
 
 <Layout title="Articles | Sara Natour" description={description}>
@@ -35,7 +36,7 @@ const intro = "Building for the web, Convex, AI agents, and whatever else I'm fi
       <h1 class="text-7xl leading-none tracking-tight max-sm:text-5xl">Articles</h1>
       {intro && <p class="max-w-110 text-lg leading-normal text-[#4a4843]">{intro}</p>}
       <a href="/rss.xml" class="mt-3 inline-flex min-h-11 items-center gap-2 self-start rounded-full border border-blue-1 px-4.5 text-[15px] text-blue-1 hover:bg-blue-1/10">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 11a9 9 0 0 1 9 9" /><path d="M4 4a16 16 0 0 1 16 16" /><circle cx="5" cy="19" r="1" /></svg>
+        <Rss />
         RSS feed
       </a>
     </header>
@@ -46,7 +47,7 @@ const intro = "Building for the web, Convex, AI agents, and whatever else I'm fi
       {
         articles.map((article) => (
           <article class="flex flex-col gap-2 border-t border-black-1/10 py-6 last:pb-0">
-            <ArticleMeta article={article} audioTag class="text-sm" />
+            <ArticleMeta article={article} class="text-sm" />
             <h3 class="text-[28px] leading-tight" transition:name={`article-title-${article.id}`}>
               <a href={`/articles/${article.id}`} class="transition-colors hover:text-blue-1">{article.data.title}</a>
             </h3>
