@@ -6,8 +6,6 @@ import type { AstroComponentFactory } from "astro/runtime/server/index.js";
 // You can import this data from anywhere in your site by using the `import` keyword.
 export const SITE_TITLE = "Sara Natour's Personal website";
 export const SITE_DESCRIPTION = "The personal Website of Sara Natour.";
-// Article narration audio: public/audio/ (gitignored) in dev, the R2 bucket in production.
-export const AUDIO_BASE = import.meta.env.DEV ? "/audio" : "https://audio.saranatour.dev";
 
 type SocialLink = {
   url: string;
