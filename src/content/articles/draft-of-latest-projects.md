@@ -81,9 +81,12 @@ Hides promoted, unwanted ads from your Facebook, LinkedIn and YouTube feeds.
 
 A shared record room on Convex: pick a record, drop it on the turntable, see who's tuning in.
 
-[![GitHub preview of the listening-lounge repo](https://opengraph.githubassets.com/1/saranatour1/listening-lounge)](https://github.com/saranatour1/listening-lounge)
+<div class="my-8 grid gap-4 sm:grid-cols-2 [&_img]:my-0">
+<a href="https://github.com/saranatour1/listening-lounge"><img src="https://opengraph.githubassets.com/1/saranatour1/listening-lounge" alt="GitHub preview of the listening-lounge repo" width="1200" height="600" loading="lazy"></a>
+<a href="https://impressive-frog-993.eu-west-1.convex.site/"><img src="https://impressive-frog-993.eu-west-1.convex.site/og.png" alt="Preview of the live Listening Lounge site" width="1200" height="630" loading="lazy"></a>
+</div>
 
-[Repo](https://github.com/saranatour1/listening-lounge)
+[Repo](https://github.com/saranatour1/listening-lounge) · [Live](https://impressive-frog-993.eu-west-1.convex.site/)
 
 ### Email Bro
 
