@@ -20,6 +20,14 @@ Put your ideas on a board and get them criticized, anonymously, by a person or b
 
 [Repo](https://github.com/saranatour1/slam) · [Live](https://slam.428.lol)
 
+### Slottd
+
+A concept site for renting branded ad slots on office beverage coolers, built with Astro and three.js.
+
+[![Preview of the live Slottd site](https://slottd.428.lol/og.png)](https://slottd.428.lol)
+
+[Live](https://slottd.428.lol)
+
 ### Dream Home
 
 My dream home: shipping containers and concrete blocks, rendered in three.js with a smart-home hub.
@@ -92,7 +100,10 @@ A shared record room on Convex: pick a record, drop it on the turntable, see who
 
 All your Gmail inboxes in one place. An AI sorts each new email into Needs action, Goal, Info or Spam, so only what matters is on top.
 
-[![GitHub preview of the Email-bro repo](https://opengraph.githubassets.com/1/saranatour1/Email-bro)](https://github.com/saranatour1/Email-bro)
+<div class="my-8 grid gap-4 sm:grid-cols-2 [&_img]:my-0">
+<a href="https://github.com/saranatour1/Email-bro"><img src="https://opengraph.githubassets.com/1/saranatour1/Email-bro" alt="GitHub preview of the Email-bro repo" width="1200" height="600" loading="lazy"></a>
+<a href="https://email-bro.428.lol"><img src="https://email-bro.428.lol/og.png" alt="Preview of the live Email Bro site" width="1200" height="630" loading="lazy"></a>
+</div>
 
 [Repo](https://github.com/saranatour1/Email-bro) · [Live](https://email-bro.428.lol)
 
