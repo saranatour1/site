@@ -24,6 +24,7 @@ const ogImage = `/og/articles/${article.id}.png`;
 const minutes = readingMinutes(article);
 const author = {
   "@type": "Person",
+  "@id": new URL("/#person", Astro.site),
   name: "Sara Natour",
   url: Astro.site,
   jobTitle: "Full-stack developer",
