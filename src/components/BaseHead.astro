@@ -19,6 +19,14 @@ const markdownURL = new URL(`${Astro.url.pathname.replace(/\/$/, "") || "/index"
 // Each platform crops to a different ratio, so each gets its own image.
 const { title, description, image = "/og/og-linkedin.png", type = "website" } = Astro.props;
 const twitterImage = Astro.props.image ?? "/og/og-twitter.png";
+
+// X, LinkedIn and Discord cache card images by URL. Bump this when the OG images change so they fetch the new ones.
+const OG_VERSION = "2";
+const ogImageUrl = (path: string) => {
+  const url = new URL(path, Astro.url);
+  url.searchParams.set("v", OG_VERSION);
+  return url;
+};
 ---
 
 <!-- Global Metadata -->
@@ -57,7 +65,7 @@ const twitterImage = Astro.props.image ?? "/og/og-twitter.png";
 <meta property="og:url" content={Astro.url} />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
-<meta property="og:image" content={new URL(image, Astro.url)} />
+<meta property="og:image" content={ogImageUrl(image)} />
 <meta property="og:image:alt" content={title} />
 <meta property="og:site_name" content="Sara Natour" />
 <meta property="og:locale" content="en_US" />
@@ -67,7 +75,7 @@ const twitterImage = Astro.props.image ?? "/og/og-twitter.png";
 <meta property="twitter:url" content={Astro.url} />
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
-<meta property="twitter:image" content={new URL(twitterImage, Astro.url)} />
+<meta property="twitter:image" content={ogImageUrl(twitterImage)} />
 <!-- Databuddy analytics (cookieless, no PII) -->
 <script
   src="https://cdn.databuddy.cc/databuddy.js"
