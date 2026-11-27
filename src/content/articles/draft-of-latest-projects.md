@@ -1,5 +1,5 @@
 ---
-title: A collage of things I've built this year 
+title: A collage of things I've built this year 2026
 description: Projects and Packages I built this year 
 pubDate: 2026-11-27
 narrated: false
@@ -11,7 +11,7 @@ draft: true
 
 ### Slam Ideas
 
-Put your ideas on a board and get them criticized, anonymously, by a person or by Jev.
+Put your ideas on a board and get them criticized, anonymously, by a person or by Jev. Who is it for: If a lot of people are needed to vote on something, and you don't feel like using a coin then this is for you. built on convex.
 
 <div class="my-8 grid gap-4 sm:grid-cols-2 [&_img]:my-0">
 <a href="https://github.com/saranatour1/slam"><img src="https://opengraph.githubassets.com/1/saranatour1/slam" alt="GitHub preview of the slam repo" width="1200" height="600" loading="lazy"></a>
@@ -22,7 +22,7 @@ Put your ideas on a board and get them criticized, anonymously, by a person or b
 
 ### Slottd
 
-A concept site for renting branded ad slots on office beverage coolers, built with Astro and three.js.
+Started as a Joke, but could be worth money. A concept site for renting branded ad slots on office beverage coolers, built with Astro and three.js.
 
 [![Preview of the live Slottd site](https://slottd.428.lol/og.png)](https://slottd.428.lol)
 
@@ -30,8 +30,7 @@ A concept site for renting branded ad slots on office beverage coolers, built wi
 
 ### Dream Home
 
-My dream home: shipping containers and concrete blocks, rendered in three.js with a smart-home hub.
-
+My dream home, made out of containers. 
 [![GitHub preview of the dream-home repo](https://opengraph.githubassets.com/1/saranatour1/dream-home)](https://github.com/saranatour1/dream-home)
 
 [Repo](https://github.com/saranatour1/dream-home) · [Live](https://saranatour1.github.io/dream-home/)
@@ -49,7 +48,7 @@ Which Convex region is closest to you?
 
 ### Story Time
 
-A personal scrapbook and journal.
+A personal scrapbook and journal. Built on convex :) 
 
 <div class="my-8 grid gap-4 sm:grid-cols-2 [&_img]:my-0">
 <a href="https://github.com/saranatour1/Story-time"><img src="https://opengraph.githubassets.com/1/saranatour1/Story-time" alt="GitHub preview of the Story-time repo" width="1200" height="600" loading="lazy"></a>
@@ -60,7 +59,7 @@ A personal scrapbook and journal.
 
 ### Agent Arena
 
-Agents fighting.
+what happens if you put a bunch of agents to fight in an Arena?
 
 <div class="my-8 grid gap-4 sm:grid-cols-2 [&_img]:my-0">
 <a href="https://github.com/saranatour1/agent-arena"><img src="https://opengraph.githubassets.com/1/saranatour1/agent-arena" alt="GitHub preview of the agent-arena repo" width="1200" height="600" loading="lazy"></a>
@@ -79,7 +78,7 @@ Send, receive and store email through Cloudflare from Convex.
 
 ### No More Ads
 
-Hides promoted, unwanted ads from your Facebook, LinkedIn and YouTube feeds.
+Hides promoted, unwanted ads from your Facebook, LinkedIn and YouTube feeds. (I recommend forking and using this on your machine :); I don't think I'll announce this)
 
 [![GitHub preview of the no-more-ads repo](https://opengraph.githubassets.com/1/saranatour1/no-more-ads)](https://github.com/saranatour1/no-more-ads)
 
@@ -87,8 +86,7 @@ Hides promoted, unwanted ads from your Facebook, LinkedIn and YouTube feeds.
 
 ### Listening Lounge
 
-A shared record room on Convex: pick a record, drop it on the turntable, see who's tuning in.
-
+If you miss every convex event like I do, this one's for you. 
 <div class="my-8 grid gap-4 sm:grid-cols-2 [&_img]:my-0">
 <a href="https://github.com/saranatour1/listening-lounge"><img src="https://opengraph.githubassets.com/1/saranatour1/listening-lounge" alt="GitHub preview of the listening-lounge repo" width="1200" height="600" loading="lazy"></a>
 <a href="https://impressive-frog-993.eu-west-1.convex.site/"><img src="https://impressive-frog-993.eu-west-1.convex.site/og.png" alt="Preview of the live Listening Lounge site" width="1200" height="630" loading="lazy"></a>
@@ -98,7 +96,7 @@ A shared record room on Convex: pick a record, drop it on the turntable, see who
 
 ### Email Bro
 
-All your Gmail inboxes in one place. An AI sorts each new email into Needs action, Goal, Info or Spam, so only what matters is on top.
+All your Gmail inboxes in one place. An AI sorts each new email into Needs action, Goal, Info or Spam. The logo is basically 3 circles with an arrow that has no head, the circles represent the inboxes, and the arrow is what holds them together, "It's just an email, bro!".
 
 <div class="my-8 grid gap-4 sm:grid-cols-2 [&_img]:my-0">
 <a href="https://github.com/saranatour1/Email-bro"><img src="https://opengraph.githubassets.com/1/saranatour1/Email-bro" alt="GitHub preview of the Email-bro repo" width="1200" height="600" loading="lazy"></a>
@@ -109,8 +107,7 @@ All your Gmail inboxes in one place. An AI sorts each new email into Needs actio
 
 ### Article Drafting Tool
 
-Write an article once, preview how it looks on dev.to, X and Medium, and copy it for each.
-
+Mostly, for me. draft your ideas in here. 
 <div class="my-8 grid gap-4 sm:grid-cols-2 [&_img]:my-0">
 <a href="https://github.com/saranatour1/article-drafting-tool"><img src="https://opengraph.githubassets.com/1/saranatour1/article-drafting-tool" alt="GitHub preview of the article-drafting-tool repo" width="1200" height="600" loading="lazy"></a>
 <a href="https://drafts.saranatour.dev"><img src="https://drafts.saranatour.dev/og.png" alt="Preview of the live Article drafts site" width="1200" height="630" loading="lazy"></a>
@@ -120,7 +117,7 @@ Write an article once, preview how it looks on dev.to, X and Medium, and copy it
 
 ### Matilda
 
-She's just an AI. The assistant that actually calls you.
+She's just an AI. The assistant that actually calls you. Powered by convex! 
 
 <div class="my-8 grid gap-4 sm:grid-cols-2 [&_img]:my-0">
 <a href="https://github.com/saranatour1/Matlida"><img src="https://opengraph.githubassets.com/1/saranatour1/Matlida" alt="GitHub preview of the Matlida repo" width="1200" height="600" loading="lazy"></a>
@@ -131,7 +128,7 @@ She's just an AI. The assistant that actually calls you.
 
 ### Job Tracking Helper
 
-How I accidentally scraped the internet, and crashed the job market.
+How I accidentally scraped the internet, and crashed the job market. Powered by convex + Tanstack start + cloudflare. 
 
 [![GitHub preview of the job-tracking-helper repo](https://opengraph.githubassets.com/1/saranatour1/job-tracking-helper)](https://github.com/saranatour1/job-tracking-helper)
 
@@ -150,7 +147,7 @@ An open-source meetings app built on Convex and Cloudflare RealtimeKit.
 
 ### This site
 
-Keeping track of my things. You're on it.
+Keeping track of my things. You're on it. scores 100 on lighthouse :D 
 
 <div class="my-8 grid gap-4 sm:grid-cols-2 [&_img]:my-0">
 <a href="https://github.com/saranatour1/site"><img src="https://opengraph.githubassets.com/1/saranatour1/site" alt="GitHub preview of the site repo" width="1200" height="600" loading="lazy"></a>
@@ -163,7 +160,7 @@ Keeping track of my things. You're on it.
 
 ### Feedback Loop
 
-Still being built.
+Still being built, use linq convex component 
 
 [![GitHub preview of the feedback-loop repo](https://opengraph.githubassets.com/1/saranatour1/feedback-loop)](https://github.com/saranatour1/feedback-loop)
 
