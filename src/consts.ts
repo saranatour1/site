@@ -45,12 +45,12 @@ export const skillSet = [
   },
   {
     name: "TanStack",
-    icon: "https://tanstack.com/favicon.ico",
+    icon: "/icons/stack/tanstack.svg",
     url: "https://tanstack.com/",
   },
   {
     name: "shadcn UI",
-    icon: "https://ui.shadcn.com/favicon.ico",
+    icon: "/icons/stack/shadcnui.svg",
     url: "https://ui.shadcn.com/",
   },
   {
@@ -70,7 +70,7 @@ export const techStack: { title: string; items: [string, string, string?][] }[] 
   {
     title: "Building with",
     items: [
-      ["Convex", "convex.png"], ["Astro", "astro.svg"], ["Vite", "vite.svg"], ["TanStack", "tanstack.svg"],
+      ["Convex", "convex.png"], ["Astro", "astro.svg"], ["Vite", "vite.svg"], ["Vite+", "viteplus.svg"], ["TanStack", "tanstack.svg"],
       ["TypeScript", "typescript.svg"], ["shadcn UI", "shadcnui.svg"],
       ["Cloudflare", "cloudflare.svg"], ["Go", "go.svg", "learning"],
     ],
@@ -88,7 +88,7 @@ export const techStack: { title: string; items: [string, string, string?][] }[] 
     items: [
       ["VS Code", "visualstudiocode.svg"], ["GitHub", "github.svg"], ["Linear", "linear.svg"],
       ["Notion", "notion.svg"], ["Raycast", "raycast.svg"], ["Superhuman", "superhuman.svg"],
-      ["Databuddy", "databuddy.svg"],
+      ["Databuddy", "databuddy.svg"], ["Capy", "capy.png"], ["Claude AI", "claude.svg"],
     ],
   },
   {

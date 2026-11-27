@@ -2,5 +2,7 @@
   font-family: Recoleta;
   font-style: normal;
   font-weight: 400;
-  src: local("Recoleta"), url(/fonts/Recoleta-RegularDEMO.otf) format("opentype");
+  font-display: swap;
+  /* Latin subset of Recoleta-RegularDEMO.otf (src/assets/fonts), without the demo's broken fi/fl ligature. */
+  src: url(/fonts/recoleta.woff2) format("woff2");
 }

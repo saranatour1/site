@@ -1,31 +1,26 @@
 ---
 import CardWrapper from "../CardWrapper.astro";
-import Card from "../ui/Card.astro";
-import CardDescription from "../ui/CardDescription.astro";
-import CardTitle from "../ui/CardTitle.astro";
 import { techStack } from "../../consts";
 ---
-<section class="w-full max-w-200 mt-4">
-  <CardWrapper className="flex flex-col justify-start items-start">
-    <Card className="bg-transparent">
-      <CardTitle as="h2" className="text-2xl font-bold leading-6">My Tech Stack</CardTitle>
-      <CardDescription>Things I use every day</CardDescription>
-      <div class="mt-6 flex flex-col gap-5 w-full">
-        {techStack.map(({ title, items }) => (
-          <div class="grid grid-cols-[8rem_1fr] gap-4 items-start max-sm:grid-cols-1 max-sm:gap-2">
-            <h3 class="text-xs uppercase tracking-widest text-neutral-500 pt-2">{title}</h3>
-            <ul class="flex flex-wrap gap-2">
-              {items.map(([name, icon, note]) => (
-                <li class="flex items-center gap-2 pl-2 pr-3 py-1.5 rounded-full border border-blue-1/25 text-sm text-black-1 transition hover:border-blue-1 hover:-translate-y-0.5">
-                  <img src={`/icons/stack/${icon}`} alt="" width="16" height="16" loading="lazy" class="size-4 object-contain" />
-                  {name}
-                  {note && <span class="text-[10px] uppercase tracking-wide text-blue-1">{note}</span>}
-                </li>
-              ))}
-            </ul>
-          </div>
-        ))}
-      </div>
-    </Card>
+<div class="w-full max-w-200 mt-4">
+  <CardWrapper className="py-10 flex flex-col gap-2">
+    <h2 class="text-2xl">My tech stack</h2>
+    <p class="text-[15px] text-[#6b6860]">Things I use every day</p>
+    <div class="mt-4 flex flex-col">
+      {techStack.map(({ title, items }) => (
+        <div class="grid grid-cols-[8rem_1fr] gap-x-6 gap-y-2 border-t border-black-1/10 py-4 max-sm:grid-cols-1">
+          <h3 class="pt-1 text-xs uppercase tracking-[0.12em] text-[#6b6860]">{title}</h3>
+          <ul class="flex flex-wrap gap-x-5.5 gap-y-2.5">
+            {items.map(([name, icon, note]) => (
+              <li class="flex items-center gap-2 text-[15px]">
+                <img src={`/icons/stack/${icon}`} alt="" width="16" height="16" loading="lazy" class="size-4 object-contain" />
+                {name}
+                {note && <span class="text-[11px] uppercase tracking-wide text-blue-1">{note}</span>}
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
   </CardWrapper>
-</section>
+</div>

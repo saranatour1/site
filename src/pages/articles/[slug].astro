@@ -1,5 +1,7 @@
 ---
 import { render } from "astro:content";
+import { Image } from "astro:assets";
+import avatar from "../../assets/avatar.jpg";
 import Layout from "../../layouts/Layout.astro";
 import ArticleMeta from "../../components/articles/ArticleMeta.astro";
 import { AUDIO_BASE, socialLinks } from "../../consts";
@@ -13,7 +15,8 @@ export async function getStaticPaths() {
 const { article, articles } = Astro.props;
 const { title, description, pubDate, updatedDate, tags, narrated, originalAudio, shared } = article.data;
 const { Content } = await render(article);
-const more = articles.filter((other) => other.id !== article.id).slice(0, 2);
+const more = articles.filter((other) => other.id !== article.id).slice(0, 3);
+const email = socialLinks.find(({ label }) => label === "email")?.url;
 const audio = `${AUDIO_BASE}/${article.id}.mp3`;
 
 const url = new URL(Astro.url.pathname, Astro.site);
@@ -64,7 +67,7 @@ const jsonLd = [
 ];
 ---
 
-<Layout title={`${title} | Sara Natour`} description={description} type="article" image={ogImage}>
+<Layout title={`${title} | Sara Natour`} description={description} type="article" image={ogImage} wide>
   <Fragment slot="head">
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
@@ -74,28 +77,34 @@ const jsonLd = [
     {tags.map((tag) => <meta property="article:tag" content={tag} />)}
     <script type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />
   </Fragment>
-  <main class="mx-auto flex w-full max-w-170 flex-col">
-    <a href="/articles" class="mt-10 inline-flex min-h-11 items-center gap-1.5 self-start text-[15px] text-[#4a4843] hover:text-blue-1 max-sm:mt-2">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5" /><path d="m12 19-7-7 7-7" /></svg>
-      All articles
-    </a>
-
-    <header class="flex flex-col gap-4 pt-6">
-      <ArticleMeta article={article} class="text-[15px]" />
+  <div class="flex w-full max-w-280 flex-col">
+    <div class="flex flex-wrap items-start gap-x-16 gap-y-12 pt-8">
+  <main class="flex min-w-0 max-w-170 flex-[999_1_560px] flex-col">
+    <header class="flex flex-col gap-5 border-b border-black-1/10 pb-8">
+      <span class="self-start rounded-full bg-blue-1/12 px-3 py-1 text-[13px] text-[#14564e]">{tags[0] ?? "Writing"}</span>
       {/* Same transition names as the list rows, so the title and description glide up into place. */}
-      <h1 class="m-0 text-[56px] leading-[1.05] tracking-tight text-black-1 max-sm:text-4xl" transition:name={`article-title-${article.id}`}>{title}</h1>
-      <p class="m-0 text-lg leading-normal text-[#4a4843] max-sm:text-base" transition:name={`article-description-${article.id}`}>{description}</p>
-      {
-        narrated && (
-          // Shown by the script; opens the player. Without JS the native player below is used.
-          <button data-listen hidden type="button" class="mt-2 inline-flex min-h-11 cursor-pointer items-center gap-2.5 self-start rounded-full border border-black-1/15 py-1.5 pr-4 pl-1.5 text-[15px] text-black-1 transition-colors hover:border-blue-1">
-            <span class="grid size-8 place-items-center rounded-full bg-blue-1 text-white-1">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3" /></svg>
-            </span>
-            Listen to this article
-          </button>
-        )
-      }
+      <h1 class="text-[60px] leading-[1.05] tracking-tight max-sm:text-4xl" transition:name={`article-title-${article.id}`}>{title}</h1>
+      <p class="text-xl leading-normal text-[#4a4843] max-sm:text-lg" transition:name={`article-description-${article.id}`}>{description}</p>
+      <div class="mt-2 flex flex-wrap items-center justify-between gap-4">
+        <div class="flex items-center gap-3">
+          <Image src={avatar} alt="" width={40} height={40} densities={[1, 2]} class="size-10 rounded-full ring-1 ring-black-1/10" />
+          <div class="flex flex-col gap-0.5">
+            <span>Sara</span>
+            <ArticleMeta article={article} class="text-sm" />
+          </div>
+        </div>
+        {
+          narrated && (
+            // Shown by the script; opens the player. Without JS the native player below is used.
+            <button data-listen hidden type="button" class="inline-flex min-h-11 cursor-pointer items-center gap-2.5 rounded-full border border-blue-1 py-1.5 pr-4.5 pl-1.5 text-[15px] transition-colors hover:bg-blue-1/10">
+              <span class="grid size-8 place-items-center rounded-full bg-[#1d756a] text-white-1">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3" /></svg>
+              </span>
+              Listen to this article
+            </button>
+          )
+        }
+      </div>
     </header>
 
     {
@@ -106,7 +115,7 @@ const jsonLd = [
           <audio data-narration controls preload="metadata" src={audio} class="mt-9 w-full">
             <track kind="metadata" src={`/narration/${article.id}.vtt`} default />
           </audio>
-          <div data-player hidden role="group" aria-label="Narration player" class="mt-9 flex flex-col gap-3.5 rounded-3xl border border-black-1/10 bg-[#fffdf7] px-5 pt-4.5 pb-4 shadow-[0_1px_2px_rgba(26,26,26,0.04),0_10px_28px_-18px_rgba(26,26,26,0.35)]">
+          <div data-player hidden role="group" aria-label="Narration player" class="mt-7 flex flex-col gap-3.5 rounded-3xl border border-blue-1 bg-[#fffdf7] px-5 pt-4.5 pb-4 shadow-[0_1px_2px_rgba(26,26,26,0.04),0_10px_28px_-18px_rgba(26,26,26,0.35)]">
             <div class="flex items-center justify-between gap-2">
               <span class="truncate text-[15px]">Listen · read by Sara</span>
               <span class="flex shrink-0 items-center gap-1">
@@ -172,29 +181,54 @@ const jsonLd = [
       )
     }
 
-    <article data-article class="prose prose-xl prose-neutral max-w-none pt-12 max-sm:prose-lg prose-headings:font-normal prose-headings:text-black-1 prose-a:text-blue-1 prose-a:underline-offset-4 prose-blockquote:border-blue-1 prose-blockquote:font-normal prose-blockquote:text-black-1 prose-pre:rounded-2xl prose-pre:bg-black-1 prose-img:mx-auto prose-img:rounded-2xl prose-figcaption:text-center prose-figcaption:text-[#6b6860]">
+    <article data-article class="prose prose-xl prose-neutral max-w-none pt-12 max-sm:prose-lg prose-headings:font-normal prose-headings:text-black-1 prose-a:text-blue-text prose-a:underline-offset-4 prose-blockquote:border-blue-1 prose-blockquote:font-normal prose-blockquote:text-black-1 prose-pre:rounded-2xl prose-pre:bg-black-1 prose-img:mx-auto prose-img:rounded-2xl prose-figcaption:text-center prose-figcaption:text-[#6b6860]">
       <Content />
     </article>
 
+  </main>
+
+  {/* Sticks beside the article on wide screens; drops below it on phones. */}
+  <aside aria-label="More from Sara" class="flex min-w-0 max-w-95 flex-[1_1_300px] flex-col gap-4 lg:sticky lg:top-6">
     {
       more.length > 0 && (
-        <section aria-labelledby="more-articles" class="pt-18">
-          <h2 id="more-articles" class="m-0 mb-5 text-sm font-normal uppercase tracking-[0.08em] text-[#6b6860]">More articles</h2>
-          <div class="grid grid-cols-[repeat(auto-fit,minmax(260px,1fr))] gap-4">
-            {more.map((other) => (
-              <a href={`/articles/${other.id}`} class="flex flex-col gap-2.5 rounded-[20px] border border-black-1/10 bg-[#fffdf7] p-6 text-black-1 transition-colors hover:border-blue-1">
-                <span class="text-sm text-[#6b6860]">
+        <section aria-labelledby="more-articles" class="flex flex-col gap-2 rounded-2xl border border-blue-1 p-5">
+          <div class="flex items-baseline justify-between gap-3">
+            <h2 id="more-articles" class="text-lg">More articles</h2>
+            <a href="/articles" class="text-sm text-blue-1 hover:underline">View all</a>
+          </div>
+          {more.map((other) => (
+            <a href={`/articles/${other.id}`} class="flex min-h-11 items-center gap-3 border-t border-black-1/10 py-3 transition-colors hover:text-blue-1">
+              <span class="flex min-w-0 flex-1 flex-col gap-1">
+                <span class="leading-snug">{other.data.title}</span>
+                <span class="text-[13px] text-[#6b6860]">
                   {other.data.pubDate.toLocaleDateString("en", { dateStyle: "medium" })} · {readingMinutes(other)} minute read
                 </span>
-                <span class="text-[22px] leading-tight">{other.data.title}</span>
-                <span class="text-base leading-normal text-[#4a4843]">{other.data.description}</span>
-              </a>
-            ))}
-          </div>
+              </span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="shrink-0 text-[#6b6860]"><path d="m9 18 6-6-6-6" /></svg>
+            </a>
+          ))}
         </section>
       )
     }
-  </main>
+    {
+      email && (
+        <section aria-labelledby="work-together" class="flex flex-col gap-3 rounded-2xl border border-blue-1 px-5 py-6">
+          <h2 id="work-together" class="text-[22px] leading-tight">Working on something interesting?</h2>
+          <p class="text-[15px] leading-relaxed text-[#4a4843]">I help startups ship better products with TypeScript and Convex.</p>
+          <a href={`mailto:${email}`} class="mt-1 inline-flex min-h-11 items-center gap-2 self-start rounded-full bg-[#1d756a] px-4.5 text-[15px] text-white-1 transition hover:brightness-110">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2" /><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" /></svg>
+            {email}
+          </a>
+        </section>
+      )
+    }
+    <a href="/rss.xml" class="inline-flex min-h-11 items-center gap-2 self-start px-1 text-[15px] text-[#4a4843] transition-colors hover:text-blue-1">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 11a9 9 0 0 1 9 9" /><path d="M4 4a16 16 0 0 1 16 16" /><circle cx="5" cy="19" r="1" /></svg>
+      Follow along with RSS
+    </a>
+  </aside>
+    </div>
+  </div>
 </Layout>
 
 <style is:global>

@@ -1,80 +1,51 @@
 ---
 import CardWrapper from "../CardWrapper.astro";
-import Card from "../ui/Card.astro";
-import CardTitle from "../ui/CardTitle.astro";
+
+// start/end: [datetime attribute, shown text]; no end means "Present".
+const jobs: { role: string; company?: string; start: [string, string]; end?: [string, string]; description: string; note?: string }[] = [
+  {
+    role: "Independent Contractor (Freelance)",
+    start: ["2024-04", "April 2024"],
+    description:
+      "Freelance full-stack development for clients and businesses, building web applications with React, Next.js and Convex. Open source contributor. Currently available for new projects. Working on client projects like Sirdab, Markets, which will be released this year.",
+    note: "Want better SEO and visibility for your business? Email me for a quote.",
+  },
+  {
+    role: "Independent Study & Relocation",
+    start: ["2025-02", "February 2025"],
+    end: ["2025-11", "November 2025"],
+    description: "Independent study and a career break, exploring new work ventures.",
+  },
+  {
+    role: "Full stack developer",
+    company: "@Clarity TXT inc",
+    start: ["2024-11", "November 2024"],
+    end: ["2025-02", "February 2025"],
+    description: "Worked with convex.dev, TypeScript, React, Next.js, clerk, to create a Real time chat application.",
+  },
+  {
+    role: "Full stack developer",
+    start: ["2023-10", "October 2023"],
+    end: ["2024-01", "January 2024"],
+    description: "Worked with TypeScript and react on creating a Website builder",
+  },
+];
 ---
 
 <div class="mt-4 w-full max-w-200">
-  <CardWrapper className="">
-    <Card className="bg-transparent">
-      <CardTitle as="h2"> Professional experience </CardTitle>
-      <div>
-        <div class="w-full">
-          <ul class="flex items-center justify-between contrast-50">
-            <li>- Independent Contractor (Freelance)</li>
-            <li>
-              <time datetime="2024-04">April 2024</time> - Present
-            </li>
-          </ul>
-          <p class="p-4 w-full max-w-full prose">
-            Freelance full-stack development for clients and businesses,
-            building web applications with React, Next.js and Convex. Open
-            source contributor. Currently available for new projects.
-            Working on client projects like Sirdab, Markets, which will be released this year. 
-            <br />
-            <span class="text-sm text-gray-900"
-              >Want better SEO and visibility for your business? Email me for a
-              quote.</span
-            >
+  <CardWrapper className="py-10">
+    <h2 class="text-2xl mb-2">Professional experience</h2>
+    {jobs.map(({ role, company, start, end, description, note }) => (
+      <div class="flex flex-col gap-2 border-t border-black-1/10 py-5 first-of-type:border-t-0 last:pb-0">
+        <div class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+          <h3 class="text-lg">{role} {company && <span class="text-blue-1">{company}</span>}</h3>
+          <p class="text-sm text-[#6b6860]">
+            <time datetime={start[0]}>{start[1]}</time> – {end ? <time datetime={end[0]}>{end[1]}</time> : "Present"}
           </p>
         </div>
-        <div class="w-full">
-          <ul class="flex items-center justify-between contrast-50">
-            <li>- Independent Study & Relocation</li>
-            <li>
-              <time datetime="2025-02">February 2025</time> - <time
-                datetime="2025-11">November 2025</time
-              >
-            </li>
-          </ul>
-          <p class="p-4 w-full max-w-full">
-            Independent study and a career break, exploring new work ventures.
-          </p>
-        </div>
-        <div>
-          <ul class="flex items-center justify-between contrast-50">
-            <li>
-              - Full stack developer <span class="text-blue-900"
-                >@Clarity TXT inc</span
-              >
-            </li>
-            <li>
-              <time datetime="2024-11">November 2024</time> - <time
-                datetime="2025-02">February 2025</time
-              >
-            </li>
-          </ul>
-          <p class="p-4">
-            worked with convex.dev, TypeScript, React, Next.js, clerk, to create
-            a Real time chat application.
-          </p>
-        </div>
-        <div>
-          <ul class="flex items-center justify-between contrast-50">
-            <li>
-              - Full stack developer
-            </li>
-            <li>
-              <time datetime="2023-10">October 2023</time> - <time
-                datetime="2024-01">January 2024</time
-              >
-            </li>
-          </ul>
-          <p class="p-4">
-            Worked with TypeScript and react on creating a Website builder
-          </p>
-        </div>
+        <p class="leading-relaxed text-[#4a4843]">{description}</p>
+        {note && <p class="text-sm text-[#6b6860]">{note}</p>}
       </div>
-    </Card>
+    ))}
   </CardWrapper>
 </div>

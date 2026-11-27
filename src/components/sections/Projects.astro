@@ -1,7 +1,5 @@
 ---
 import { Octokit } from "@octokit/core";
-import Card from "../ui/Card.astro";
-import CardTitle from "../ui/CardTitle.astro";
 
 interface ProjectType {
   name: string;
@@ -80,8 +78,8 @@ if (import.meta.env.GITHUB_TOKEN) {
 ---
 
 <section class="mt-4 w-full max-w-200">
-    <Card className="bg-transparent border-blue-1 p-8">
-      <CardTitle as="h2" className="text-2xl font-bold leading-6 ">Cool things</CardTitle>
+    <div class="rounded-2xl border border-blue-1 p-10 max-sm:px-4">
+      <h2 class="text-2xl">Cool things</h2>
       <!-- CSS-only magnetic hover (anchor positioning); styles live in globals.css (.magnetic) -->
       <!-- auto-rows-fr: every card shares the tallest card's height -->
       <div class="magnetic mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 auto-rows-fr">
@@ -94,5 +92,5 @@ if (import.meta.env.GITHUB_TOKEN) {
           </a>
         ))}
       </div>
-    </Card>
+    </div>
 </section>

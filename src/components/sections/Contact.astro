@@ -1,31 +1,22 @@
 ---
 import CardWrapper from "../CardWrapper.astro";
-import Card from "../ui/Card.astro";
-import CardTitle from "../ui/CardTitle.astro";
 import { socialLinks } from "../../consts";
 ---
-<section class="w-full max-w-200 mt-4">
-  <CardWrapper className="flex justify-between items-center w-full max-md:flex-col">
-  <Card className="bg-transparent">
-    <CardTitle as="h2"> Contact information</CardTitle>
-    <div>
-      <div class="w-full flex flex-col gap-4 items-start">
-        {socialLinks.map(({ url, icon: Icon, label }) => {
-          return (
-            <a
-              href={label === "email" ? `mailto:${url}` : url}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="flex  group items-center p-2 rounded-md text-gray-700 hover:text-blue-1 transition-colors hover:bg-blue-1/10 w-full"
-            >
-              {<Icon />}
-              <span class="text-sm font-medium">{label}</span>
-            </a>
-          );
-        })}
-      </div>
-      
+<div class="w-full max-w-200 mt-4">
+  <CardWrapper className="py-10 flex flex-col gap-3">
+    <h2 class="text-2xl">Contact information</h2>
+    <div class="flex flex-wrap gap-x-8 gap-y-2">
+      {socialLinks.map(({ url, icon: Icon, label }) => (
+        <a
+          href={label === "email" ? `mailto:${url}` : url}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex min-h-11 items-center gap-2.5 text-black-1 transition-colors hover:text-blue-1"
+        >
+          <Icon />
+          {label}
+        </a>
+      ))}
     </div>
-  </Card>
   </CardWrapper>
-</section>
+</div>

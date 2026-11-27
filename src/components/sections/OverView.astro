@@ -1,26 +1,23 @@
 ---
 import { socialLinks } from "../../consts";
 import CardWrapper from "../CardWrapper.astro";
-import Card from "../ui/Card.astro";
-import CardTitle from "../ui/CardTitle.astro";
-import CardDescription from "../ui/CardDescription.astro";
 const email = socialLinks.find((r) => r["label"]==="email");
 ---
 
-<div
-  class="flex justify-between items-center max-md:flex-col w-full max-w-200 mt-4"
->
-  <CardWrapper>
-    <Card className="bg-transparent w-full h-full">
-      <CardTitle as="h2" className={`text-2xl`}> About Me </CardTitle>
-      <CardDescription>
-        I'm a full-stack developer specializing in TypeScript and Convex,
-        helping startups ship better products across commerce, health, and B2B.
-        When I'm not working, I'm building garden beds or helping people furnish
-        their homes with the right tech. I like traveling, new places, new
-        perspectives. <br /> Working on something interesting? →
-        {email?.url && <a href={`mailto:${email.url}`}>{email.url}</a>}
-      </CardDescription>
-    </Card>
+<div class="w-full max-w-200 mt-4">
+  <CardWrapper className="py-10 flex flex-col gap-3">
+    <h2 class="text-2xl">About me</h2>
+    <p class="text-[17px] leading-relaxed text-[#4a4843]">
+      I'm a full-stack developer specializing in TypeScript and Convex,
+      helping startups ship better products across commerce, health, and B2B.
+      When I'm not working, I'm building garden beds or helping people furnish
+      their homes with the right tech. I like traveling, new places, new
+      perspectives.
+    </p>
+    {email?.url && (
+      <p class="text-[17px] leading-relaxed text-[#4a4843]">
+        Working on something interesting? → <a href={`mailto:${email.url}`} class="text-blue-1 underline underline-offset-4">{email.url}</a>
+      </p>
+    )}
   </CardWrapper>
 </div>

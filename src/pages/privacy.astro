@@ -1,48 +1,35 @@
 ---
-import CardWrapper from "../components/CardWrapper.astro";
 import Layout from "../layouts/Layout.astro";
-import Card from "../components/ui/Card.astro";
-import CardTitle from "../components/ui/CardTitle.astro";
 import { socialLinks } from "../consts";
 
 const email = socialLinks.find((r) => r["label"]==="email");
 ---
 
 <Layout title="Privacy" description="Privacy and analytics on this site">
-  <main
-    class="flex flex-col justify-between items-center max-md:flex-col w-full max-w-200 mx-auto"
-  >
-    <CardWrapper className="w-full py-6" enableWobble={false}>
-      <Card className="bg-transparent w-full h-full p-6">
-        <div class="flex justify-between items-center mb-4">
-          <CardTitle as="h1" className="text-2xl text-black-1">Privacy</CardTitle>
-        </div>
-        <div>
-          <p>
-            This site uses <a href="https://databuddy.cc" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">Databuddy</a>, a cookieless analytics tool.
-          </p>
+  <main class="w-full max-w-200 mx-auto flex flex-col gap-4">
+    <header class="flex flex-col items-center gap-4 rounded-2xl border border-blue-1 px-10 py-16 text-center max-sm:px-5 max-sm:py-12">
+      <h1 class="text-7xl leading-none tracking-tight max-sm:text-5xl">Privacy</h1>
+      <p class="max-w-150 text-lg leading-relaxed text-[#4a4843]">
+        This site uses <a href="https://databuddy.cc" target="_blank" rel="noopener noreferrer" class="text-blue-1 underline underline-offset-4">Databuddy</a>, a cookieless analytics tool.
+      </p>
+    </header>
 
-          <blockquote class="border-l-2 pl-4 italic text-neutral-600">
-            "We don't use cookies, we don't identify users, we anonymize IPs, and we only collect minimal, aggregated data so you get insights without tracking people." &mdash; <a href="https://www.databuddy.cc/privacy" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">Databuddy's privacy policy</a>
-          </blockquote>
+    <section aria-labelledby="collected" class="flex flex-col gap-4 rounded-2xl border border-blue-1 p-10 max-sm:px-5">
+      <h2 id="collected" class="text-2xl">What's collected</h2>
+      <p class="leading-relaxed text-[#4a4843]">Approximate location (country/city), page views, referrer, and device/browser type.</p>
+      <blockquote class="border-l-2 border-blue-1 pl-5 leading-relaxed text-[#4a4843]">
+        "We don't use cookies, we don't identify users, we anonymize IPs, and we only collect minimal, aggregated data so you get insights without tracking people." &mdash; <a href="https://www.databuddy.cc/privacy" target="_blank" rel="noopener noreferrer" class="text-blue-1 underline underline-offset-4">Databuddy's privacy policy</a>
+      </blockquote>
+    </section>
 
-          <div>
-            <h3 class="text-lg font-semibold text-black-1 mb-2">What's collected</h3>
-            <p>Approximate location (country/city), page views, referrer, and device/browser type.</p>
-          </div>
-
-          <p class="font-medium text-black-1">
-            Questions? Send me an email.
-          </p>
-          {email?.url && (
-            <div class="mt-4">
-              <a href={`mailto:${email.url}`} class="text-blue-600 hover:underline">
-                {email.url}
-              </a>
-            </div>
-          )}
-        </div>
-      </Card>
-    </CardWrapper>
+    {email?.url && (
+      <section aria-labelledby="questions" class="flex flex-wrap items-center justify-between gap-6 rounded-2xl border border-blue-1 px-10 py-12 max-sm:px-5">
+        <h2 id="questions" class="min-w-0 flex-[1_1_300px] text-[28px] leading-tight">Questions? Send me an email.</h2>
+        <a href={`mailto:${email.url}`} class="inline-flex min-h-12 items-center gap-2.5 rounded-full bg-[#1d756a] px-5.5 text-white-1 transition hover:brightness-110">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2" /><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" /></svg>
+          {email.url}
+        </a>
+      </section>
+    )}
   </main>
 </Layout>
