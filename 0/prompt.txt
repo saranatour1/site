@@ -1,0 +1,33 @@
+So we just want a quick rundown of like public projects that I built, just like from the top down, not from the down up preview. So here are a couple of repos. I just want to have the repos previewed and the live project previewed as well, kind of like an index.
+
+https://github.com/saranatour1/dream-home
+
+https://github.com/saranatour1/Convex-Regions
+https://github.com/saranatour1/Story-time
+https://github.com/saranatour1/agent-arena
+https://github.com/saranatour1/cloudflare-email-component
+https://github.com/saranatour1/no-more-ads
+https://github.com/saranatour1/feedback-loop -> in progress
+https://github.com/saranatour1/listening-lounge
+https://github.com/saranatour1/Email-bro
+https://github.com/saranatour1/article-drafting-tool
+https://github.com/saranatour1/Matlida
+https://github.com/saranatour1/job-tracking-helper
+https://github.com/saranatour1/convex-meetings
+https://github.com/saranatour1/site
+
+and a few projects that are in progress including advent of code 2026
+
+---
+
+How about making the previewable via links instead of taking a screenshot
+
+---
+
+<task-notification>
+<task-id>b8duoxhn9</task-id>
+<tool-use-id>REDACTED</tool-use-id>
+<output-file>/private/tmp/claude-501/-Users-saranatour-workspace-Personal-Website/3354f514-31c6-44aa-acec-7670da74181a/tasks/b8duoxhn9.output</output-file>
+<status>completed</status>
+<summary>Background command "Retry the repo cards that were rate limited" completed (exit code 0)</summary>
+</task-notification>
